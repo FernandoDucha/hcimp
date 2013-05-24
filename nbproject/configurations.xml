@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="88">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Arquivos de cabeçalho"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Arquivos de código-fonte"
+                   projectFiles="true">
+      <itemPath>Avl.cpp</itemPath>
+      <itemPath>Avl.h</itemPath>
+      <itemPath>BFS.cpp</itemPath>
+      <itemPath>BFS.h</itemPath>
+      <itemPath>BasicFunctions.cpp</itemPath>
+      <itemPath>BasicFunctions.h</itemPath>
+      <itemPath>BasicTypes.cpp</itemPath>
+      <itemPath>BasicTypes.h</itemPath>
+      <itemPath>BasicTypes_heap.cpp</itemPath>
+      <itemPath>BasicTypes_heap.h</itemPath>
+      <itemPath>Combinatorics.cpp</itemPath>
+      <itemPath>Combinatorics.h</itemPath>
+      <itemPath>CompleteKarmarkarKarp.cpp</itemPath>
+      <itemPath>CompleteKarmarkarKarp.h</itemPath>
+      <itemPath>CompleteKarmarkarKarp_MPZ.cpp</itemPath>
+      <itemPath>CompleteKarmarkarKarp_MPZ.h</itemPath>
+      <itemPath>Cronometro.cpp</itemPath>
+      <itemPath>Cronometro.h</itemPath>
+      <itemPath>Hash.cpp</itemPath>
+      <itemPath>Hash.h</itemPath>
+      <itemPath>HashExtended.cpp</itemPath>
+      <itemPath>HashExtended.h</itemPath>
+      <itemPath>HeapStrctPtr.cpp</itemPath>
+      <itemPath>HeapStrctPtr.h</itemPath>
+      <itemPath>HeapStructure.cpp</itemPath>
+      <itemPath>HeapStructure.h</itemPath>
+      <itemPath>ListStructure.cpp</itemPath>
+      <itemPath>ListStructure.h</itemPath>
+      <itemPath>ListStructurePtr.cpp</itemPath>
+      <itemPath>ListStructurePtr.h</itemPath>
+      <itemPath>Mpz_Heap_Node_Template.cpp</itemPath>
+      <itemPath>Mpz_Heap_Node_Template.h</itemPath>
+      <itemPath>NumberPartitionProblem.cpp</itemPath>
+      <itemPath>NumberPartitionProblem.h</itemPath>
+      <itemPath>NumberPartitionProblem_MPZ.cpp</itemPath>
+      <itemPath>NumberPartitionProblem_MPZ.h</itemPath>
+      <itemPath>PPN_Heap.cpp</itemPath>
+      <itemPath>PPN_Heap.h</itemPath>
+      <itemPath>Semaphore.cpp</itemPath>
+      <itemPath>Semaphore.h</itemPath>
+      <itemPath>enums.h</itemPath>
+      <itemPath>main.cpp</itemPath>
+      <itemPath>node_list_struct.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Arquivos de recurso"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Arquivos de testes"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Arquivos importantes"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <incDir>
+            <pElem>/opt/ibm/ILOG/CPLEX_Studio_Academic123/opl/include/ilconcert</pElem>
+            <pElem>/opt/ibm/ILOG/CPLEX_Studio_Academic123/opl/include/ilcplex</pElem>
+            <pElem>/opt/ibm/ILOG/CPLEX_Studio_Academic123/concert/include</pElem>
+            <pElem>/opt/ibm/ILOG/CPLEX_Studio_Academic123/cplex/include</pElem>
+          </incDir>
+          <commandLine>-fexceptions -DIL_STD -std=c++11</commandLine>
+        </ccTool>
+        <linkerTool>
+          <linkerAddLib>
+            <pElem>/opt/ibm/ILOG/CPLEX_Studio_Academic123/cplex/lib/x86-64_sles10_4.1/static_pic</pElem>
+            <pElem>/opt/ibm/ILOG/CPLEX_Studio_Academic123/concert/lib/x86-64_sles10_4.1/static_pic</pElem>
+          </linkerAddLib>
+          <linkerLibItems>
+            <linkerOptionItem>-lm</linkerOptionItem>
+            <linkerOptionItem>-pthread</linkerOptionItem>
+            <linkerOptionItem>-lrt</linkerOptionItem>
+            <linkerLibLibItem>mpfr</linkerLibLibItem>
+            <linkerLibLibItem>gsl</linkerLibLibItem>
+            <linkerLibLibItem>gmp</linkerLibLibItem>
+            <linkerLibLibItem>gmpxx</linkerLibLibItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <item path="Avl.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Avl.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="BFS.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BFS.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="BasicFunctions.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BasicFunctions.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="BasicTypes.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BasicTypes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="BasicTypes_heap.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BasicTypes_heap.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Combinatorics.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Combinatorics.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CompleteKarmarkarKarp.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CompleteKarmarkarKarp.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CompleteKarmarkarKarp_MPZ.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CompleteKarmarkarKarp_MPZ.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Cronometro.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Cronometro.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Hash.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Hash.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="HashExtended.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="HashExtended.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="HeapStrctPtr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="HeapStrctPtr.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="HeapStructure.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="HeapStructure.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ListStructure.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ListStructure.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ListStructurePtr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ListStructurePtr.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Mpz_Heap_Node_Template.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Mpz_Heap_Node_Template.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="NumberPartitionProblem.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="NumberPartitionProblem.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="NumberPartitionProblem_MPZ.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="NumberPartitionProblem_MPZ.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PPN_Heap.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PPN_Heap.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Semaphore.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Semaphore.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="enums.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="node_list_struct.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>GNU|GNU</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+          <standard>8</standard>
+          <incDir>
+            <pElem>/opt/ibm/ILOG/CPLEX_Studio_Academic123/opl/include/ilconcert</pElem>
+            <pElem>/opt/ibm/ILOG/CPLEX_Studio_Academic123/opl/include/ilcplex</pElem>
+            <pElem>/opt/ibm/ILOG/CPLEX_Studio_Academic123/concert/include</pElem>
+            <pElem>/opt/ibm/ILOG/CPLEX_Studio_Academic123/cplex/include</pElem>
+          </incDir>
+          <commandLine>-m64 -O6 -O -fPIC -fexceptions -DNDEBUG -DIL_STD</commandLine>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+        <linkerTool>
+          <linkerAddLib>
+            <pElem>/opt/ibm/ILOG/CPLEX_Studio_Academic123/cplex/lib/x86-64_sles10_4.1/static_pic</pElem>
+            <pElem>/opt/ibm/ILOG/CPLEX_Studio_Academic123/concert/lib/x86-64_sles10_4.1/static_pic</pElem>
+          </linkerAddLib>
+          <linkerLibItems>
+            <linkerLibLibItem>ilocplex</linkerLibLibItem>
+            <linkerLibLibItem>cplex</linkerLibLibItem>
+            <linkerLibLibItem>concert</linkerLibLibItem>
+            <linkerOptionItem>-lm</linkerOptionItem>
+            <linkerOptionItem>-pthread</linkerOptionItem>
+            <linkerOptionItem>-lrt</linkerOptionItem>
+            <linkerLibLibItem>gmp</linkerLibLibItem>
+            <linkerLibLibItem>gmpxx</linkerLibLibItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <item path="Avl.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Avl.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="BFS.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BFS.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="BasicFunctions.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BasicFunctions.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="BasicTypes.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BasicTypes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="BasicTypes_heap.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BasicTypes_heap.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Combinatorics.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Combinatorics.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CompleteKarmarkarKarp.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CompleteKarmarkarKarp.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CompleteKarmarkarKarp_MPZ.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CompleteKarmarkarKarp_MPZ.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Cronometro.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Cronometro.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Hash.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Hash.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="HashExtended.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="HashExtended.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="HeapStrctPtr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="HeapStrctPtr.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="HeapStructure.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="HeapStructure.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ListStructure.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ListStructure.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ListStructurePtr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ListStructurePtr.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Mpz_Heap_Node_Template.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Mpz_Heap_Node_Template.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="NumberPartitionProblem.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="NumberPartitionProblem.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="NumberPartitionProblem_MPZ.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="NumberPartitionProblem_MPZ.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PPN_Heap.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PPN_Heap.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Semaphore.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Semaphore.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="enums.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="node_list_struct.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Windows" type="1">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <linkerTool>
+          <linkerAddLib>
+            <pElem>../../../../../cygwin/usr/local/lib</pElem>
+          </linkerAddLib>
+          <linkerLibItems>
+            <linkerOptionItem>-lgmpxx -lgmp</linkerOptionItem>
+            <linkerOptionItem>-lrt</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <item path="Avl.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Avl.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="BFS.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BFS.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="BasicFunctions.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BasicFunctions.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="BasicTypes.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BasicTypes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="BasicTypes_heap.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BasicTypes_heap.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Combinatorics.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Combinatorics.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CompleteKarmarkarKarp.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CompleteKarmarkarKarp.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CompleteKarmarkarKarp_MPZ.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CompleteKarmarkarKarp_MPZ.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Cronometro.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Cronometro.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Hash.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Hash.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="HashExtended.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="HashExtended.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="HeapStrctPtr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="HeapStrctPtr.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="HeapStructure.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="HeapStructure.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ListStructure.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ListStructure.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ListStructurePtr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ListStructurePtr.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Mpz_Heap_Node_Template.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Mpz_Heap_Node_Template.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="NumberPartitionProblem.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="NumberPartitionProblem.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="NumberPartitionProblem_MPZ.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="NumberPartitionProblem_MPZ.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PPN_Heap.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PPN_Heap.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Semaphore.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Semaphore.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="enums.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="node_list_struct.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
