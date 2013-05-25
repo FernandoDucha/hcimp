@@ -198,15 +198,16 @@ void PPN_Heap::KK(mpz_node_bfs * node){
             min = node->getSum();
             perfect = (min == perfectVal) ? true : false;
             res << log2(node->getSum() + 1) << ";" << chrono.elapsed() << ";" << nodes_inspected << ";" << nodes_pruned << endl;
-            mpz_heap_elem_ptr Last=node->removeLargest();
-            delete Last;
         }
+        mpz_heap_elem_ptr Last=node->removeLargest();
+        delete Last;
+//        cout<<"soma final kk: "<< node->getSum()<<endl;
     } else {
         mpz_heap_elem_ptr A, B, DIFF;
         A = node->removeLargest();
         B = node->removeLargest();
         DIFF = &(*A-*B);
-        DIFF->Original(false);
+        DIFF->Original(false);        
         node->pushElem(DIFF);
         KK(node);
         if(A->isOrig()){
@@ -246,9 +247,7 @@ void PPN_Heap::runBFS() {
 void PPN_Heap::runBFS(mpz_node_bfs * node) {
     HashExtended hash(nElementos + 1, 100000);
     hash.put(node);
-    cout<<"abc"<<endl;
     KK(node);
-    cout<<node->getSum()<<endl;
     hash.nextCyle();
     while (chrono.elapsed() <= tempo || !perfect) {
         int nelem = hash.getNElem();
@@ -269,8 +268,7 @@ void PPN_Heap::runBFS(mpz_node_bfs * node) {
                     right->pushElem(&(*A+*B));
                     nodes_inspected++;
                     right->setNodeId(left->getNodeId() + 1);
-//                    mpz_node_bfs init1(*right);
-                    //KK(&init1);
+                    KK(right);
                     if (right->prune(min, nroParticoes)) {
                         nodes_pruned++;
                         delete right;
