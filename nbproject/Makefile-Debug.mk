@@ -72,7 +72,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-L/opt/ibm/ILOG/CPLEX_Studio_Academic123/cplex/lib/x86-64_sles10_4.1/static_pic -L/opt/ibm/ILOG/CPLEX_Studio_Academic123/concert/lib/x86-64_sles10_4.1/static_pic -lm -pthread -lrt -lmpfr -lgsl -lgmp -lgmpxx
+LDLIBSOPTIONS=-L/opt/ibm/ILOG/CPLEX_Studio_Academic123/cplex/lib/x86-64_sles10_4.1/static_pic -L/opt/ibm/ILOG/CPLEX_Studio_Academic123/concert/lib/x86-64_sles10_4.1/static_pic -lm -pthread -lrt -lmpfr -lgsl -lgmp -lgmpxx -ltcmalloc
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}

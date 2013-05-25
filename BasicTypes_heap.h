@@ -21,10 +21,10 @@ public:
     num_elem_mpz_heap(mpz_class  n):ref(0),ori(true) {
         id = n;
     }
-    num_elem_mpz_heap():id(NULL),ref(0) {
+    num_elem_mpz_heap():id(0),ref(0),ori(false) {
     }
     mpz_class getId() const {
-        return *id;
+        return id;
     }
     ~num_elem_mpz_heap(){
 

@@ -100,6 +100,7 @@
             <linkerLibLibItem>gsl</linkerLibLibItem>
             <linkerLibLibItem>gmp</linkerLibLibItem>
             <linkerLibLibItem>gmpxx</linkerLibLibItem>
+            <linkerLibLibItem>tcmalloc</linkerLibLibItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>

@@ -43,7 +43,6 @@ void HashExtended::nextCyle() {
         for (int i = 0; i < searchSpace; i++) {
             sum += count[i];
             if (sum > maxElem) {
-//                cout<<"entrou aqui"<<endl;
                 ulong diff = sum - maxElem;
                 int k=0;
                 for (k = count[i]-1; k >= count[i]-diff; k--) {
@@ -53,7 +52,7 @@ void HashExtended::nextCyle() {
                 }
                 count[i]-=diff;
                 for (int j = i + 1; count[j]!=0; j++) {
-                    for (int l = count[j] - 1; l >= 0; l--) {
+                    for (int l = count[j]-1; l >= 0; l--) {
                         delete hash[j][l];
                         hash[j][l]=NULL;
                         nElem--;

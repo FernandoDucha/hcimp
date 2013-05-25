@@ -50,7 +50,7 @@ template <class heapType,class heapElement>MpzHeapNodeTemplate<heapType,heapElem
     sum=0;
 }
 template <class heapType,class heapElement>MpzHeapNodeTemplate<heapType,heapElement>::~MpzHeapNodeTemplate(){
-//        delete elements;
+
 }
 template <class heapType,class heapElement> MpzHeapNodeTemplate<heapType,heapElement> & MpzHeapNodeTemplate<heapType,heapElement>::operator=(MpzHeapNodeTemplate<heapType,heapElement> & rhs){
     this->elements= rhs.data();
