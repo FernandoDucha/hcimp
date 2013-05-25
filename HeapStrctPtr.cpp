@@ -31,10 +31,10 @@ HeapStrctPtr::HeapStrctPtr(HeapStrctPtr & Orig){
 //    print();
 }
 HeapStrctPtr::~HeapStrctPtr() {
-    for(int i=pos;i>=0;i++){
+    for(int i=pos;i>=0;i--){
         mpz_heap_elem * temp =heap[i];
         heap.pop_back();
-        *temp--;
+        (*temp)--;
         mpz_heap_elem::tryDeleting(temp);
     }
 }

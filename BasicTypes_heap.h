@@ -14,12 +14,12 @@
 #include "HeapStructure.h"
 class num_elem_mpz_heap {
 private:
-    mpz_class * id;
+    mpz_class id;
     ulong ref;
     bool ori;
 public:
     num_elem_mpz_heap(mpz_class  n):ref(0),ori(true) {
-        id = new mpz_class(n);
+        id = n;
     }
     num_elem_mpz_heap():id(NULL),ref(0) {
     }
@@ -27,16 +27,14 @@ public:
         return *id;
     }
     ~num_elem_mpz_heap(){
-        if(!ref){
-            delete id;
-        }
+
     }
     num_elem_mpz_heap * copyRef(){
         ref++;
         return this;
     }
     static inline void tryDeleting(num_elem_mpz_heap * candidate){
-        if(!candidate->_ref()){
+        if(candidate->_ref()<=0){
             delete candidate;
         }
     }

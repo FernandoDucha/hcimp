@@ -11,8 +11,8 @@
 HashExtended::HashExtended(int maxDepth, int maxElements) {
     hash = new heap_node_p*[maxDepth];
     for (int i = 0; i < maxDepth; i++) {
-        hash[i] = new heap_node_p[(int)(maxElements/2)];
-        for(int j=0;j<0.5*maxElements;j++){
+        hash[i] = new heap_node_p[maxElements];
+        for(int j=0;j<maxElements;j++){
             hash[i][j]=NULL;
         }
     }
@@ -43,7 +43,7 @@ void HashExtended::nextCyle() {
         for (int i = 0; i < searchSpace; i++) {
             sum += count[i];
             if (sum > maxElem) {
-                cout<<"entrou aqui"<<endl;
+//                cout<<"entrou aqui"<<endl;
                 ulong diff = sum - maxElem;
                 int k=0;
                 for (k = count[i]-1; k >= count[i]-diff; k--) {
@@ -52,7 +52,7 @@ void HashExtended::nextCyle() {
                     nElem--;
                 }
                 count[i]-=diff;
-                for (int j = i + 1; j < searchSpace&&count[j]!=0; j++) {
+                for (int j = i + 1; count[j]!=0; j++) {
                     for (int l = count[j] - 1; l >= 0; l--) {
                         delete hash[j][l];
                         hash[j][l]=NULL;
@@ -60,6 +60,7 @@ void HashExtended::nextCyle() {
                     }
                     auxcount[j] = count[j] = 0;
                 }
+                searchSpace=i+1;
                 break;
             }
         }
@@ -74,7 +75,6 @@ void HashExtended::nextCyle() {
         }else{
             break;
         }
-        //cout<<i<<"--"<<auxcount[i]<<"---"<<sum<<endl;
     }
 }
 

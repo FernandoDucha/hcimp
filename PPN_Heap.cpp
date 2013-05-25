@@ -245,7 +245,7 @@ void PPN_Heap::runBFS() {
 }
 
 void PPN_Heap::runBFS(mpz_node_bfs * node) {
-    HashExtended hash(nElementos + 1, 100000);
+    HashExtended hash(nElementos + 1, 1000);
     hash.put(node);
     KK(node);
     hash.nextCyle();
@@ -257,6 +257,7 @@ void PPN_Heap::runBFS(mpz_node_bfs * node) {
             mpz_node_bfs *left;
             ulong nh = hash.getHeightCoun(j);
             if (nh) {
+                
                 mpz_node_bfs ** line = hash.getHeightVector(j);
                 for (int k = 0; k < nh; k++) {
                     left = line[k];
