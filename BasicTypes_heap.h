@@ -15,7 +15,7 @@
 class num_elem_mpz_heap {
 private:
     mpz_class id;
-    ulong ref;
+    long ref;
     bool ori;
 public:
     num_elem_mpz_heap(mpz_class  n):ref(0),ori(true) {
@@ -39,7 +39,7 @@ public:
         }
     }
 
-    ulong _ref() const {
+    long _ref() const {
         return ref;
     }
 

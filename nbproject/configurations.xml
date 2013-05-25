@@ -85,7 +85,7 @@
             <pElem>/opt/ibm/ILOG/CPLEX_Studio_Academic123/concert/include</pElem>
             <pElem>/opt/ibm/ILOG/CPLEX_Studio_Academic123/cplex/include</pElem>
           </incDir>
-          <commandLine>-fexceptions -DIL_STD -std=c++11</commandLine>
+          <commandLine>-fexceptions -DIL_STD -std=c++11 -pg</commandLine>
         </ccTool>
         <linkerTool>
           <linkerAddLib>
@@ -100,7 +100,7 @@
             <linkerLibLibItem>gsl</linkerLibLibItem>
             <linkerLibLibItem>gmp</linkerLibLibItem>
             <linkerLibLibItem>gmpxx</linkerLibLibItem>
-            <linkerLibLibItem>tcmalloc</linkerLibLibItem>
+            <linkerLibLibItem>profiler</linkerLibLibItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>

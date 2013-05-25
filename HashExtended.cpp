@@ -27,7 +27,15 @@ HashExtended::HashExtended(int maxDepth, int maxElements) {
 }
 
 HashExtended::~HashExtended() {
-
+    for (int i = 0; i < maxSize; i++) {
+        for(int j=0;j<maxElem;j++){
+            if(hash[i][j]){
+                delete hash[i][j];
+            }
+        }
+        delete [] hash[i];
+    }
+    delete [] hash;
 }
 
 void HashExtended::put(mpz_node_bfs * novo) {
@@ -45,7 +53,8 @@ void HashExtended::nextCyle() {
             if (sum > maxElem) {
                 ulong diff = sum - maxElem;
                 int k=0;
-                for (k = count[i]-1; k >= count[i]-diff; k--) {
+                int countdiff=count[i]-diff;
+                for (k = count[i]-1;k>=countdiff; k--) {
                     delete hash[i][k];
                     hash[i][k]=NULL;
                     nElem--;
@@ -64,7 +73,6 @@ void HashExtended::nextCyle() {
             }
         }
     }
-    cout<<nElem<<endl;
     for (int i = 0; i < searchSpace; i++) {
         auxcount[i] = count[i];
         if(auxcount[i]!=0){

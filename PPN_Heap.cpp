@@ -21,7 +21,7 @@ PPN_Heap::PPN_Heap(char * filename) {
 
 PPN_Heap::~PPN_Heap() {
     delete raiz;
-    delete raiz_bfs;
+//    delete raiz_bfs;
 }
 
 void PPN_Heap::lerArquivo(char * problemFile) {
@@ -245,7 +245,7 @@ void PPN_Heap::runBFS() {
 }
 
 void PPN_Heap::runBFS(mpz_node_bfs * node) {
-    HashExtended hash(nElementos + 1, 10);
+    HashExtended hash(nElementos + 1, 10000);
     hash.put(node);
     KK(node);
     hash.nextCyle();

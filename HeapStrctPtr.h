@@ -22,6 +22,7 @@ public:
     void print();
     virtual ~HeapStrctPtr();
     int GetPos() const;
+    void printRefs();
     int size(){
         return pos;
     }
@@ -93,6 +94,10 @@ inline void HeapStrctPtr::print(){
        cout<<i<<":"<<log2(heap[i]->getId())<<"---"<<heap[i]->_ref()<<"---"<<(bool)heap[i]->isOrig()<<endl;
    }   
 }
-
+inline void HeapStrctPtr::printRefs(){
+   for(int i=1;i<=pos;i++){
+       cout<<i<<":"<<heap[i]->_ref()<<endl;
+   }   
+}
 #endif	/* HEAPSTRUCTURE_H */
 
