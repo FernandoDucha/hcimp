@@ -42,7 +42,7 @@ int main(int argc, char** argv) {
 //    mpz_class prime2(2);
 //    mpz_class prime3(0),prime4(0);
 //    cout<<(*a+*b).id<<endl;
-    constructProblem(50,50,2,3600,"test.txt");
+    constructProblem(1000,1000,2,3600,"test.txt");
     PPN_Heap a("test.txt");
     a.runBFS();
     

@@ -245,7 +245,7 @@ void PPN_Heap::runBFS() {
 }
 
 void PPN_Heap::runBFS(mpz_node_bfs * node) {
-    HashExtended hash(nElementos + 1, 10000);
+    HashExtended hash(nElementos + 1, 100000);
     hash.put(node);
     KK(node);
     hash.nextCyle();
