@@ -18,12 +18,10 @@ private:
     ulong ref;
     bool ori;
 public:
-    num_elem_mpz_heap(mpz_class  n):ref(1),ori(true) {
+    num_elem_mpz_heap(mpz_class  n):ref(0),ori(true) {
         id = new mpz_class(n);
     }
-    num_elem_mpz_heap() {
-        id =NULL;
-        ref=0;
+    num_elem_mpz_heap():id(NULL),ref(0) {
     }
     mpz_class getId() const {
         return *id;
@@ -32,12 +30,6 @@ public:
         if(!ref){
             delete id;
         }
-    }
-    void upRef(){
-        ref++;
-    }
-    void downRef(){
-        ref--;
     }
     num_elem_mpz_heap * copyRef(){
         ref++;

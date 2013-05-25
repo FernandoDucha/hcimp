@@ -246,10 +246,9 @@ void PPN_Heap::runBFS() {
 void PPN_Heap::runBFS(mpz_node_bfs * node) {
     HashExtended hash(nElementos + 1, 100000);
     hash.put(node);
-   // mpz_node_bfs init(*node);
-    node->print();
+    cout<<node->getSum()<<endl;
     KK(node);
-    node->print();
+    cout<<node->getSum()<<endl;
     hash.nextCyle();
     while (chrono.elapsed() <= tempo || !perfect) {
         int nelem = hash.getNElem();

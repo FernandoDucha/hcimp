@@ -68,6 +68,7 @@ inline void HeapStrctPtr::FixUp(int k) {
 }
 inline mpz_class HeapStrctPtr::Insert(mpz_heap_elem* data){    
     heap.push_back(data);
+    (*data)++;
     pos++;
  //  print();
  //   cout<<heap[pos]->getId()<<endl;
@@ -89,7 +90,7 @@ inline mpz_heap_elem* HeapStrctPtr::getMax(){
 }
 inline void HeapStrctPtr::print(){
    for(int i=1;i<=pos;i++){
-       cout<<i<<":"<<log2(heap[i]->getId())<<"---"<<heap[i]->_ref()<<"---"<<heap[i]->isOrig()<<endl;
+       cout<<i<<":"<<log2(heap[i]->getId())<<"---"<<heap[i]->_ref()<<"---"<<(bool)heap[i]->isOrig()<<endl;
    }   
 }
 
