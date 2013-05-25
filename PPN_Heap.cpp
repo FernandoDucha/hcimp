@@ -246,7 +246,7 @@ void PPN_Heap::runBFS() {
 void PPN_Heap::runBFS(mpz_node_bfs * node) {
     HashExtended hash(nElementos + 1, 100000);
     hash.put(node);
-    cout<<"hello"<<endl;
+    cout<<"abc"<<endl;
     KK(node);
     cout<<node->getSum()<<endl;
     hash.nextCyle();
