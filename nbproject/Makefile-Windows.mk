@@ -47,6 +47,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/Hash.o \
 	${OBJECTDIR}/HashExtended.o \
 	${OBJECTDIR}/HeapStrctPtr.o \
+	${OBJECTDIR}/HeapStrctPtrMin.o \
 	${OBJECTDIR}/HeapStructure.o \
 	${OBJECTDIR}/ListStructure.o \
 	${OBJECTDIR}/ListStructurePtr.o \
@@ -141,6 +142,11 @@ ${OBJECTDIR}/HeapStrctPtr.o: HeapStrctPtr.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/HeapStrctPtr.o HeapStrctPtr.cpp
+
+${OBJECTDIR}/HeapStrctPtrMin.o: HeapStrctPtrMin.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/HeapStrctPtrMin.o HeapStrctPtrMin.cpp
 
 ${OBJECTDIR}/HeapStructure.o: HeapStructure.cpp 
 	${MKDIR} -p ${OBJECTDIR}

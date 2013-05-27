@@ -35,12 +35,11 @@ public:
     mpz_class valueMax(){
         return heap[1]->getId();
     }
-private:
+protected:
     void FixDown(int k , int N);
     void FixUp(int k);
     int pos;
-    vector<mpz_heap_elem*> heap;
-    
+    vector<mpz_heap_elem*> heap;   
 };
 typedef HeapStrctPtr mpz_heap_ptr;
 
@@ -108,7 +107,7 @@ inline HeapStrctPtr & HeapStrctPtr::operator=(HeapStrctPtr & rhs){
     }
     return * this;
 }
-inline HeapStrctPtr::HeapStrctPtr(){
+inline HeapStrctPtr::HeapStrctPtr():pos(0){
     heap.push_back(new mpz_heap_elem(-1));
  }
 inline HeapStrctPtr::HeapStrctPtr(HeapStrctPtr & Orig){

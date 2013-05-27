@@ -47,6 +47,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/Hash.o \
 	${OBJECTDIR}/HashExtended.o \
 	${OBJECTDIR}/HeapStrctPtr.o \
+	${OBJECTDIR}/HeapStrctPtrMin.o \
 	${OBJECTDIR}/HeapStructure.o \
 	${OBJECTDIR}/ListStructure.o \
 	${OBJECTDIR}/ListStructurePtr.o \
@@ -141,6 +142,11 @@ ${OBJECTDIR}/HeapStrctPtr.o: HeapStrctPtr.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -I/opt/ibm/ILOG/CPLEX_Studio_Academic123/opl/include/ilconcert -I/opt/ibm/ILOG/CPLEX_Studio_Academic123/opl/include/ilcplex -I/opt/ibm/ILOG/CPLEX_Studio_Academic123/concert/include -I/opt/ibm/ILOG/CPLEX_Studio_Academic123/cplex/include -std=c++11 -m64 -O6 -O -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/HeapStrctPtr.o HeapStrctPtr.cpp
+
+${OBJECTDIR}/HeapStrctPtrMin.o: HeapStrctPtrMin.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -I/opt/ibm/ILOG/CPLEX_Studio_Academic123/opl/include/ilconcert -I/opt/ibm/ILOG/CPLEX_Studio_Academic123/opl/include/ilcplex -I/opt/ibm/ILOG/CPLEX_Studio_Academic123/concert/include -I/opt/ibm/ILOG/CPLEX_Studio_Academic123/cplex/include -std=c++11 -m64 -O6 -O -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/HeapStrctPtrMin.o HeapStrctPtrMin.cpp
 
 ${OBJECTDIR}/HeapStructure.o: HeapStructure.cpp 
 	${MKDIR} -p ${OBJECTDIR}

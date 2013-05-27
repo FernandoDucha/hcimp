@@ -32,6 +32,8 @@
       <itemPath>HashExtended.h</itemPath>
       <itemPath>HeapStrctPtr.cpp</itemPath>
       <itemPath>HeapStrctPtr.h</itemPath>
+      <itemPath>HeapStrctPtrMin.cpp</itemPath>
+      <itemPath>HeapStrctPtrMin.h</itemPath>
       <itemPath>HeapStructure.cpp</itemPath>
       <itemPath>HeapStructure.h</itemPath>
       <itemPath>ListStructure.cpp</itemPath>
@@ -85,7 +87,7 @@
             <pElem>/opt/ibm/ILOG/CPLEX_Studio_Academic123/concert/include</pElem>
             <pElem>/opt/ibm/ILOG/CPLEX_Studio_Academic123/cplex/include</pElem>
           </incDir>
-          <commandLine>-fexceptions -DIL_STD -std=c++11 -pg</commandLine>
+          <commandLine>-fexceptions -DIL_STD -std=c++11</commandLine>
         </ccTool>
         <linkerTool>
           <linkerAddLib>
@@ -151,6 +153,10 @@
       <item path="HeapStrctPtr.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="HeapStrctPtr.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="HeapStrctPtrMin.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="HeapStrctPtrMin.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="HeapStructure.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -284,6 +290,10 @@
       </item>
       <item path="HeapStrctPtr.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="HeapStrctPtrMin.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="HeapStrctPtrMin.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="HeapStructure.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="HeapStructure.h" ex="false" tool="3" flavor2="0">
@@ -388,6 +398,10 @@
       <item path="HeapStrctPtr.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="HeapStrctPtr.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="HeapStrctPtrMin.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="HeapStrctPtrMin.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="HeapStructure.cpp" ex="false" tool="1" flavor2="0">
       </item>

@@ -12,6 +12,7 @@
 #include "BasicFunctions.h"
 #include "BasicTypes_heap.h"
 #include "HashExtended.h"
+#include "HeapStrctPtrMin.h"
 using namespace std;
 class PPN_Heap {
     
@@ -25,7 +26,7 @@ public:
     void KK();
 private:
     void KK(mpz_node * node);
-    void KK(mpz_node_bfs * node);
+    void KK(HeapStrctPtrMin & node);
     void runBFS(mpz_node_bfs * node);
     void runDFS(mpz_node * node);
     void runLDS(mpz_node * node);

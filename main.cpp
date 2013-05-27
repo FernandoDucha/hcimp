@@ -21,6 +21,8 @@
 #include "PPN_Heap.h"
 #include "HeapStructure.h"
 #include <assert.h>
+#include <google/heap-checker.h>
+#include <google/profiler.h>
 //#include <vector>
 //#include "BasicTypes.h"
 //#include <gsl/gsl_math.h>
@@ -42,12 +44,16 @@ int main(int argc, char** argv) {
 //    mpz_class prime2(2);
 //    mpz_class prime3(0),prime4(0);
 //    cout<<(*a+*b).id<<endl;
-    constructProblem(1000,1000,2,3600,"test.txt");
+//     HeapLeakChecker heap_checker("test_foo");{
+//    ProfilerStart("Teste");
+//    {
+    constructProblem(100,100,2,3600,"test.txt");    
     PPN_Heap a("test.txt");
     a.runBFS();
-    
+//   }
+//    ProfilerStop();
 //    }
-//     if (!heap_check.NoLeaks()) assert(NULL == "heap memory leak");
+//    if (!heap_checker.NoLeaks()) assert(NULL == "heap memory leak");
     //constructProblem(100,100,2,60,"test.txt");
    // constructProblemLPCplex("test.txt","cplex.txt");
    /* int p1=350377;

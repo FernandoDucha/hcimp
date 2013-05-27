@@ -192,32 +192,29 @@ void PPN_Heap::KK(mpz_node * node) {
         KK(node);
     }
 }
-void PPN_Heap::KK(mpz_node_bfs * node){
-    if (node->size() == 1) {
-        if (node->getSum() < min) {
-            min = node->getSum();
+void PPN_Heap::KK(HeapStrctPtrMin & node){
+    if (node.size() == 1) {
+        mpz_class result=node.pick_max()->getId();
+        if ( result < min) {
+            min = result;
             perfect = (min == perfectVal) ? true : false;
-            res << log2(node->getSum() + 1) << ";" << chrono.elapsed() << ";" << nodes_inspected << ";" << nodes_pruned << endl;
+            res << log2(result + 1) << ";" << chrono.elapsed() << ";" << nodes_inspected << ";" << nodes_pruned << endl;
         }
-        mpz_heap_elem_ptr Last=node->removeLargest();
+        mpz_heap_elem_ptr Last=node.getMax();
         delete Last;
 //        cout<<"soma final kk: "<< node->getSum()<<endl;
     } else {
         mpz_heap_elem_ptr A, B, DIFF;
-        A = node->removeLargest();
-        B = node->removeLargest();
+        A = node.getMax();
+        B = node.getMax();
         DIFF = &(*A-*B);
         DIFF->Original(false);        
-        node->pushElem(DIFF);
+        node.Insert(DIFF);
         KK(node);
-        if(A->isOrig()){
-            node->pushElem(A);
-        }else{
+        if(!A->isOrig()){
             delete A;
         }
-        if(B->isOrig()){
-            node->pushElem(B);
-        }else{
+        if(!B->isOrig()){
             delete B;
         }
     }
@@ -245,11 +242,13 @@ void PPN_Heap::runBFS() {
 }
 
 void PPN_Heap::runBFS(mpz_node_bfs * node) {
-    HashExtended hash(nElementos + 1, 100000);
+    HashExtended hash(nElementos + 1, 10);
     hash.put(node);
-    KK(node);
+    HeapStrctPtrMin hmin;
+    hmin = node->data();
+    KK(hmin);
     hash.nextCyle();
-    while (chrono.elapsed() <= tempo || !perfect) {
+    while (chrono.elapsed() <= tempo && !perfect) {
         int nelem = hash.getNElem();
         int j = 0;
         int i = 0;
@@ -269,7 +268,8 @@ void PPN_Heap::runBFS(mpz_node_bfs * node) {
                     right->pushElem(&(*A+*B));
                     nodes_inspected++;
                     right->setNodeId(left->getNodeId() + 1);
-                    KK(right);
+                    hmin=right->data();
+                    KK(hmin);
                     if (right->prune(min, nroParticoes)) {
                         nodes_pruned++;
                         delete right;
@@ -290,4 +290,5 @@ void PPN_Heap::runBFS(mpz_node_bfs * node) {
         }
         hash.nextCyle();
     }
+    res << log2(min + 1) << ";" << chrono.elapsed() << ";" << nodes_inspected << ";" << nodes_pruned << endl;
 }
