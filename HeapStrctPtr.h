@@ -18,7 +18,9 @@ public:
     HeapStrctPtr(int nMax);
     HeapStrctPtr(HeapStrctPtr & Orig);
     mpz_class Insert(mpz_heap_elem*  data);
+//    mpz_class InsertDelayed(mpz_heap_elem * data);
     mpz_heap_elem* getMax();
+//    mpz_heap_elem* getMaxDelayed();
     void print();
     virtual ~HeapStrctPtr();
     int GetPos() const;
@@ -75,6 +77,26 @@ inline mpz_class HeapStrctPtr::Insert(mpz_heap_elem* data){
     FixUp(pos);
     return data->getId();
 }
+//inline mpz_class HeapStrctPtr::InsertDelayed(mpz_heap_elem* data){    
+//    heap.push_back(data);
+//    (*data)++;
+//    pos++;
+// //  print();
+// //   cout<<heap[pos]->getId()<<endl;
+//    FixDown(1,pos);
+//    return data->getId();
+//}
+//inline mpz_heap_elem* HeapStrctPtr::getMaxDelayed(){
+//   mpz_heap_elem* temp=heap[1];
+//   heap[1]=heap[2];
+//   heap[2]=heap[pos];
+//   heap[pos]=temp;
+//   pos--;
+//   mpz_heap_elem* ret = heap[pos+1];
+//   (*ret)--;
+//   heap.pop_back();
+//   return ret;  
+//}
 inline mpz_heap_elem* HeapStrctPtr::getMax(){
    mpz_heap_elem* temp=heap[1];
    heap[1]=heap[pos];

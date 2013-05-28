@@ -79,32 +79,23 @@
         <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
         <compilerSet>default</compilerSet>
         <dependencyChecking>true</dependencyChecking>
-        <rebuildPropChanged>false</rebuildPropChanged>
+        <rebuildPropChanged>true</rebuildPropChanged>
       </toolsSet>
       <compileType>
         <ccTool>
-          <incDir>
-            <pElem>/opt/ibm/ILOG/CPLEX_Studio_Academic123/opl/include/ilconcert</pElem>
-            <pElem>/opt/ibm/ILOG/CPLEX_Studio_Academic123/opl/include/ilcplex</pElem>
-            <pElem>/opt/ibm/ILOG/CPLEX_Studio_Academic123/concert/include</pElem>
-            <pElem>/opt/ibm/ILOG/CPLEX_Studio_Academic123/cplex/include</pElem>
-          </incDir>
-          <commandLine>-fexceptions -DIL_STD -std=c++11</commandLine>
+          <standard>8</standard>
+          <commandLine>-m64 -fexceptions -DIL_STD</commandLine>
         </ccTool>
         <linkerTool>
-          <linkerAddLib>
-            <pElem>/opt/ibm/ILOG/CPLEX_Studio_Academic123/cplex/lib/x86-64_sles10_4.1/static_pic</pElem>
-            <pElem>/opt/ibm/ILOG/CPLEX_Studio_Academic123/concert/lib/x86-64_sles10_4.1/static_pic</pElem>
-          </linkerAddLib>
           <linkerLibItems>
             <linkerOptionItem>-lm</linkerOptionItem>
             <linkerOptionItem>-pthread</linkerOptionItem>
             <linkerOptionItem>-lrt</linkerOptionItem>
             <linkerLibLibItem>mpfr</linkerLibLibItem>
-            <linkerLibLibItem>gsl</linkerLibLibItem>
             <linkerLibLibItem>gmp</linkerLibLibItem>
             <linkerLibLibItem>gmpxx</linkerLibLibItem>
-            <linkerLibLibItem>profiler</linkerLibLibItem>
+            <linkerLibFileItem>/usr/lib/libgsl.a</linkerLibFileItem>
+            <linkerLibFileItem>/usr/lib/libgslcblas.a</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>
@@ -215,9 +206,9 @@
           <developmentMode>5</developmentMode>
         </cTool>
         <ccTool>
-          <developmentMode>5</developmentMode>
+          <developmentMode>6</developmentMode>
           <standard>8</standard>
-          <commandLine>-m64 -O6 -O -fPIC -fexceptions -DNDEBUG -DIL_STD</commandLine>
+          <commandLine>-m64 -fPIC -fexceptions -DNDEBUG -DIL_STD</commandLine>
         </ccTool>
         <fortranCompilerTool>
           <developmentMode>5</developmentMode>

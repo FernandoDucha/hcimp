@@ -38,6 +38,7 @@ void PPN_Heap::lerArquivo(char * problemFile) {
 
     //filestr.getline(buff, 100);
     filestr >> nElementos; // = atoi(buff);
+    combs=CombLookUp(nElementos);
     filestr >> buff;
     filestr >> nroParticoes;
     raiz = new mpz_node();
@@ -125,14 +126,57 @@ void PPN_Heap::runLDS() {
     runLDS(raiz);
     res.close();
 }
-
+void PPN_Heap::_runLDS(){
+    string file = problem_file;
+    file += ".res";
+    res.open(file.c_str(), ios::out);
+    perfectVal = (raiz->getSum() % 2 == 0) ? 0 : 1;
+    chrono.start();
+    _runLDS(raiz);
+    res.close();
+}
 void PPN_Heap::runLDS(mpz_node * node) {
     chrono.start();
     for (int i = 0; i <= node->size(); i++) {
         runLDS(node, node->size(), i);
     }
 }
+void PPN_Heap::_runLDS(mpz_node* node){
+//    ProfilerStart("Teste");
+//    {
+    mpz_node aux=*node;
+    KK(&aux);
+    for(int i=1;i<=node->size();i++){
+        gsl_combination * temp=gsl_combination_calloc(node->size(),i);
+        bool r;
+        do{
+            aux=*node;
+            r = combs.getNext(temp,i);
+            int k=0;
+            for(int j=0;j<node->size()-1;j++){
+                mpz_class A=aux.removeLargest();
+                mpz_class B=aux.removeLargest();
+                if(k<temp->k&&temp->data[k]==j){
+                    aux.pushElem(A+B);
+                    k++;
+                }else{
+                    aux.pushElem(A-B);
+                }
+                if(aux.prune(min,2)){
+                    break;
+                }
+            }
+            if(aux.size()==1){
+                min = aux.getSum();
+                perfect = (min == perfectVal) ? true : false;
+                res << log2(min + 1) << ";" << chrono.elapsed() << ";" << nodes_inspected << ";" << nodes_pruned << endl;
+            }
+        }while(r);
+        cout<<i<<"--"<<chrono.elapsed()<<endl;
+    }
+//    }   ProfilerStop();
 
+}
 void PPN_Heap::runLDS(mpz_node * node, u_int32_t depth, u_int32_t disc) {
     if (chrono.elapsed() >= tempo || perfect) {
         res << log2(node->getSum() + 1) << ";" << chrono.elapsed() << ";" << nodes_inspected << ";" << nodes_pruned << endl;

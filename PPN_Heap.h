@@ -13,6 +13,9 @@
 #include "BasicTypes_heap.h"
 #include "HashExtended.h"
 #include "HeapStrctPtrMin.h"
+#include "CombLookUp.h"
+#include <google/profiler.h>
+
 using namespace std;
 class PPN_Heap {
     
@@ -22,6 +25,7 @@ public:
     void lerArquivo(char * problemFile);
     void runDFS();
     void runLDS();
+    void _runLDS();
     void runBFS();
     void KK();
 private:
@@ -30,6 +34,7 @@ private:
     void runBFS(mpz_node_bfs * node);
     void runDFS(mpz_node * node);
     void runLDS(mpz_node * node);
+    void _runLDS(mpz_node * node);
     void runLDS(mpz_node * node, u_int32_t depth, u_int32_t k );
     mpz_node * raiz;
     mpz_node_bfs * raiz_bfs;
@@ -43,6 +48,7 @@ private:
     mpz_class nodes_inspected;
     mpz_class nodes_pruned;
     char* problem_file;
+    CombLookUp combs;
     ofstream res;
 };
 

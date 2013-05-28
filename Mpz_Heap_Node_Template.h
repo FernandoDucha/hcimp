@@ -26,7 +26,9 @@ public:
     unsigned long int size();
     void heaping();
     heapElement removeLargest();
+//    heapElement removeLargestDelayHeapfy();
     void pushElem(heapElement elem);
+//    void pushElemDelayed(heapElement elem);
     void print();
     void sort();
     heapType & data();
@@ -59,42 +61,52 @@ template <class heapType,class heapElement> MpzHeapNodeTemplate<heapType,heapEle
     this->sum=rhs.getSum();
     return *this;
 }    
-template <class heapType,class heapElement>mpz_class MpzHeapNodeTemplate<heapType,heapElement>::getSum() const {
+template <class heapType,class heapElement>inline mpz_class MpzHeapNodeTemplate<heapType,heapElement>::getSum() const {
     return sum;
 }
 
-template <class heapType,class heapElement>unsigned long int MpzHeapNodeTemplate<heapType,heapElement>::size(){
+template <class heapType,class heapElement>inline unsigned long int MpzHeapNodeTemplate<heapType,heapElement>::size(){
     return size_t;
 }
-template <class heapType,class heapElement>heapElement MpzHeapNodeTemplate<heapType,heapElement>::removeLargest(){
+template <class heapType,class heapElement>inline heapElement MpzHeapNodeTemplate<heapType,heapElement>::removeLargest(){
     sum-=elements.valueMax();
     heapElement max=elements.getMax();
     size_t--;
     return  max;
 }
+// template <class heapType,class heapElement>inline heapElement MpzHeapNodeTemplate<heapType,heapElement>::removeLargestDelayHeapfy(){
+//    sum-=elements.valueMax();
+//    heapElement max=elements.getMaxDelayed();
+//    size_t--;
+//    return  max;
+// }
 //void mpz_heap_node::addElem(mpz_heap_elem * elem){
 //    elements.push_back(elem);
 //}
-template <class heapType,class heapElement>void MpzHeapNodeTemplate<heapType,heapElement>::pushElem(heapElement elem){
+template <class heapType,class heapElement>inline void MpzHeapNodeTemplate<heapType,heapElement>::pushElem(heapElement elem){
     
     size_t++;
     sum+=elements.Insert(elem);
 }
-template <class heapType,class heapElement> void MpzHeapNodeTemplate<heapType,heapElement>::print(){
+//template <class heapType,class heapElement>inline void MpzHeapNodeTemplate<heapType,heapElement>::pushElemDelayed(heapElement elem){
+//    size_t++;
+//    sum+=elements.InsertDelayed(elem);
+//}
+template <class heapType,class heapElement>inline void MpzHeapNodeTemplate<heapType,heapElement>::print(){
     elements.print();
 }
-template <class heapType,class heapElement>heapType & MpzHeapNodeTemplate<heapType,heapElement>::data(){
+template <class heapType,class heapElement>inline heapType & MpzHeapNodeTemplate<heapType,heapElement>::data(){
     return elements;
 }
 
-template <class heapType,class heapElement>mpz_class  MpzHeapNodeTemplate<heapType,heapElement>::getNodeId() const {
+template <class heapType,class heapElement>inline mpz_class  MpzHeapNodeTemplate<heapType,heapElement>::getNodeId() const {
     return nodeId;
 }
 
-template <class heapType,class heapElement>void MpzHeapNodeTemplate<heapType,heapElement>::setNodeId(mpz_class  nodeId) {
+template <class heapType,class heapElement>inline void MpzHeapNodeTemplate<heapType,heapElement>::setNodeId(mpz_class  nodeId) {
     this->nodeId = nodeId;
 }
-template <class heapType,class heapElement>bool MpzHeapNodeTemplate<heapType,heapElement>::prune(mpz_class & min, unsigned int part){
+template <class heapType,class heapElement>inline bool MpzHeapNodeTemplate<heapType,heapElement>::prune(mpz_class & min, unsigned int part){
     mpz_class front;
     front=elements.valueMax();
     mpz_class factor=front-(sum-front)/(part-1);
@@ -104,7 +116,7 @@ template <class heapType,class heapElement>bool MpzHeapNodeTemplate<heapType,hea
     return false;
 }
 
-template <class heapType,class heapElement>void MpzHeapNodeTemplate<heapType,heapElement>::setParent(MpzHeapNodeTemplate* parent) {
+template <class heapType,class heapElement>inline void MpzHeapNodeTemplate<heapType,heapElement>::setParent(MpzHeapNodeTemplate* parent) {
     this->parent = parent;
 }
 typedef MpzHeapNodeTemplate<mpz_heap_ptr, mpz_heap_elem*> mpz_node_bfs;

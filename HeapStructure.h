@@ -16,8 +16,10 @@ template <class type> class HeapStructure {
 public:
     HeapStructure();
     HeapStructure(HeapStructure<type> & Orig);
-    mpz_class Insert(type  data);
+    type Insert(type  data);
+//    type InsertDelayed(type  data);
     type getMax();
+//    type getMaxDelayed();
     void print();
     virtual ~HeapStructure();
     int GetPos() const;
@@ -85,12 +87,18 @@ template <class type> inline void HeapStructure<type>::FixUp(int k) {
         k/=2;
     }
 }
-template <class type> inline mpz_class HeapStructure<type>::Insert(type data){
+template <class type> inline type HeapStructure<type>::Insert(type data){
     heap.push_back(data);
     pos++;
     FixUp(pos);
     return data;
 }
+//template <class type> inline type HeapStructure<type>::InsertDelayed(type data){
+//    heap.push_back(data);
+//    pos++;
+//    FixDown(1,pos);
+//    return data;
+//}
 template <class type> inline type HeapStructure<type>::getMax(){
    type temp=heap[1];
    heap[1]=heap[pos];
@@ -114,6 +122,17 @@ template <class type>HeapStructure<type> & HeapStructure<type>::operator=(HeapSt
     this->heap=rhs.GetHeap();
     return * this;
 }
+//template <class type> inline type HeapStructure<type>::getMaxDelayed(){
+//   type temp=heap[1];
+//   heap[1]=heap[2];
+//   heap[2]=heap[pos];
+//   heap[pos]=temp;
+//   pos--;
+//   type ret = heap[pos+1];
+//   cout<<ret<<endl;
+//   heap.pop_back();
+//   return ret;  
+//}
 typedef HeapStructure<mpz_class> mpz_heap;
 #endif	/* HEAPSTRUCTURE_H */
 

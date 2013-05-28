@@ -64,8 +64,8 @@ OBJECTFILES= \
 CFLAGS=
 
 # CC Compiler Flags
-CCFLAGS=-m64 -O6 -O -fPIC -fexceptions -DNDEBUG -DIL_STD
-CXXFLAGS=-m64 -O6 -O -fPIC -fexceptions -DNDEBUG -DIL_STD
+CCFLAGS=-m64 -fPIC -fexceptions -DNDEBUG -DIL_STD
+CXXFLAGS=-m64 -fPIC -fexceptions -DNDEBUG -DIL_STD
 
 # Fortran Compiler Flags
 FFLAGS=
@@ -87,117 +87,117 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hcimp: ${OBJECTFILES}
 ${OBJECTDIR}/Avl.o: Avl.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -O2 `pkg-config --cflags gsl` -std=c++11 -m64 -O6 -O -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/Avl.o Avl.cpp
+	$(COMPILE.cc) -O3 `pkg-config --cflags gsl` -std=c++11 -m64 -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/Avl.o Avl.cpp
 
 ${OBJECTDIR}/BFS.o: BFS.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -O2 `pkg-config --cflags gsl` -std=c++11 -m64 -O6 -O -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/BFS.o BFS.cpp
+	$(COMPILE.cc) -O3 `pkg-config --cflags gsl` -std=c++11 -m64 -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/BFS.o BFS.cpp
 
 ${OBJECTDIR}/BasicFunctions.o: BasicFunctions.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -O2 `pkg-config --cflags gsl` -std=c++11 -m64 -O6 -O -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/BasicFunctions.o BasicFunctions.cpp
+	$(COMPILE.cc) -O3 `pkg-config --cflags gsl` -std=c++11 -m64 -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/BasicFunctions.o BasicFunctions.cpp
 
 ${OBJECTDIR}/BasicTypes.o: BasicTypes.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -O2 `pkg-config --cflags gsl` -std=c++11 -m64 -O6 -O -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/BasicTypes.o BasicTypes.cpp
+	$(COMPILE.cc) -O3 `pkg-config --cflags gsl` -std=c++11 -m64 -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/BasicTypes.o BasicTypes.cpp
 
 ${OBJECTDIR}/BasicTypes_heap.o: BasicTypes_heap.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -O2 `pkg-config --cflags gsl` -std=c++11 -m64 -O6 -O -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/BasicTypes_heap.o BasicTypes_heap.cpp
+	$(COMPILE.cc) -O3 `pkg-config --cflags gsl` -std=c++11 -m64 -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/BasicTypes_heap.o BasicTypes_heap.cpp
 
 ${OBJECTDIR}/CombLookUp.o: CombLookUp.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -O2 `pkg-config --cflags gsl` -std=c++11 -m64 -O6 -O -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/CombLookUp.o CombLookUp.cpp
+	$(COMPILE.cc) -O3 `pkg-config --cflags gsl` -std=c++11 -m64 -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/CombLookUp.o CombLookUp.cpp
 
 ${OBJECTDIR}/Combinatorics.o: Combinatorics.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -O2 `pkg-config --cflags gsl` -std=c++11 -m64 -O6 -O -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/Combinatorics.o Combinatorics.cpp
+	$(COMPILE.cc) -O3 `pkg-config --cflags gsl` -std=c++11 -m64 -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/Combinatorics.o Combinatorics.cpp
 
 ${OBJECTDIR}/CompleteKarmarkarKarp.o: CompleteKarmarkarKarp.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -O2 `pkg-config --cflags gsl` -std=c++11 -m64 -O6 -O -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/CompleteKarmarkarKarp.o CompleteKarmarkarKarp.cpp
+	$(COMPILE.cc) -O3 `pkg-config --cflags gsl` -std=c++11 -m64 -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/CompleteKarmarkarKarp.o CompleteKarmarkarKarp.cpp
 
 ${OBJECTDIR}/CompleteKarmarkarKarp_MPZ.o: CompleteKarmarkarKarp_MPZ.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -O2 `pkg-config --cflags gsl` -std=c++11 -m64 -O6 -O -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/CompleteKarmarkarKarp_MPZ.o CompleteKarmarkarKarp_MPZ.cpp
+	$(COMPILE.cc) -O3 `pkg-config --cflags gsl` -std=c++11 -m64 -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/CompleteKarmarkarKarp_MPZ.o CompleteKarmarkarKarp_MPZ.cpp
 
 ${OBJECTDIR}/Cronometro.o: Cronometro.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -O2 `pkg-config --cflags gsl` -std=c++11 -m64 -O6 -O -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/Cronometro.o Cronometro.cpp
+	$(COMPILE.cc) -O3 `pkg-config --cflags gsl` -std=c++11 -m64 -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/Cronometro.o Cronometro.cpp
 
 ${OBJECTDIR}/Hash.o: Hash.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -O2 `pkg-config --cflags gsl` -std=c++11 -m64 -O6 -O -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/Hash.o Hash.cpp
+	$(COMPILE.cc) -O3 `pkg-config --cflags gsl` -std=c++11 -m64 -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/Hash.o Hash.cpp
 
 ${OBJECTDIR}/HashExtended.o: HashExtended.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -O2 `pkg-config --cflags gsl` -std=c++11 -m64 -O6 -O -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/HashExtended.o HashExtended.cpp
+	$(COMPILE.cc) -O3 `pkg-config --cflags gsl` -std=c++11 -m64 -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/HashExtended.o HashExtended.cpp
 
 ${OBJECTDIR}/HeapStrctPtr.o: HeapStrctPtr.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -O2 `pkg-config --cflags gsl` -std=c++11 -m64 -O6 -O -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/HeapStrctPtr.o HeapStrctPtr.cpp
+	$(COMPILE.cc) -O3 `pkg-config --cflags gsl` -std=c++11 -m64 -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/HeapStrctPtr.o HeapStrctPtr.cpp
 
 ${OBJECTDIR}/HeapStrctPtrMin.o: HeapStrctPtrMin.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -O2 `pkg-config --cflags gsl` -std=c++11 -m64 -O6 -O -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/HeapStrctPtrMin.o HeapStrctPtrMin.cpp
+	$(COMPILE.cc) -O3 `pkg-config --cflags gsl` -std=c++11 -m64 -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/HeapStrctPtrMin.o HeapStrctPtrMin.cpp
 
 ${OBJECTDIR}/HeapStructure.o: HeapStructure.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -O2 `pkg-config --cflags gsl` -std=c++11 -m64 -O6 -O -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/HeapStructure.o HeapStructure.cpp
+	$(COMPILE.cc) -O3 `pkg-config --cflags gsl` -std=c++11 -m64 -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/HeapStructure.o HeapStructure.cpp
 
 ${OBJECTDIR}/ListStructure.o: ListStructure.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -O2 `pkg-config --cflags gsl` -std=c++11 -m64 -O6 -O -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/ListStructure.o ListStructure.cpp
+	$(COMPILE.cc) -O3 `pkg-config --cflags gsl` -std=c++11 -m64 -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/ListStructure.o ListStructure.cpp
 
 ${OBJECTDIR}/ListStructurePtr.o: ListStructurePtr.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -O2 `pkg-config --cflags gsl` -std=c++11 -m64 -O6 -O -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/ListStructurePtr.o ListStructurePtr.cpp
+	$(COMPILE.cc) -O3 `pkg-config --cflags gsl` -std=c++11 -m64 -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/ListStructurePtr.o ListStructurePtr.cpp
 
 ${OBJECTDIR}/Mpz_Heap_Node_Template.o: Mpz_Heap_Node_Template.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -O2 `pkg-config --cflags gsl` -std=c++11 -m64 -O6 -O -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/Mpz_Heap_Node_Template.o Mpz_Heap_Node_Template.cpp
+	$(COMPILE.cc) -O3 `pkg-config --cflags gsl` -std=c++11 -m64 -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/Mpz_Heap_Node_Template.o Mpz_Heap_Node_Template.cpp
 
 ${OBJECTDIR}/NumberPartitionProblem.o: NumberPartitionProblem.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -O2 `pkg-config --cflags gsl` -std=c++11 -m64 -O6 -O -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/NumberPartitionProblem.o NumberPartitionProblem.cpp
+	$(COMPILE.cc) -O3 `pkg-config --cflags gsl` -std=c++11 -m64 -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/NumberPartitionProblem.o NumberPartitionProblem.cpp
 
 ${OBJECTDIR}/NumberPartitionProblem_MPZ.o: NumberPartitionProblem_MPZ.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -O2 `pkg-config --cflags gsl` -std=c++11 -m64 -O6 -O -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/NumberPartitionProblem_MPZ.o NumberPartitionProblem_MPZ.cpp
+	$(COMPILE.cc) -O3 `pkg-config --cflags gsl` -std=c++11 -m64 -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/NumberPartitionProblem_MPZ.o NumberPartitionProblem_MPZ.cpp
 
 ${OBJECTDIR}/PPN_Heap.o: PPN_Heap.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -O2 `pkg-config --cflags gsl` -std=c++11 -m64 -O6 -O -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/PPN_Heap.o PPN_Heap.cpp
+	$(COMPILE.cc) -O3 `pkg-config --cflags gsl` -std=c++11 -m64 -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/PPN_Heap.o PPN_Heap.cpp
 
 ${OBJECTDIR}/Semaphore.o: Semaphore.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -O2 `pkg-config --cflags gsl` -std=c++11 -m64 -O6 -O -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/Semaphore.o Semaphore.cpp
+	$(COMPILE.cc) -O3 `pkg-config --cflags gsl` -std=c++11 -m64 -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/Semaphore.o Semaphore.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -O2 `pkg-config --cflags gsl` -std=c++11 -m64 -O6 -O -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -O3 `pkg-config --cflags gsl` -std=c++11 -m64 -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
 
 # Subprojects
 .build-subprojects:
