@@ -40,6 +40,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/BasicFunctions.o \
 	${OBJECTDIR}/BasicTypes.o \
 	${OBJECTDIR}/BasicTypes_heap.o \
+	${OBJECTDIR}/CombLookUp.o \
 	${OBJECTDIR}/Combinatorics.o \
 	${OBJECTDIR}/CompleteKarmarkarKarp.o \
 	${OBJECTDIR}/CompleteKarmarkarKarp_MPZ.o \
@@ -107,6 +108,11 @@ ${OBJECTDIR}/BasicTypes_heap.o: BasicTypes_heap.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/BasicTypes_heap.o BasicTypes_heap.cpp
+
+${OBJECTDIR}/CombLookUp.o: CombLookUp.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/CombLookUp.o CombLookUp.cpp
 
 ${OBJECTDIR}/Combinatorics.o: Combinatorics.cpp 
 	${MKDIR} -p ${OBJECTDIR}

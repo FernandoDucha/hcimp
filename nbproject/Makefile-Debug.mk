@@ -40,6 +40,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/BasicFunctions.o \
 	${OBJECTDIR}/BasicTypes.o \
 	${OBJECTDIR}/BasicTypes_heap.o \
+	${OBJECTDIR}/CombLookUp.o \
 	${OBJECTDIR}/Combinatorics.o \
 	${OBJECTDIR}/CompleteKarmarkarKarp.o \
 	${OBJECTDIR}/CompleteKarmarkarKarp_MPZ.o \
@@ -107,6 +108,11 @@ ${OBJECTDIR}/BasicTypes_heap.o: BasicTypes_heap.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -g -I/opt/ibm/ILOG/CPLEX_Studio_Academic123/opl/include/ilconcert -I/opt/ibm/ILOG/CPLEX_Studio_Academic123/opl/include/ilcplex -I/opt/ibm/ILOG/CPLEX_Studio_Academic123/concert/include -I/opt/ibm/ILOG/CPLEX_Studio_Academic123/cplex/include -fexceptions -DIL_STD -std=c++11 -MMD -MP -MF $@.d -o ${OBJECTDIR}/BasicTypes_heap.o BasicTypes_heap.cpp
+
+${OBJECTDIR}/CombLookUp.o: CombLookUp.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -g -I/opt/ibm/ILOG/CPLEX_Studio_Academic123/opl/include/ilconcert -I/opt/ibm/ILOG/CPLEX_Studio_Academic123/opl/include/ilcplex -I/opt/ibm/ILOG/CPLEX_Studio_Academic123/concert/include -I/opt/ibm/ILOG/CPLEX_Studio_Academic123/cplex/include -fexceptions -DIL_STD -std=c++11 -MMD -MP -MF $@.d -o ${OBJECTDIR}/CombLookUp.o CombLookUp.cpp
 
 ${OBJECTDIR}/Combinatorics.o: Combinatorics.cpp 
 	${MKDIR} -p ${OBJECTDIR}
