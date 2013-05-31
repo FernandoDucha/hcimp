@@ -153,9 +153,10 @@ void PPN_Heap::_runLDS(mpz_node* node){
             aux=*node;
             r = combs.getNext(temp,i);
             int k=0;
+            mpz_class A,B;
             for(int j=0;j<node->size()-1;j++){
-                mpz_class A=aux.removeLargest();
-                mpz_class B=aux.removeLargest();
+                A=aux.removeLargest();
+                B=aux.removeLargest();
                 if(k<temp->k&&temp->data[k]==j){
                     aux.pushElem(A+B);
                     k++;
@@ -272,6 +273,10 @@ void PPN_Heap::KK() {
     chrono.start();
     KK(raiz);
     res.close();
+}
+
+mpz_node* PPN_Heap::getRaiz() const {
+    return raiz;
 }
 
 void PPN_Heap::runBFS() {

@@ -36,51 +36,51 @@ using namespace std;
  */
 
 int main(int argc, char** argv) {
-    
-//    number_element_mpz *a,*b;
-//    a = new number_element_mpz(mpz_class(2));
-//    b = new number_element_mpz(mpz_class(3));
-//    mpz_class prime1(0);
-//    mpz_class prime2(2);
-//    mpz_class prime3(0),prime4(0);
-//    cout<<(*a+*b).id<<endl;
-//     HeapLeakChecker heap_checker("test_foo");{
-   // constructProblem(100,100,2,3600,"test.txt");    
+
+    //    number_element_mpz *a,*b;
+    //    a = new number_element_mpz(mpz_class(2));
+    //    b = new number_element_mpz(mpz_class(3));
+    //    mpz_class prime1(0);
+    //    mpz_class prime2(2);
+    //    mpz_class prime3(0),prime4(0);
+    //    cout<<(*a+*b).id<<endl;
+    //     HeapLeakChecker heap_checker("test_foo");{
+    constructProblem(10,10,2,3600,"test.txt");    
     PPN_Heap a("test.txt");
     a.runLDS();
-//    CombLookUp a(1000);
-//    a.createAllUntil(1000);
-//    a.print();
-//   }
-//    }
-//    if (!heap_checker.NoLeaks()) assert(NULL == "heap memory leak");
+    //    CombLookUp a(1000);
+    //    a.createAllUntil(1000);
+    //    a.print();
+    //   }
+    //    }
+    //    if (!heap_checker.NoLeaks()) assert(NULL == "heap memory leak");
     //constructProblem(100,100,2,60,"test.txt");
-   // constructProblemLPCplex("test.txt","cplex.txt");
-   /* int p1=350377;
-    mpz_pow_ui(prime3.get_mpz_t(),prime2.get_mpz_t(),p1);
-    prime3-=1;
-    cout<<prime3<<endl;
-    cout<<"Grandeza: "<<log2(prime3)/log2(10)<<endl;
-    //  cout<<prime2<<endl;
-    prime1-=1;*/
-//    mpz_class a(3);
-//    Cronometro c(Cronometro::SEGUNDOS);
-//    c.start();
-//    mpz_class b;
-//    for(prime1=1;prime1<10000;prime1++){
-//        mpz_pow_ui(a.get_mpz_t(),a.get_mpz_t(),prime1.get_ui());
-//        a-=1;
-//        b=a;
-//        //cout<<prime1<<"-"<<a<<endl;
-//        if(a%2==1){
-//            cout<<a<<"-"<<c.elapsed()<<endl;
-////            if(a!=0){
-////                cout<<log2(a)<<endl;
-////            }
-//        }
-//        a=3;
-//    }
-//    cout<<b<<endl;
+    // constructProblemLPCplex("test.txt","cplex.txt");
+    /* int p1=350377;
+     mpz_pow_ui(prime3.get_mpz_t(),prime2.get_mpz_t(),p1);
+     prime3-=1;
+     cout<<prime3<<endl;
+     cout<<"Grandeza: "<<log2(prime3)/log2(10)<<endl;
+     //  cout<<prime2<<endl;
+     prime1-=1;*/
+    //    mpz_class a(3);
+    //    Cronometro c(Cronometro::SEGUNDOS);
+    //    c.start();
+    //    mpz_class b;
+    //    for(prime1=1;prime1<10000;prime1++){
+    //        mpz_pow_ui(a.get_mpz_t(),a.get_mpz_t(),prime1.get_ui());
+    //        a-=1;
+    //        b=a;
+    //        //cout<<prime1<<"-"<<a<<endl;
+    //        if(a%2==1){
+    //            cout<<a<<"-"<<c.elapsed()<<endl;
+    ////            if(a!=0){
+    ////                cout<<log2(a)<<endl;
+    ////            }
+    //        }
+    //        a=3;
+    //    }
+    //    cout<<b<<endl;
     /*for(int i=0;i<argc;i++){
      
      *    cout<<i<<" : "<<argv[i]<<endl;
@@ -97,7 +97,7 @@ int main(int argc, char** argv) {
         ckk.runDFS1();
         cout << log2(ckk.GetMin() + 1) << " -- " << log2(p->checkBestSolution() + 1) << endl;
     }*/
-    
+
     return 0;
 }
 

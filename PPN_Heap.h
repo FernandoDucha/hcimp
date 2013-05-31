@@ -14,7 +14,7 @@
 #include "HashExtended.h"
 #include "HeapStrctPtrMin.h"
 #include "CombLookUp.h"
-#include <google/profiler.h>
+//#include <google/profiler.h>
 
 using namespace std;
 class PPN_Heap {
@@ -28,6 +28,7 @@ public:
     void _runLDS();
     void runBFS();
     void KK();
+    mpz_node* getRaiz() const;
 private:
     void KK(mpz_node * node);
     void KK(HeapStrctPtrMin & node);

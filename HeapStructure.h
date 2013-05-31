@@ -38,13 +38,38 @@ public:
 private:
     void FixDown(int k , int N);
     void FixUp(int k);
+//    void heapfyFromInit(int i );
     int pos;
-    vector<type> heap;
-    
+    int init;
+    vector<type> heap;  
 };
+//template <class type> void HeapStructure<type>::heapfyFromInit(int i){
+//    int r = 2*i+1;
+//    int l = 2*i;
+//    int l1=l+init-1;
+//    int r1=r+init-1;
+//    int i1=init;
+//    int Largest;
+//    if((l1<=pos)&&(heap[l1]>heap[i1])){
+//        Largest=l;
+//    }else{
+//        Largest=i;
+//    }
+//    if((r1<=pos)&&(heap[r1]>heap[Largest+init])){
+//        Largest=l;
+//    }
+//    if(Largest!=i){
+//        type temp = heap[i1];
+//        heap[i1]=heap[Largest+init];
+//        heap[Largest+init]=temp;
+//        print();
+//        heapfyFromInit(Largest);
+//    }
+//}
 template <class type> HeapStructure<type>::HeapStructure(){
-    heap.push_back(mpz_class(-1));
+    heap.push_back(type(-1));
     pos=0;
+    init=1;
 }
 template <class type> HeapStructure<type>::HeapStructure(HeapStructure<type> & Orig){
     pos=Orig.GetPos();
@@ -80,7 +105,7 @@ template <class type> inline void HeapStructure<type>::FixDown(int k , int N) {
     }
 }
 template <class type> inline void HeapStructure<type>::FixUp(int k) {
-    while(k>1&&heap[k/2]<heap[k]){
+    while(k>init&&heap[k/2]<heap[k]){
         type temp = heap[k];
         heap[k]= heap[k/2];
         heap[k/2]=temp;
@@ -94,9 +119,9 @@ template <class type> inline type HeapStructure<type>::Insert(type data){
     return data;
 }
 //template <class type> inline type HeapStructure<type>::InsertDelayed(type data){
-//    heap.push_back(data);
-//    pos++;
-//    FixDown(1,pos);
+//    init--;
+//    heap[init]=data;
+//    heapfyFromInit(1);
 //    return data;
 //}
 template <class type> inline type HeapStructure<type>::getMax(){
@@ -104,15 +129,13 @@ template <class type> inline type HeapStructure<type>::getMax(){
    heap[1]=heap[pos];
    heap[pos]=temp;
    pos--;
-  // print();
    FixDown(1,pos);
- /// print();
    type ret = heap[pos+1];
    heap.pop_back();
    return ret;   
 }
 template <class type> inline void HeapStructure<type>::print(){
-   for(int i=1;i<=pos;i++){
+   for(int i=init;i<=pos;i++){
        cout<<i<<":"<<log2(heap[i])<<endl;
    }   
 }
@@ -123,14 +146,8 @@ template <class type>HeapStructure<type> & HeapStructure<type>::operator=(HeapSt
     return * this;
 }
 //template <class type> inline type HeapStructure<type>::getMaxDelayed(){
-//   type temp=heap[1];
-//   heap[1]=heap[2];
-//   heap[2]=heap[pos];
-//   heap[pos]=temp;
-//   pos--;
-//   type ret = heap[pos+1];
-//   cout<<ret<<endl;
-//   heap.pop_back();
+//   type ret = heap[init];
+//   init++;
 //   return ret;  
 //}
 typedef HeapStructure<mpz_class> mpz_heap;
