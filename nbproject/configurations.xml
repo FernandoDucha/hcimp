@@ -1,64 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configurationDescriptor version="88">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
-    <logicalFolder name="HeaderFiles"
-                   displayName="Arquivos de cabeçalho"
-                   projectFiles="true">
-    </logicalFolder>
-    <logicalFolder name="SourceFiles"
-                   displayName="Arquivos de código-fonte"
-                   projectFiles="true">
-      <itemPath>Avl.cpp</itemPath>
-      <itemPath>Avl.h</itemPath>
-      <itemPath>BFS.cpp</itemPath>
-      <itemPath>BFS.h</itemPath>
-      <itemPath>BasicFunctions.cpp</itemPath>
-      <itemPath>BasicFunctions.h</itemPath>
-      <itemPath>BasicTypes.cpp</itemPath>
-      <itemPath>BasicTypes.h</itemPath>
-      <itemPath>BasicTypes_heap.cpp</itemPath>
-      <itemPath>BasicTypes_heap.h</itemPath>
-      <itemPath>CombLookUp.cpp</itemPath>
-      <itemPath>CombLookUp.h</itemPath>
-      <itemPath>Combinatorics.cpp</itemPath>
-      <itemPath>Combinatorics.h</itemPath>
-      <itemPath>CompleteKarmarkarKarp.cpp</itemPath>
-      <itemPath>CompleteKarmarkarKarp.h</itemPath>
-      <itemPath>CompleteKarmarkarKarp_MPZ.cpp</itemPath>
-      <itemPath>CompleteKarmarkarKarp_MPZ.h</itemPath>
-      <itemPath>Cronometro.cpp</itemPath>
-      <itemPath>Cronometro.h</itemPath>
-      <itemPath>Hash.cpp</itemPath>
-      <itemPath>Hash.h</itemPath>
-      <itemPath>HashExtended.cpp</itemPath>
-      <itemPath>HashExtended.h</itemPath>
-      <itemPath>HeapStrctPtr.cpp</itemPath>
-      <itemPath>HeapStrctPtr.h</itemPath>
-      <itemPath>HeapStrctPtrMin.cpp</itemPath>
-      <itemPath>HeapStrctPtrMin.h</itemPath>
-      <itemPath>HeapStructure.cpp</itemPath>
-      <itemPath>HeapStructure.h</itemPath>
-      <itemPath>ListStructure.cpp</itemPath>
-      <itemPath>ListStructure.h</itemPath>
-      <itemPath>ListStructurePtr.cpp</itemPath>
-      <itemPath>ListStructurePtr.h</itemPath>
-      <itemPath>Mpz_Heap_Node_Template.cpp</itemPath>
-      <itemPath>Mpz_Heap_Node_Template.h</itemPath>
-      <itemPath>NumberPartitionProblem.cpp</itemPath>
-      <itemPath>NumberPartitionProblem.h</itemPath>
-      <itemPath>NumberPartitionProblem_MPZ.cpp</itemPath>
-      <itemPath>NumberPartitionProblem_MPZ.h</itemPath>
-      <itemPath>PPN_Heap.cpp</itemPath>
-      <itemPath>PPN_Heap.h</itemPath>
-      <itemPath>Semaphore.cpp</itemPath>
-      <itemPath>Semaphore.h</itemPath>
-      <itemPath>enums.h</itemPath>
-      <itemPath>main.cpp</itemPath>
-      <itemPath>node_list_struct.h</itemPath>
-    </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Arquivos de recurso"
                    projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="include" displayName="include" projectFiles="true">
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/include/Avl.h</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/include/BFS.h</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/include/BasicFunctions.h</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/include/BasicTypes.h</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/include/BasicTypes_heap.h</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/include/CombLookUp.h</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/include/Combinatorics.h</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/include/CompleteKarmarkarKarp.h</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/include/CompleteKarmarkarKarp_MPZ.h</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/include/Cronometro.h</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/include/DefaultIncludes.h</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/include/Hash.h</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/include/HashExtended.h</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/include/HeapStrctPtr.h</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/include/HeapStrctPtrMin.h</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/include/HeapStructure.h</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/include/ListStructure.h</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/include/ListStructurePtr.h</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/include/Mpz_Heap_Node_Template.h</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/include/NumberPartitionProblem.h</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/include/NumberPartitionProblem_MPZ.h</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/include/PPN_Heap.h</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/include/Semaphore.h</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/include/enums.h</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/include/node_list_struct.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="source" displayName="source" projectFiles="true">
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/source/Avl.cpp</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/source/BFS.cpp</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/source/BasicFunctions.cpp</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/source/BasicTypes.cpp</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/source/BasicTypes_heap.cpp</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/source/CombLookUp.cpp</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/source/Combinatorics.cpp</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/source/CompleteKarmarkarKarp.cpp</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/source/CompleteKarmarkarKarp_MPZ.cpp</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/source/Cronometro.cpp</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/source/Hash.cpp</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/source/HashExtended.cpp</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/source/HeapStrctPtr.cpp</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/source/HeapStrctPtrMin.cpp</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/source/HeapStructure.cpp</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/source/ListStructure.cpp</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/source/ListStructurePtr.cpp</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/source/Mpz_Heap_Node_Template.cpp</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/source/NumberPartitionProblem.cpp</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/source/NumberPartitionProblem_MPZ.cpp</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/source/PPN_Heap.cpp</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/source/Semaphore.cpp</itemPath>
+      <itemPath>/home/fernando/Dropbox/HC/HCImp/source/main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Arquivos de testes"
@@ -72,6 +69,9 @@
       <itemPath>Makefile</itemPath>
     </logicalFolder>
   </logicalFolder>
+  <sourceRootList>
+    <Elem>source</Elem>
+  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="Debug" type="1">
@@ -84,6 +84,12 @@
       <compileType>
         <ccTool>
           <standard>8</standard>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>../RandomFwk/include</pElem>
+            <pElem>/usr/include/qt4/QtGui</pElem>
+            <pElem>/usr/include/qt4/QtCore</pElem>
+          </incDir>
           <commandLine>-m64 -fexceptions -DIL_STD</commandLine>
         </ccTool>
         <linkerTool>
@@ -96,114 +102,272 @@
             <linkerLibLibItem>gmpxx</linkerLibLibItem>
             <linkerLibFileItem>/usr/lib/libgsl.a</linkerLibFileItem>
             <linkerLibFileItem>/usr/lib/libgslcblas.a</linkerLibFileItem>
+            <linkerLibProjectItem>
+              <makeArtifact PL="/home/fernando/Dropbox/HC/RandomFwk"
+                            CT="6"
+                            CN="Release"
+                            AC="true"
+                            BL="false"
+                            WD="/home/fernando/Dropbox/HC/RandomFwk"
+                            BC="${MAKE}  -f Makefile CONF=Release"
+                            CC="${MAKE}  -f Makefile CONF=Release clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libRandomFwk.a">
+              </makeArtifact>
+            </linkerLibProjectItem>
           </linkerLibItems>
         </linkerTool>
         <requiredProjects>
-          <makeArtifact PL="/home/fernando/Dropbox/HC/RandomFwk"
+          <makeArtifact PL="../RandomFwk"
                         CT="6"
-                        CN="Release"
-                        AC="true"
+                        CN="Debug"
+                        AC="false"
                         BL="true"
-                        WD="/home/fernando/Dropbox/HC/RandomFwk"
-                        BC="${MAKE}  -f Makefile CONF=Release"
-                        CC="${MAKE}  -f Makefile CONF=Release clean"
+                        WD="../RandomFwk"
+                        BC="${MAKE}  -f Makefile CONF=Debug"
+                        CC="${MAKE}  -f Makefile CONF=Debug clean"
                         OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libRandomFwk.a">
           </makeArtifact>
         </requiredProjects>
       </compileType>
-      <item path="Avl.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/Avl.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="Avl.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/BFS.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="BFS.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/BasicFunctions.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="BFS.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/BasicTypes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="BasicFunctions.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/BasicTypes_heap.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="BasicFunctions.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/CombLookUp.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="BasicTypes.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/Combinatorics.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="BasicTypes.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/CompleteKarmarkarKarp.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="BasicTypes_heap.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/CompleteKarmarkarKarp_MPZ.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="BasicTypes_heap.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/Cronometro.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="CombLookUp.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/DefaultIncludes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="CombLookUp.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/Hash.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="Combinatorics.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/HashExtended.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="Combinatorics.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/HeapStrctPtr.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="CompleteKarmarkarKarp.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/HeapStrctPtrMin.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="CompleteKarmarkarKarp.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/HeapStructure.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="CompleteKarmarkarKarp_MPZ.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/ListStructure.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="CompleteKarmarkarKarp_MPZ.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/ListStructurePtr.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="Cronometro.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/Mpz_Heap_Node_Template.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="Cronometro.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/NumberPartitionProblem.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="Hash.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/NumberPartitionProblem_MPZ.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="Hash.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/PPN_Heap.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="HashExtended.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/Semaphore.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="HashExtended.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/enums.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="HeapStrctPtr.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/node_list_struct.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="HeapStrctPtr.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/Avl.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="HeapStrctPtrMin.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/BFS.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="HeapStrctPtrMin.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/BasicFunctions.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="HeapStructure.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/BasicTypes.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="HeapStructure.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/BasicTypes_heap.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="ListStructure.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/CombLookUp.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="ListStructure.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/Combinatorics.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="ListStructurePtr.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/CompleteKarmarkarKarp.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="ListStructurePtr.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/CompleteKarmarkarKarp_MPZ.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="Mpz_Heap_Node_Template.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/Cronometro.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="Mpz_Heap_Node_Template.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/Hash.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="NumberPartitionProblem.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/HashExtended.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="NumberPartitionProblem.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/HeapStrctPtr.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="NumberPartitionProblem_MPZ.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/HeapStrctPtrMin.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="NumberPartitionProblem_MPZ.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/HeapStructure.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="PPN_Heap.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/ListStructure.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="PPN_Heap.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/ListStructurePtr.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="Semaphore.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/Mpz_Heap_Node_Template.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="Semaphore.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/NumberPartitionProblem.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="enums.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/NumberPartitionProblem_MPZ.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/PPN_Heap.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="node_list_struct.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/Semaphore.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/main.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -255,99 +419,245 @@
           </makeArtifact>
         </requiredProjects>
       </compileType>
-      <item path="Avl.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/Avl.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="Avl.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/BFS.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="BFS.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/BasicFunctions.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="BFS.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/BasicTypes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="BasicFunctions.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/BasicTypes_heap.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="BasicFunctions.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/CombLookUp.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="BasicTypes.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/Combinatorics.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="BasicTypes.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/CompleteKarmarkarKarp.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="BasicTypes_heap.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/CompleteKarmarkarKarp_MPZ.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="BasicTypes_heap.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/Cronometro.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="CombLookUp.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/DefaultIncludes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="CombLookUp.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/Hash.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="Combinatorics.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/HashExtended.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="Combinatorics.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/HeapStrctPtr.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="CompleteKarmarkarKarp.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/HeapStrctPtrMin.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="CompleteKarmarkarKarp.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/HeapStructure.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="CompleteKarmarkarKarp_MPZ.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/ListStructure.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="CompleteKarmarkarKarp_MPZ.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/ListStructurePtr.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="Cronometro.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/Mpz_Heap_Node_Template.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="Cronometro.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/NumberPartitionProblem.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="Hash.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/NumberPartitionProblem_MPZ.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="Hash.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/PPN_Heap.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="HashExtended.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/Semaphore.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="HashExtended.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/enums.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="HeapStrctPtr.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/node_list_struct.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="HeapStrctPtr.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/Avl.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="HeapStrctPtrMin.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/BFS.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="HeapStrctPtrMin.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/BasicFunctions.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="HeapStructure.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/BasicTypes.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="HeapStructure.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/BasicTypes_heap.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="ListStructure.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/CombLookUp.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="ListStructure.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/Combinatorics.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="ListStructurePtr.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/CompleteKarmarkarKarp.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="ListStructurePtr.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/CompleteKarmarkarKarp_MPZ.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="Mpz_Heap_Node_Template.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/Cronometro.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="Mpz_Heap_Node_Template.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/Hash.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="NumberPartitionProblem.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/HashExtended.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="NumberPartitionProblem.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/HeapStrctPtr.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="NumberPartitionProblem_MPZ.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/HeapStrctPtrMin.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="NumberPartitionProblem_MPZ.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/HeapStructure.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="PPN_Heap.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/ListStructure.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="PPN_Heap.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/ListStructurePtr.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="Semaphore.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/Mpz_Heap_Node_Template.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="Semaphore.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/NumberPartitionProblem.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="enums.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/NumberPartitionProblem_MPZ.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/PPN_Heap.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="node_list_struct.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/Semaphore.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/main.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
     </conf>
     <conf name="Windows" type="1">
@@ -368,99 +678,245 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
-      <item path="Avl.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/Avl.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="Avl.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/BFS.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="BFS.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/BasicFunctions.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="BFS.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/BasicTypes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="BasicFunctions.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/BasicTypes_heap.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="BasicFunctions.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/CombLookUp.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="BasicTypes.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/Combinatorics.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="BasicTypes.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/CompleteKarmarkarKarp.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="BasicTypes_heap.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/CompleteKarmarkarKarp_MPZ.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="BasicTypes_heap.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/Cronometro.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="CombLookUp.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/DefaultIncludes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="CombLookUp.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/Hash.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="Combinatorics.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/HashExtended.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="Combinatorics.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/HeapStrctPtr.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="CompleteKarmarkarKarp.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/HeapStrctPtrMin.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="CompleteKarmarkarKarp.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/HeapStructure.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="CompleteKarmarkarKarp_MPZ.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/ListStructure.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="CompleteKarmarkarKarp_MPZ.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/ListStructurePtr.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="Cronometro.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/Mpz_Heap_Node_Template.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="Cronometro.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/NumberPartitionProblem.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="Hash.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/NumberPartitionProblem_MPZ.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="Hash.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/PPN_Heap.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="HashExtended.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/Semaphore.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="HashExtended.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/enums.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="HeapStrctPtr.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/include/node_list_struct.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="HeapStrctPtr.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/Avl.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="HeapStrctPtrMin.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/BFS.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="HeapStrctPtrMin.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/BasicFunctions.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="HeapStructure.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/BasicTypes.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="HeapStructure.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/BasicTypes_heap.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="ListStructure.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/CombLookUp.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="ListStructure.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/Combinatorics.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="ListStructurePtr.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/CompleteKarmarkarKarp.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="ListStructurePtr.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/CompleteKarmarkarKarp_MPZ.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="Mpz_Heap_Node_Template.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/Cronometro.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="Mpz_Heap_Node_Template.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/Hash.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="NumberPartitionProblem.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/HashExtended.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="NumberPartitionProblem.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/HeapStrctPtr.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="NumberPartitionProblem_MPZ.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/HeapStrctPtrMin.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="NumberPartitionProblem_MPZ.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/HeapStructure.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="PPN_Heap.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/ListStructure.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="PPN_Heap.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/ListStructurePtr.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="Semaphore.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/Mpz_Heap_Node_Template.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="Semaphore.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/NumberPartitionProblem.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="enums.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/NumberPartitionProblem_MPZ.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/PPN_Heap.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="node_list_struct.h" ex="false" tool="3" flavor2="0">
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/Semaphore.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/fernando/Dropbox/HC/HCImp/source/main.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
     </conf>
   </confs>

@@ -22,6 +22,8 @@
 #include "HeapStructure.h"
 #include <assert.h>
 #include "CombLookUp.h"
+#include <FileRawBuffer.h>
+#include <GeneralUsage.h>
 //#include <google/heap-checker.h>
 //#include <vector>
 //#include "BasicTypes.h"
@@ -45,6 +47,8 @@ int main(int argc, char** argv) {
     //    mpz_class prime3(0),prime4(0);
     //    cout<<(*a+*b).id<<endl;
     //     HeapLeakChecker heap_checker("test_foo");{
+    FileRawBuffer b("/media/DATA0/qrngdata",pow(2,20));
+    cout<<log2(b.getFileSize())<<"---"<<log2(b.getSize())<<endl;
     constructProblem(10,10,2,3600,"test.txt");    
     PPN_Heap a("test.txt");
     a.runLDS();

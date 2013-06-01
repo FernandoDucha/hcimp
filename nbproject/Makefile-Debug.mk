@@ -35,29 +35,29 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/Avl.o \
-	${OBJECTDIR}/BFS.o \
-	${OBJECTDIR}/BasicFunctions.o \
-	${OBJECTDIR}/BasicTypes.o \
-	${OBJECTDIR}/BasicTypes_heap.o \
-	${OBJECTDIR}/CombLookUp.o \
-	${OBJECTDIR}/Combinatorics.o \
-	${OBJECTDIR}/CompleteKarmarkarKarp.o \
-	${OBJECTDIR}/CompleteKarmarkarKarp_MPZ.o \
-	${OBJECTDIR}/Cronometro.o \
-	${OBJECTDIR}/Hash.o \
-	${OBJECTDIR}/HashExtended.o \
-	${OBJECTDIR}/HeapStrctPtr.o \
-	${OBJECTDIR}/HeapStrctPtrMin.o \
-	${OBJECTDIR}/HeapStructure.o \
-	${OBJECTDIR}/ListStructure.o \
-	${OBJECTDIR}/ListStructurePtr.o \
-	${OBJECTDIR}/Mpz_Heap_Node_Template.o \
-	${OBJECTDIR}/NumberPartitionProblem.o \
-	${OBJECTDIR}/NumberPartitionProblem_MPZ.o \
-	${OBJECTDIR}/PPN_Heap.o \
-	${OBJECTDIR}/Semaphore.o \
-	${OBJECTDIR}/main.o
+	${OBJECTDIR}/_ext/1469337217/Avl.o \
+	${OBJECTDIR}/_ext/1469337217/BFS.o \
+	${OBJECTDIR}/_ext/1469337217/BasicFunctions.o \
+	${OBJECTDIR}/_ext/1469337217/BasicTypes.o \
+	${OBJECTDIR}/_ext/1469337217/BasicTypes_heap.o \
+	${OBJECTDIR}/_ext/1469337217/CombLookUp.o \
+	${OBJECTDIR}/_ext/1469337217/Combinatorics.o \
+	${OBJECTDIR}/_ext/1469337217/CompleteKarmarkarKarp.o \
+	${OBJECTDIR}/_ext/1469337217/CompleteKarmarkarKarp_MPZ.o \
+	${OBJECTDIR}/_ext/1469337217/Cronometro.o \
+	${OBJECTDIR}/_ext/1469337217/Hash.o \
+	${OBJECTDIR}/_ext/1469337217/HashExtended.o \
+	${OBJECTDIR}/_ext/1469337217/HeapStrctPtr.o \
+	${OBJECTDIR}/_ext/1469337217/HeapStrctPtrMin.o \
+	${OBJECTDIR}/_ext/1469337217/HeapStructure.o \
+	${OBJECTDIR}/_ext/1469337217/ListStructure.o \
+	${OBJECTDIR}/_ext/1469337217/ListStructurePtr.o \
+	${OBJECTDIR}/_ext/1469337217/Mpz_Heap_Node_Template.o \
+	${OBJECTDIR}/_ext/1469337217/NumberPartitionProblem.o \
+	${OBJECTDIR}/_ext/1469337217/NumberPartitionProblem_MPZ.o \
+	${OBJECTDIR}/_ext/1469337217/PPN_Heap.o \
+	${OBJECTDIR}/_ext/1469337217/Semaphore.o \
+	${OBJECTDIR}/_ext/1469337217/main.o
 
 
 # C Compiler Flags
@@ -74,7 +74,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-lm -pthread -lrt -lmpfr -lgmp -lgmpxx /usr/lib/libgsl.a /usr/lib/libgslcblas.a
+LDLIBSOPTIONS=-lm -pthread -lrt -lmpfr -lgmp -lgmpxx /usr/lib/libgsl.a /usr/lib/libgslcblas.a /home/fernando/Dropbox/HC/RandomFwk/dist/Release/GNU-Linux-x86/libRandomFwk.a
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -84,128 +84,130 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hcimp: /usr/lib/libgsl.a
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hcimp: /usr/lib/libgslcblas.a
 
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hcimp: /home/fernando/Dropbox/HC/RandomFwk/dist/Release/GNU-Linux-x86/libRandomFwk.a
+
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hcimp: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hcimp ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/Avl.o: nbproject/Makefile-${CND_CONF}.mk Avl.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/_ext/1469337217/Avl.o: nbproject/Makefile-${CND_CONF}.mk /home/fernando/Dropbox/HC/HCImp/source/Avl.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1469337217
 	${RM} $@.d
-	$(COMPILE.cc) -g -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/Avl.o Avl.cpp
+	$(COMPILE.cc) -g -Iinclude -I../RandomFwk/include -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1469337217/Avl.o /home/fernando/Dropbox/HC/HCImp/source/Avl.cpp
 
-${OBJECTDIR}/BFS.o: nbproject/Makefile-${CND_CONF}.mk BFS.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/_ext/1469337217/BFS.o: nbproject/Makefile-${CND_CONF}.mk /home/fernando/Dropbox/HC/HCImp/source/BFS.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1469337217
 	${RM} $@.d
-	$(COMPILE.cc) -g -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/BFS.o BFS.cpp
+	$(COMPILE.cc) -g -Iinclude -I../RandomFwk/include -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1469337217/BFS.o /home/fernando/Dropbox/HC/HCImp/source/BFS.cpp
 
-${OBJECTDIR}/BasicFunctions.o: nbproject/Makefile-${CND_CONF}.mk BasicFunctions.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/_ext/1469337217/BasicFunctions.o: nbproject/Makefile-${CND_CONF}.mk /home/fernando/Dropbox/HC/HCImp/source/BasicFunctions.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1469337217
 	${RM} $@.d
-	$(COMPILE.cc) -g -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/BasicFunctions.o BasicFunctions.cpp
+	$(COMPILE.cc) -g -Iinclude -I../RandomFwk/include -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1469337217/BasicFunctions.o /home/fernando/Dropbox/HC/HCImp/source/BasicFunctions.cpp
 
-${OBJECTDIR}/BasicTypes.o: nbproject/Makefile-${CND_CONF}.mk BasicTypes.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/_ext/1469337217/BasicTypes.o: nbproject/Makefile-${CND_CONF}.mk /home/fernando/Dropbox/HC/HCImp/source/BasicTypes.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1469337217
 	${RM} $@.d
-	$(COMPILE.cc) -g -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/BasicTypes.o BasicTypes.cpp
+	$(COMPILE.cc) -g -Iinclude -I../RandomFwk/include -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1469337217/BasicTypes.o /home/fernando/Dropbox/HC/HCImp/source/BasicTypes.cpp
 
-${OBJECTDIR}/BasicTypes_heap.o: nbproject/Makefile-${CND_CONF}.mk BasicTypes_heap.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/_ext/1469337217/BasicTypes_heap.o: nbproject/Makefile-${CND_CONF}.mk /home/fernando/Dropbox/HC/HCImp/source/BasicTypes_heap.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1469337217
 	${RM} $@.d
-	$(COMPILE.cc) -g -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/BasicTypes_heap.o BasicTypes_heap.cpp
+	$(COMPILE.cc) -g -Iinclude -I../RandomFwk/include -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1469337217/BasicTypes_heap.o /home/fernando/Dropbox/HC/HCImp/source/BasicTypes_heap.cpp
 
-${OBJECTDIR}/CombLookUp.o: nbproject/Makefile-${CND_CONF}.mk CombLookUp.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/_ext/1469337217/CombLookUp.o: nbproject/Makefile-${CND_CONF}.mk /home/fernando/Dropbox/HC/HCImp/source/CombLookUp.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1469337217
 	${RM} $@.d
-	$(COMPILE.cc) -g -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/CombLookUp.o CombLookUp.cpp
+	$(COMPILE.cc) -g -Iinclude -I../RandomFwk/include -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1469337217/CombLookUp.o /home/fernando/Dropbox/HC/HCImp/source/CombLookUp.cpp
 
-${OBJECTDIR}/Combinatorics.o: nbproject/Makefile-${CND_CONF}.mk Combinatorics.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/_ext/1469337217/Combinatorics.o: nbproject/Makefile-${CND_CONF}.mk /home/fernando/Dropbox/HC/HCImp/source/Combinatorics.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1469337217
 	${RM} $@.d
-	$(COMPILE.cc) -g -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/Combinatorics.o Combinatorics.cpp
+	$(COMPILE.cc) -g -Iinclude -I../RandomFwk/include -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1469337217/Combinatorics.o /home/fernando/Dropbox/HC/HCImp/source/Combinatorics.cpp
 
-${OBJECTDIR}/CompleteKarmarkarKarp.o: nbproject/Makefile-${CND_CONF}.mk CompleteKarmarkarKarp.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/_ext/1469337217/CompleteKarmarkarKarp.o: nbproject/Makefile-${CND_CONF}.mk /home/fernando/Dropbox/HC/HCImp/source/CompleteKarmarkarKarp.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1469337217
 	${RM} $@.d
-	$(COMPILE.cc) -g -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/CompleteKarmarkarKarp.o CompleteKarmarkarKarp.cpp
+	$(COMPILE.cc) -g -Iinclude -I../RandomFwk/include -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1469337217/CompleteKarmarkarKarp.o /home/fernando/Dropbox/HC/HCImp/source/CompleteKarmarkarKarp.cpp
 
-${OBJECTDIR}/CompleteKarmarkarKarp_MPZ.o: nbproject/Makefile-${CND_CONF}.mk CompleteKarmarkarKarp_MPZ.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/_ext/1469337217/CompleteKarmarkarKarp_MPZ.o: nbproject/Makefile-${CND_CONF}.mk /home/fernando/Dropbox/HC/HCImp/source/CompleteKarmarkarKarp_MPZ.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1469337217
 	${RM} $@.d
-	$(COMPILE.cc) -g -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/CompleteKarmarkarKarp_MPZ.o CompleteKarmarkarKarp_MPZ.cpp
+	$(COMPILE.cc) -g -Iinclude -I../RandomFwk/include -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1469337217/CompleteKarmarkarKarp_MPZ.o /home/fernando/Dropbox/HC/HCImp/source/CompleteKarmarkarKarp_MPZ.cpp
 
-${OBJECTDIR}/Cronometro.o: nbproject/Makefile-${CND_CONF}.mk Cronometro.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/_ext/1469337217/Cronometro.o: nbproject/Makefile-${CND_CONF}.mk /home/fernando/Dropbox/HC/HCImp/source/Cronometro.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1469337217
 	${RM} $@.d
-	$(COMPILE.cc) -g -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/Cronometro.o Cronometro.cpp
+	$(COMPILE.cc) -g -Iinclude -I../RandomFwk/include -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1469337217/Cronometro.o /home/fernando/Dropbox/HC/HCImp/source/Cronometro.cpp
 
-${OBJECTDIR}/Hash.o: nbproject/Makefile-${CND_CONF}.mk Hash.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/_ext/1469337217/Hash.o: nbproject/Makefile-${CND_CONF}.mk /home/fernando/Dropbox/HC/HCImp/source/Hash.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1469337217
 	${RM} $@.d
-	$(COMPILE.cc) -g -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/Hash.o Hash.cpp
+	$(COMPILE.cc) -g -Iinclude -I../RandomFwk/include -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1469337217/Hash.o /home/fernando/Dropbox/HC/HCImp/source/Hash.cpp
 
-${OBJECTDIR}/HashExtended.o: nbproject/Makefile-${CND_CONF}.mk HashExtended.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/_ext/1469337217/HashExtended.o: nbproject/Makefile-${CND_CONF}.mk /home/fernando/Dropbox/HC/HCImp/source/HashExtended.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1469337217
 	${RM} $@.d
-	$(COMPILE.cc) -g -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/HashExtended.o HashExtended.cpp
+	$(COMPILE.cc) -g -Iinclude -I../RandomFwk/include -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1469337217/HashExtended.o /home/fernando/Dropbox/HC/HCImp/source/HashExtended.cpp
 
-${OBJECTDIR}/HeapStrctPtr.o: nbproject/Makefile-${CND_CONF}.mk HeapStrctPtr.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/_ext/1469337217/HeapStrctPtr.o: nbproject/Makefile-${CND_CONF}.mk /home/fernando/Dropbox/HC/HCImp/source/HeapStrctPtr.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1469337217
 	${RM} $@.d
-	$(COMPILE.cc) -g -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/HeapStrctPtr.o HeapStrctPtr.cpp
+	$(COMPILE.cc) -g -Iinclude -I../RandomFwk/include -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1469337217/HeapStrctPtr.o /home/fernando/Dropbox/HC/HCImp/source/HeapStrctPtr.cpp
 
-${OBJECTDIR}/HeapStrctPtrMin.o: nbproject/Makefile-${CND_CONF}.mk HeapStrctPtrMin.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/_ext/1469337217/HeapStrctPtrMin.o: nbproject/Makefile-${CND_CONF}.mk /home/fernando/Dropbox/HC/HCImp/source/HeapStrctPtrMin.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1469337217
 	${RM} $@.d
-	$(COMPILE.cc) -g -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/HeapStrctPtrMin.o HeapStrctPtrMin.cpp
+	$(COMPILE.cc) -g -Iinclude -I../RandomFwk/include -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1469337217/HeapStrctPtrMin.o /home/fernando/Dropbox/HC/HCImp/source/HeapStrctPtrMin.cpp
 
-${OBJECTDIR}/HeapStructure.o: nbproject/Makefile-${CND_CONF}.mk HeapStructure.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/_ext/1469337217/HeapStructure.o: nbproject/Makefile-${CND_CONF}.mk /home/fernando/Dropbox/HC/HCImp/source/HeapStructure.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1469337217
 	${RM} $@.d
-	$(COMPILE.cc) -g -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/HeapStructure.o HeapStructure.cpp
+	$(COMPILE.cc) -g -Iinclude -I../RandomFwk/include -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1469337217/HeapStructure.o /home/fernando/Dropbox/HC/HCImp/source/HeapStructure.cpp
 
-${OBJECTDIR}/ListStructure.o: nbproject/Makefile-${CND_CONF}.mk ListStructure.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/_ext/1469337217/ListStructure.o: nbproject/Makefile-${CND_CONF}.mk /home/fernando/Dropbox/HC/HCImp/source/ListStructure.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1469337217
 	${RM} $@.d
-	$(COMPILE.cc) -g -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/ListStructure.o ListStructure.cpp
+	$(COMPILE.cc) -g -Iinclude -I../RandomFwk/include -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1469337217/ListStructure.o /home/fernando/Dropbox/HC/HCImp/source/ListStructure.cpp
 
-${OBJECTDIR}/ListStructurePtr.o: nbproject/Makefile-${CND_CONF}.mk ListStructurePtr.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/_ext/1469337217/ListStructurePtr.o: nbproject/Makefile-${CND_CONF}.mk /home/fernando/Dropbox/HC/HCImp/source/ListStructurePtr.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1469337217
 	${RM} $@.d
-	$(COMPILE.cc) -g -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/ListStructurePtr.o ListStructurePtr.cpp
+	$(COMPILE.cc) -g -Iinclude -I../RandomFwk/include -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1469337217/ListStructurePtr.o /home/fernando/Dropbox/HC/HCImp/source/ListStructurePtr.cpp
 
-${OBJECTDIR}/Mpz_Heap_Node_Template.o: nbproject/Makefile-${CND_CONF}.mk Mpz_Heap_Node_Template.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/_ext/1469337217/Mpz_Heap_Node_Template.o: nbproject/Makefile-${CND_CONF}.mk /home/fernando/Dropbox/HC/HCImp/source/Mpz_Heap_Node_Template.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1469337217
 	${RM} $@.d
-	$(COMPILE.cc) -g -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/Mpz_Heap_Node_Template.o Mpz_Heap_Node_Template.cpp
+	$(COMPILE.cc) -g -Iinclude -I../RandomFwk/include -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1469337217/Mpz_Heap_Node_Template.o /home/fernando/Dropbox/HC/HCImp/source/Mpz_Heap_Node_Template.cpp
 
-${OBJECTDIR}/NumberPartitionProblem.o: nbproject/Makefile-${CND_CONF}.mk NumberPartitionProblem.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/_ext/1469337217/NumberPartitionProblem.o: nbproject/Makefile-${CND_CONF}.mk /home/fernando/Dropbox/HC/HCImp/source/NumberPartitionProblem.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1469337217
 	${RM} $@.d
-	$(COMPILE.cc) -g -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/NumberPartitionProblem.o NumberPartitionProblem.cpp
+	$(COMPILE.cc) -g -Iinclude -I../RandomFwk/include -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1469337217/NumberPartitionProblem.o /home/fernando/Dropbox/HC/HCImp/source/NumberPartitionProblem.cpp
 
-${OBJECTDIR}/NumberPartitionProblem_MPZ.o: nbproject/Makefile-${CND_CONF}.mk NumberPartitionProblem_MPZ.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/_ext/1469337217/NumberPartitionProblem_MPZ.o: nbproject/Makefile-${CND_CONF}.mk /home/fernando/Dropbox/HC/HCImp/source/NumberPartitionProblem_MPZ.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1469337217
 	${RM} $@.d
-	$(COMPILE.cc) -g -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/NumberPartitionProblem_MPZ.o NumberPartitionProblem_MPZ.cpp
+	$(COMPILE.cc) -g -Iinclude -I../RandomFwk/include -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1469337217/NumberPartitionProblem_MPZ.o /home/fernando/Dropbox/HC/HCImp/source/NumberPartitionProblem_MPZ.cpp
 
-${OBJECTDIR}/PPN_Heap.o: nbproject/Makefile-${CND_CONF}.mk PPN_Heap.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/_ext/1469337217/PPN_Heap.o: nbproject/Makefile-${CND_CONF}.mk /home/fernando/Dropbox/HC/HCImp/source/PPN_Heap.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1469337217
 	${RM} $@.d
-	$(COMPILE.cc) -g -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/PPN_Heap.o PPN_Heap.cpp
+	$(COMPILE.cc) -g -Iinclude -I../RandomFwk/include -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1469337217/PPN_Heap.o /home/fernando/Dropbox/HC/HCImp/source/PPN_Heap.cpp
 
-${OBJECTDIR}/Semaphore.o: nbproject/Makefile-${CND_CONF}.mk Semaphore.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/_ext/1469337217/Semaphore.o: nbproject/Makefile-${CND_CONF}.mk /home/fernando/Dropbox/HC/HCImp/source/Semaphore.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1469337217
 	${RM} $@.d
-	$(COMPILE.cc) -g -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/Semaphore.o Semaphore.cpp
+	$(COMPILE.cc) -g -Iinclude -I../RandomFwk/include -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1469337217/Semaphore.o /home/fernando/Dropbox/HC/HCImp/source/Semaphore.cpp
 
-${OBJECTDIR}/main.o: nbproject/Makefile-${CND_CONF}.mk main.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/_ext/1469337217/main.o: nbproject/Makefile-${CND_CONF}.mk /home/fernando/Dropbox/HC/HCImp/source/main.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1469337217
 	${RM} $@.d
-	$(COMPILE.cc) -g -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -Iinclude -I../RandomFwk/include -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1469337217/main.o /home/fernando/Dropbox/HC/HCImp/source/main.cpp
 
 # Subprojects
 .build-subprojects:
-	cd /home/fernando/Dropbox/HC/RandomFwk && ${MAKE}  -f Makefile CONF=Release
+	cd ../RandomFwk && ${MAKE}  -f Makefile CONF=Debug
 
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
@@ -214,7 +216,7 @@ ${OBJECTDIR}/main.o: nbproject/Makefile-${CND_CONF}.mk main.cpp
 
 # Subprojects
 .clean-subprojects:
-	cd /home/fernando/Dropbox/HC/RandomFwk && ${MAKE}  -f Makefile CONF=Release clean
+	cd ../RandomFwk && ${MAKE}  -f Makefile CONF=Debug clean
 
 # Enable dependency checking
 .dep.inc: .depcheck-impl
