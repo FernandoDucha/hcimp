@@ -98,6 +98,18 @@
             <linkerLibFileItem>/usr/lib/libgslcblas.a</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
+        <requiredProjects>
+          <makeArtifact PL="/home/fernando/Dropbox/HC/RandomFwk"
+                        CT="6"
+                        CN="Release"
+                        AC="true"
+                        BL="true"
+                        WD="/home/fernando/Dropbox/HC/RandomFwk"
+                        BC="${MAKE}  -f Makefile CONF=Release"
+                        CC="${MAKE}  -f Makefile CONF=Release clean"
+                        OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libRandomFwk.a">
+          </makeArtifact>
+        </requiredProjects>
       </compileType>
       <item path="Avl.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -230,6 +242,18 @@
             <linkerOptionItem>`pkg-config --libs gsl`</linkerOptionItem>
           </linkerLibItems>
         </linkerTool>
+        <requiredProjects>
+          <makeArtifact PL="/home/fernando/Dropbox/HC/RandomFwk"
+                        CT="6"
+                        CN="Release"
+                        AC="true"
+                        BL="false"
+                        WD="/home/fernando/Dropbox/HC/RandomFwk"
+                        BC="${MAKE}  -f Makefile CONF=Release"
+                        CC="${MAKE}  -f Makefile CONF=Release clean"
+                        OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libRandomFwk.a">
+          </makeArtifact>
+        </requiredProjects>
       </compileType>
       <item path="Avl.cpp" ex="false" tool="1" flavor2="0">
       </item>

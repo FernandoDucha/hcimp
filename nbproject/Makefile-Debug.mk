@@ -205,6 +205,7 @@ ${OBJECTDIR}/main.o: nbproject/Makefile-${CND_CONF}.mk main.cpp
 
 # Subprojects
 .build-subprojects:
+	cd /home/fernando/Dropbox/HC/RandomFwk && ${MAKE}  -f Makefile CONF=Release
 
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
@@ -213,6 +214,7 @@ ${OBJECTDIR}/main.o: nbproject/Makefile-${CND_CONF}.mk main.cpp
 
 # Subprojects
 .clean-subprojects:
+	cd /home/fernando/Dropbox/HC/RandomFwk && ${MAKE}  -f Makefile CONF=Release clean
 
 # Enable dependency checking
 .dep.inc: .depcheck-impl
