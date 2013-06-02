@@ -106,7 +106,7 @@
               <makeArtifact PL="/home/fernando/Dropbox/HC/RandomFwk"
                             CT="6"
                             CN="Release"
-                            AC="true"
+                            AC="false"
                             BL="false"
                             WD="/home/fernando/Dropbox/HC/RandomFwk"
                             BC="${MAKE}  -f Makefile CONF=Release"
@@ -116,18 +116,6 @@
             </linkerLibProjectItem>
           </linkerLibItems>
         </linkerTool>
-        <requiredProjects>
-          <makeArtifact PL="../RandomFwk"
-                        CT="6"
-                        CN="Debug"
-                        AC="false"
-                        BL="true"
-                        WD="../RandomFwk"
-                        BC="${MAKE}  -f Makefile CONF=Debug"
-                        CC="${MAKE}  -f Makefile CONF=Debug clean"
-                        OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libRandomFwk.a">
-          </makeArtifact>
-        </requiredProjects>
       </compileType>
       <item path="/home/fernando/Dropbox/HC/HCImp/include/Avl.h"
             ex="false"

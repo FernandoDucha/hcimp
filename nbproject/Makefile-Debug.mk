@@ -207,7 +207,6 @@ ${OBJECTDIR}/_ext/1469337217/main.o: nbproject/Makefile-${CND_CONF}.mk /home/fer
 
 # Subprojects
 .build-subprojects:
-	cd ../RandomFwk && ${MAKE}  -f Makefile CONF=Debug
 
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
@@ -216,7 +215,6 @@ ${OBJECTDIR}/_ext/1469337217/main.o: nbproject/Makefile-${CND_CONF}.mk /home/fer
 
 # Subprojects
 .clean-subprojects:
-	cd ../RandomFwk && ${MAKE}  -f Makefile CONF=Debug clean
 
 # Enable dependency checking
 .dep.inc: .depcheck-impl

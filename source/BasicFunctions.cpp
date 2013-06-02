@@ -5,8 +5,47 @@
  * Created on 13 de Maio de 2013, 16:22
  */
 
-#include "BasicFunctions.h"
+#include <gmp.h>
 
+#include "BasicFunctions.h"
+void constructK1ProblemStandard(ulong nBits, int nPartitions, FileRawBuffer * frwb, char * fileName){
+    RandomNumberGenerator rng(frwb);
+    mpz_class max;
+    mpz_pow_ui(max.get_mpz_t(),mpz_class(2).get_mpz_t(),nBits);
+    max--;
+    double log1=(nPartitions-1)*(log(max)/log(nPartitions));
+    int nElem=ceil(log1);
+    ofstream filestr(fileName);
+    filestr << 3600 << endl;
+    filestr << "~" << endl;
+    filestr << nElem<< endl;
+    filestr << "~" << endl;
+    filestr << nPartitions << endl;
+    filestr << "~" << endl;
+    for (int i = 0; i < nElem; i++) {
+        filestr << rng.getNumberExactBits(nBits) << endl;
+    }
+    filestr.close();
+}
+void constructK1ProblemStandard_1(ulong nBits, int nPartitions, FileRawBuffer * frwb, char * fileName){
+    RandomNumberGenerator rng(frwb);
+    mpz_class max;
+    mpz_pow_ui(max.get_mpz_t(),mpz_class(2).get_mpz_t(),nBits);
+    max--;
+    double log1=(nPartitions-1)*(log(max)/log(nPartitions));
+    int nElem=ceil(log1);
+    ofstream filestr(fileName);
+    filestr << 3600 << endl;
+    filestr << "~" << endl;
+    filestr << nElem<< endl;
+    filestr << "~" << endl;
+    filestr << nPartitions << endl;
+    filestr << "~" << endl;
+    for (int i = 0; i < nElem; i++) {
+        filestr << rng.getNumberWithMaxBits(nBits) << endl;
+    }
+    filestr.close();
+}
 void constructProblem(int nElements, int nBits, int nPartitions, int nTime, char * fileName) {
     srand(time(NULL));
     Cronometro c(Cronometro::NANO_S);
@@ -15,7 +54,6 @@ void constructProblem(int nElements, int nBits, int nPartitions, int nTime, char
     r4.seed(c.elapsed());
     c.end();
     ofstream filestr(fileName);
-    //filestr.open(fileName, fstream::in | fstream::out);
     filestr << nTime << endl;
     filestr << "~" << endl;
     filestr << nElements << endl;
@@ -142,9 +180,33 @@ double log2(mpz_class  l) {
     temp = y + temp / 2;
     mpf_clear(a);
    // cout<<temp<<endl;*/
-   return resp.get_d();
-    
+   return resp.get_d();    
 }
+double log(mpz_class  l) {
+    mpf_class r = l;
+    mpf_class t,t1=l;
+    int y=1;
+    mpf_class resp;
+    do{
+        mpf_sqrt(t.get_mpf_t(),t1.get_mpf_t());
+        y*=2;
+        t1=t;
+    } while (t>2);
+    resp=y*log(t.get_d());
+    /*mpf_t a;
+    mpf_init(a);
+    mpf_class b(l);
+    //cout<<b<<"--"<<l<<endl;
+    mpf_div_2exp(a, b.get_mpf_t(), y);
+    double temp = mpf_get_d(a);
+    temp = pow(temp, 2);
+    temp = log(temp) / log(2);
+    temp = y + temp / 2;
+    mpf_clear(a);
+   // cout<<temp<<endl;*/
+   return resp.get_d();    
+}
+
 //double log2(mpf_class  l) {
 //    mpf_class r = l;
 //    mpf_class t,t1=l;
