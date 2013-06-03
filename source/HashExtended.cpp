@@ -27,17 +27,44 @@ HashExtended::HashExtended(int maxDepth, int maxElements) {
 }
 
 HashExtended::~HashExtended() {
-    for (int i = 0; count[i]!=0; i++) {
+    vector<mpz_heap_elem*> vec;
+    for (int i = 0;i<maxSize ; i++) {
         for(int j=0;j<maxElem;j++){
             if(hash[i][j]){
+//                int s =hash[i][j]->data().GetHeap().size();
+//                for(int k=s-1;k>=0;k--){
+//                    mpz_heap_elem * elem=hash[i][j]->data().GetHeap()[k];
+//                    hash[i][j]->data().GetHeap().pop_back();
+//                    (*elem)--;
+//                    if(!contains(vec,elem)){
+//                        vec.push_back(elem);
+//                    }
+//                }
                 delete hash[i][j];
+            }else{
+                break;
             }
         }
         delete [] hash[i];
     }
+//    int size= vec.size();
+//    for(int i=size-1;i>=0;i--){
+//       mpz_heap_elem* b = vec[i];
+//       vec.pop_back();
+//       delete b;
+//    }
     delete [] hash;
+    delete [] count;
+    delete [] auxcount;
 }
-
+bool HashExtended::contains(vector<mpz_heap_elem*> v, mpz_heap_elem* elem){
+    for(int i=0;i<v.size();i++){
+        if(v[i]==elem){
+            return true;
+        }
+    }
+    return false;
+}
 void HashExtended::put(mpz_node_bfs * novo) {
     ulong id = novo->getNodeId().get_ui();
     hash[id][count[id]]=novo;

@@ -8,6 +8,7 @@
 #ifndef PPN_HEAP_H
 #define	PPN_HEAP_H
 #include <string>
+#include <iostream>
 #include <fstream>
 #include "BasicFunctions.h"
 #include "BasicTypes_heap.h"
@@ -21,6 +22,8 @@ class PPN_Heap {
     
 public:
     PPN_Heap(char * filename);
+    PPN_Heap();
+    void openNewProblem(char * filename);
     virtual ~PPN_Heap();
     void lerArquivo(char * problemFile);
     void runDFS();

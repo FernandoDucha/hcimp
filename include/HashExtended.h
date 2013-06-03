@@ -8,6 +8,7 @@
 #ifndef HASHEXTENDED_H
 #define	HASHEXTENDED_H
 #include <vector>
+#include <set>
 #include "Mpz_Heap_Node_Template.h"
 using namespace std;
 class HashExtended {
@@ -27,7 +28,9 @@ public:
     ulong getHeightCoun(int h){
         return auxcount[h];
     }
+    
 private:
+    bool contains(vector<mpz_heap_elem*> v, mpz_heap_elem * elem);
     heap_node_p ** hash;
     ulong * count,*auxcount;
     int maxSize,searchSpace;

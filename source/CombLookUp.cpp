@@ -8,8 +8,13 @@
 #include "CombLookUp.h"
 
 CombLookUp::CombLookUp() {
+    combs=NULL;
 }
 CombLookUp::~CombLookUp() {
+    if(combs){
+        delete combs;
+    }
+        
 }
 CombLookUp::CombLookUp(int n){
     combs = new vector<gsl_combination*>[n+1];

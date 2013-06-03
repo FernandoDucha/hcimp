@@ -14,28 +14,47 @@ public:
     virtual ~HeapStrctPtrMin();
     mpz_class Insert(mpz_heap_elem * ptr);
     mpz_heap_elem * getMax();
-    HeapStrctPtrMin& operator=(HeapStrctPtr& rhs);    
+    HeapStrctPtrMin& operator=(HeapStrctPtr& rhs);
+    bool prune(mpz_class min, ulong nPart);
+    void SetSum(mpz_class sum);
+    mpz_class GetSum() const;
 private:
-
+    mpz_class sum;
 };
-inline HeapStrctPtrMin::~HeapStrctPtrMin() {
- 
+inline void HeapStrctPtrMin::SetSum(mpz_class sum) {
+    this->sum = sum;
 }
+inline mpz_class HeapStrctPtrMin::GetSum() const {
+    return sum;
+}
+inline bool HeapStrctPtrMin::prune(mpz_class min, ulong nPart){
+    mpz_class max= pick_max()->getId();
+    mpz_class factor= max-(sum-max)/(nPart-1);
+    if(factor>=min){
+        return true;
+    }else{
+        return false;
+    }
+}
+inline HeapStrctPtrMin::~HeapStrctPtrMin() {
+    pos=-1;
+}
+
 inline mpz_heap_elem* HeapStrctPtrMin::getMax(){
    mpz_heap_elem* temp=heap[1];
    heap[1]=heap[pos];
    heap[pos]=temp;
    pos--;
-  // print();
    FixDown(1,pos);
- /// print();
    mpz_heap_elem* ret = heap[pos+1];
+   sum-=ret->getId();
    heap.pop_back();
    return ret;   
 }
 inline mpz_class HeapStrctPtrMin::Insert(mpz_heap_elem * data){
     heap.push_back(data);
     pos++;
+    sum+=data->getId();
     FixUp(pos);
     return data->getId();
 }

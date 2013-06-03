@@ -45,60 +45,39 @@ int main(int argc, char** argv) {
     //    mpz_class prime3(0),prime4(0);
     //    cout<<(*a+*b).id<<endl;
     //     HeapLeakChecker heap_checker("test_foo");{
-   // FileRawBuffer * b = new FileRawBuffer("/media/DATA0/qrngdata");
-   constructProblem(100,100,2,3600,"test.txt");    
-    PPN_Heap a("test.txt");
-    a.runLDS();
-    //delete b;
-    //    CombLookUp a(1000);
-    //    a.createAllUntil(1000);
-    //    a.print();
-    //   }
-    //    }
-    //    if (!heap_checker.NoLeaks()) assert(NULL == "heap memory leak");
-    //constructProblem(100,100,2,60,"test.txt");
-    // constructProblemLPCplex("test.txt","cplex.txt");
-    /* int p1=350377;
-     mpz_pow_ui(prime3.get_mpz_t(),prime2.get_mpz_t(),p1);
-     prime3-=1;
-     cout<<prime3<<endl;
-     cout<<"Grandeza: "<<log2(prime3)/log2(10)<<endl;
-     //  cout<<prime2<<endl;
-     prime1-=1;*/
-    //    mpz_class a(3);
-    //    Cronometro c(Cronometro::SEGUNDOS);
-    //    c.start();
-    //    mpz_class b;
-    //    for(prime1=1;prime1<10000;prime1++){
-    //        mpz_pow_ui(a.get_mpz_t(),a.get_mpz_t(),prime1.get_ui());
-    //        a-=1;
-    //        b=a;
-    //        //cout<<prime1<<"-"<<a<<endl;
-    //        if(a%2==1){
-    //            cout<<a<<"-"<<c.elapsed()<<endl;
-    ////            if(a!=0){
-    ////                cout<<log2(a)<<endl;
-    ////            }
-    //        }
-    //        a=3;
-    //    }
-    //    cout<<b<<endl;
-    /*for(int i=0;i<argc;i++){
-     
-     *    cout<<i<<" : "<<argv[i]<<endl;
+//    FileRawBuffer * b = new FileRawBuffer("/media/DATA0/qrngdata");
+//    for (int i = 0; i < 10; i++) {
+//        for (int j = 1; j <= 100; j++) {
+//            char buffer[30];
+//            sprintf(buffer,"instances/inst-%04d-%03d",(i+1)*100,j);
+//            constructK1ProblemStandard_1((i+1)*100, 2, b, buffer);
+//        }
+//    }
+    //constructProblem(100,100,2,3600,"test.txt");
+    if(argc==4){
+        if (strcmp(argv[1], "lds")==0){
+            int type = atoi(argv[2]);
+            int wich = atoi(argv[3]);
+            char buffer[30];
+            sprintf(buffer,"inst-%04d-%03d",type,wich);
+            PPN_Heap  ppn(buffer);
+            ppn.runLDS();
+        }else if(strcmp(argv[1],"bfs")==0){
+            int type = atoi(argv[2]);
+            int wich = atoi(argv[3]);
+            char buffer[30];
+            sprintf(buffer,"inst-%04d-%03d",type,wich);
+            PPN_Heap  ppn(buffer);
+            ppn.runBFS();
+        }else if(strcmp(argv[1],"dfs")==0){
+            int type = atoi(argv[2]);
+            int wich = atoi(argv[3]);
+            char buffer[30];
+            sprintf(buffer,"inst-%04d-%03d",type,wich);
+            PPN_Heap  ppn(buffer);
+            ppn.runDFS();
+        }
     }
-    NumberPartitionProblem_MPZ* p = new NumberPartitionProblem_MPZ(argv[1]);
-    CompleteKarmarkarKarp_MPZ ckk(p, p->getNroParticoes());
-    if (strcmp(argv[2], "lds")==0){
-        ckk.runLDS1(atoi(argv[3]), atoi(argv[4]));
-        cout << log2(ckk.GetMin() + 1) << " -- " << log2(p->checkBestSolution() + 1) << endl;
-    }else if(strcmp(argv[2],"bfs")==0){
-        ckk.runBFS1(atoi(argv[3]));
-        cout << log2(ckk.GetMin() + 1) << " -- " << log2(p->checkBestSolution() + 1) << endl;
-    }else if(strcmp(argv[2],"dfs")==0){
-        ckk.runDFS1();
-        cout << log2(ckk.GetMin() + 1) << " -- " << log2(p->checkBestSolution() + 1) << endl;
-    }*/
 
     return 0;
 }
