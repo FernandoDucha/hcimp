@@ -46,6 +46,7 @@ private:
     int nroParticoes;
     int tempo;
     bool perfect;
+    bool finished;
     int perfectVal;
     Cronometro chrono;
     mpz_class min;

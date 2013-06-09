@@ -17,25 +17,30 @@ PPN_Heap::PPN_Heap(char * filename) {
     nodes_pruned = 0;
     perfect = false;
     perfectVal = -1;
+    finished=false;
 }
-PPN_Heap::PPN_Heap(){
+
+PPN_Heap::PPN_Heap() {
     problem_file = NULL;
     chrono.set_resolution(Cronometro::SEGUNDOS);
     nodes_inspected = 0;
     nodes_pruned = 0;
     perfect = false;
     perfectVal = -1;
-    raiz=NULL;
-    raiz_bfs=NULL;
+    raiz = NULL;
+    raiz_bfs = NULL;
+    finished=false;
 }
-void PPN_Heap::openNewProblem(char* filename){
-    problem_file=filename;
-    if(raiz){
+
+void PPN_Heap::openNewProblem(char* filename) {
+    problem_file = filename;
+    if (raiz) {
         delete raiz;
-        raiz=NULL;
+        raiz = NULL;
     }
     lerArquivo(filename);
 }
+
 PPN_Heap::~PPN_Heap() {
     delete raiz;
     //delete raiz_bfs;
@@ -45,28 +50,29 @@ void PPN_Heap::lerArquivo(char * problemFile) {
     //cout<<4<<endl;
     string temp = "instances/";
     temp += problem_file;
-    FILE * file = fopen(temp.c_str(),"r");
-    
+    FILE * file = fopen(temp.c_str(), "r");
+
     char buff[1000];
     for (int i = 0; i < 100; i++) {
         buff[i] = '\0';
     }
-    fgets(buff,1000,file);
-    tempo=atoi(buff);
-    fgets(buff,1000,file);
-    fgets(buff,1000,file);    
-    nElementos=atoi(buff);; // = atoi(buff);
-    fgets(buff,1000,file);    
-    fgets(buff,1000,file);    
-    nroParticoes=atoi(buff); 
+    fgets(buff, 1000, file);
+    tempo = atoi(buff);
+    fgets(buff, 1000, file);
+    fgets(buff, 1000, file);
+    nElementos = atoi(buff);
+    ; // = atoi(buff);
+    fgets(buff, 1000, file);
+    fgets(buff, 1000, file);
+    nroParticoes = atoi(buff);
     raiz = new mpz_node();
-    raiz->data().GetHeap().reserve(nElementos+1);
+    raiz->data().GetHeap().reserve(nElementos + 1);
     raiz_bfs = new mpz_node_bfs();
-    raiz_bfs->data().GetHeap().reserve(nElementos+1);
-    
-    fgets(buff,1000,file);    
+    raiz_bfs->data().GetHeap().reserve(nElementos + 1);
+
+    fgets(buff, 1000, file);
     for (int i = 0; i < nElementos; i++) {
-        fgets(buff,1000,file);
+        fgets(buff, 1000, file);
         mpz_class temp(buff);
         min += temp;
         raiz->pushElem(temp);
@@ -148,7 +154,11 @@ void PPN_Heap::_runLDS() {
 void PPN_Heap::runLDS(mpz_node * node) {
     chrono.start();
     for (int i = 0; i <= node->size(); i++) {
-        runLDS(node, node->size(), i);
+        if (!finished) {
+            runLDS(node, node->size(), i);
+        }else{
+            break;
+        }
     }
 }
 
@@ -191,15 +201,17 @@ void PPN_Heap::_runLDS(mpz_node* node) {
 }
 
 void PPN_Heap::runLDS(mpz_node * node, u_int32_t depth, u_int32_t disc) {
-    if (chrono.elapsed() >= tempo || perfect) {
-        res << log2(node->getSum() + 1) << ";" << chrono.elapsed() << ";" << nodes_inspected << ";" << nodes_pruned << endl;
-        chrono.setStoped(true);
+    if(finished) return;
+    if ((chrono.elapsed() >= tempo || perfect)) {
+        res << log2(min + 1) << ";" << chrono.elapsed() << ";" << nodes_inspected << ";" << nodes_pruned <<";#"<<endl;
+        finished=true;
         return;
     } else if (node->size() == 1) {
         min = node->getSum();
         perfect = (min == perfectVal) ? true : false;
         res << log2(node->getSum() + 1) << ";" << chrono.elapsed() << ";" << nodes_inspected << ";" << nodes_pruned << endl;
     } else {
+        bool chamada1 = false, chamada2 = false;
         nodes_inspected++;
         if (depth > disc) {
             mpz_node temp;
@@ -265,6 +277,7 @@ void PPN_Heap::KK(HeapStrctPtrMin & node) {
         mpz_heap_elem_ptr A, B, DIFF;
         A = node.getMax();
         B = node.getMax();
+        nodes_inspected++;
         DIFF = &(*A - *B);
         DIFF->Original(false);
         node.Insert(DIFF);
@@ -302,7 +315,7 @@ void PPN_Heap::runBFS() {
     raiz->setNodeId(0);
     runBFS(raiz_bfs);
     res.close();
-    raiz_bfs=NULL;
+    raiz_bfs = NULL;
 }
 
 void PPN_Heap::runBFS(mpz_node_bfs * node) {
@@ -312,12 +325,13 @@ void PPN_Heap::runBFS(mpz_node_bfs * node) {
     hmin = node->data();
     KK(hmin);
     hash.nextCyle();
+    char end='#';
     while (chrono.elapsed() <= tempo && !perfect) {
         int nelem = hash.getNElem();
         int j = 0;
         mpz_node_bfs *left;
         ulong nh;
-        while(nh= hash.getHeightCoun(j)){
+        while (nh = hash.getHeightCoun(j)) {
             mpz_node_bfs ** line = hash.getHeightVector(j);
             for (int k = 0; k < nh; k++) {
                 left = line[k];
@@ -336,12 +350,12 @@ void PPN_Heap::runBFS(mpz_node_bfs * node) {
             }
             j++;
         }
-        j=0;
         if (hash.peekFirst()->size() == 1) {
+            end='$';
             break;
         }
         hash.nextCyle();
     }
-    res<< log2(min + 1) << ";" << chrono.elapsed() << ";" << nodes_inspected << ";" << nodes_pruned <<" #"<< endl;
+    res << log2(min + 1) << ";" << chrono.elapsed() << ";" << nodes_inspected << ";" << nodes_pruned << ";"<<end<< endl;
     chrono.setStoped(true);
 }

@@ -345,3 +345,31 @@ void readResults(char * resultFile){
         matrix<<min<<" "<<media<<endl;
     }
 }
+bool checkResultExist(const char *  file){
+    string file1 = "results/";
+    file1+=file;
+    ifstream in(file1.c_str());
+    if(in.is_open()){
+        while(!in.eof()){
+            char buffer [1000];
+            in.getline(buffer,1000);
+            string temp = buffer;
+            if(temp.size()<=1)return false;
+            
+            if(temp[temp.size()-1]=='#'||temp[temp.size()-1]=='$'){
+                return true;
+            }
+            int posinit=temp.find_first_of(';',0);
+            int posend=temp.find_first_of(';',posinit);
+            string finished = temp.substr(posinit+1,posend);
+            double value=atof(finished.c_str());
+            if(value>=3600){
+                return true;
+            }
+        }        
+    }else{
+        return false;
+    }
+        
+    
+}
