@@ -30,6 +30,14 @@ CND_ARTIFACT_PATH_Windows=dist/Windows/GNU-Linux-x86/hcimp
 CND_PACKAGE_DIR_Windows=dist/Windows/GNU-Linux-x86/package
 CND_PACKAGE_NAME_Windows=hcimp.tar
 CND_PACKAGE_PATH_Windows=dist/Windows/GNU-Linux-x86/package/hcimp.tar
+# Release_1 configuration
+CND_PLATFORM_Release_1=GNU-Linux-x86
+CND_ARTIFACT_DIR_Release_1=dist/Release_1/GNU-Linux-x86
+CND_ARTIFACT_NAME_Release_1=hcimp
+CND_ARTIFACT_PATH_Release_1=dist/Release_1/GNU-Linux-x86/hcimp
+CND_PACKAGE_DIR_Release_1=dist/Release_1/GNU-Linux-x86/package
+CND_PACKAGE_NAME_Release_1=hcimp.tar
+CND_PACKAGE_PATH_Release_1=dist/Release_1/GNU-Linux-x86/package/hcimp.tar
 #
 # include compiler specific variables
 #

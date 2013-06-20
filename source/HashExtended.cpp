@@ -27,7 +27,6 @@ HashExtended::HashExtended(int maxDepth, int maxElements) {
 }
 
 HashExtended::~HashExtended() {
-    vector<mpz_heap_elem*> vec;
     for (int i = 0;i<maxSize ; i++) {
         for(int j=0;j<maxElem;j++){
             if(hash[i][j]){

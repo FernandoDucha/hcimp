@@ -358,4 +358,5 @@ void PPN_Heap::runBFS(mpz_node_bfs * node) {
     }
     res << log2(min + 1) << ";" << chrono.elapsed() << ";" << nodes_inspected << ";" << nodes_pruned << ";"<<end<< endl;
     chrono.setStoped(true);
+    exit(0);
 }

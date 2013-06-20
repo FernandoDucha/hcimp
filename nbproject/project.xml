@@ -28,6 +28,10 @@
                     <name>Windows</name>
                     <type>1</type>
                 </confElem>
+                <confElem>
+                    <name>Release_1</name>
+                    <type>1</type>
+                </confElem>
             </confList>
         </data>
     </configuration>

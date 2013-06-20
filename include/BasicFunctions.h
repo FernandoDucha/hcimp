@@ -4,12 +4,10 @@
  *
  * Created on 13 de Maio de 2013, 16:22
  */
-
 #ifndef BASICFUNCTIONS_H
 #define	BASICFUNCTIONS_H
 #include <gmpxx.h>
 #include <math.h>
-#include <fstream>
 #include "Cronometro.h"
 #include <limits.h>
 #include "RandomNumberGenerator.h"

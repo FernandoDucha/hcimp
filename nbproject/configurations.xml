@@ -79,11 +79,11 @@
       <toolsSet>
         <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
         <compilerSet>default</compilerSet>
-        <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>true</rebuildPropChanged>
       </toolsSet>
       <compileType>
         <ccTool>
+          <architecture>2</architecture>
           <standard>8</standard>
           <incDir>
             <pElem>include</pElem>
@@ -231,8 +231,6 @@
       <toolsSet>
         <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
         <compilerSet>GNU|GNU</compilerSet>
-        <dependencyChecking>true</dependencyChecking>
-        <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
         <cTool>
@@ -403,8 +401,6 @@
       <toolsSet>
         <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
         <compilerSet>default</compilerSet>
-        <dependencyChecking>true</dependencyChecking>
-        <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
         <linkerTool>
@@ -416,6 +412,176 @@
             <linkerOptionItem>-lrt</linkerOptionItem>
           </linkerLibItems>
         </linkerTool>
+      </compileType>
+      <item path="include/Avl.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/BFS.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/BasicFunctions.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/BasicTypes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/BasicTypes_heap.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/CombLookUp.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/Combinatorics.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/CompleteKarmarkarKarp.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/CompleteKarmarkarKarp_MPZ.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/Cronometro.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/DefaultIncludes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/Hash.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/HashExtended.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/HeapStrctPtr.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/HeapStrctPtrMin.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/HeapStructure.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/ListStructure.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/ListStructurePtr.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/Mpz_Heap_Node_Template.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/NumberPartitionProblem.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/NumberPartitionProblem_MPZ.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/PPN_Heap.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/Semaphore.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/enums.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/node_list_struct.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Avl.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/BFS.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/BasicFunctions.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/BasicTypes.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/BasicTypes_heap.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/CombLookUp.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Combinatorics.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/CompleteKarmarkarKarp.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/CompleteKarmarkarKarp_MPZ.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Cronometro.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Hash.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/HashExtended.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/HeapStrctPtr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/HeapStrctPtrMin.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/HeapStructure.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/ListStructure.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/ListStructurePtr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Mpz_Heap_Node_Template.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/NumberPartitionProblem.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/NumberPartitionProblem_MPZ.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/PPN_Heap.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Semaphore.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="subRun.sh" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release_1" type="1">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>GNU|GNU</compilerSet>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>6</developmentMode>
+          <standard>8</standard>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>../RandomFwk/include</pElem>
+          </incDir>
+          <commandLine>-m64 -fPIC -fexceptions -DNDEBUG -DIL_STD</commandLine>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerOptionItem>-lm</linkerOptionItem>
+            <linkerOptionItem>-pthread</linkerOptionItem>
+            <linkerOptionItem>-lrt</linkerOptionItem>
+            <linkerLibLibItem>gmp</linkerLibLibItem>
+            <linkerLibLibItem>gmpxx</linkerLibLibItem>
+            <linkerOptionItem>`pkg-config --libs gsl`</linkerOptionItem>
+            <linkerLibProjectItem>
+              <makeArtifact PL="../RandomFwk"
+                            CT="6"
+                            CN="Release"
+                            AC="true"
+                            BL="false"
+                            WD="../RandomFwk"
+                            BC="${MAKE}  -f Makefile CONF=Release"
+                            CC="${MAKE}  -f Makefile CONF=Release clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libRandomFwk.a">
+              </makeArtifact>
+            </linkerLibProjectItem>
+          </linkerLibItems>
+        </linkerTool>
+        <requiredProjects>
+          <makeArtifact PL="/home/fernando/Dropbox/HC/RandomFwk"
+                        CT="6"
+                        CN="Release"
+                        AC="true"
+                        BL="false"
+                        WD="/home/fernando/Dropbox/HC/RandomFwk"
+                        BC="${MAKE}  -f Makefile CONF=Release"
+                        CC="${MAKE}  -f Makefile CONF=Release clean"
+                        OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libRandomFwk.a">
+          </makeArtifact>
+        </requiredProjects>
       </compileType>
       <item path="include/Avl.h" ex="false" tool="3" flavor2="0">
       </item>
