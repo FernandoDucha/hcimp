@@ -74,7 +74,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-lm -pthread -lrt -lmpfr -lgmp -lgmpxx /usr/lib/libgsl.a /usr/lib/libgslcblas.a ../RandomFwk/dist/Release/GNU-Linux-x86/libRandomFwk.a
+LDLIBSOPTIONS=-lm -pthread -lrt -lmpfr -lgmp -lgmpxx /usr/lib/libgsl.a /usr/lib/libgslcblas.a ../RandomFwk/dist/Release/GNU-Linux-x86/librandomfwk.a
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -84,7 +84,7 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hcimp: /usr/lib/libgsl.a
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hcimp: /usr/lib/libgslcblas.a
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hcimp: ../RandomFwk/dist/Release/GNU-Linux-x86/libRandomFwk.a
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hcimp: ../RandomFwk/dist/Release/GNU-Linux-x86/librandomfwk.a
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hcimp: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
@@ -207,6 +207,7 @@ ${OBJECTDIR}/source/main.o: nbproject/Makefile-${CND_CONF}.mk source/main.cpp
 
 # Subprojects
 .build-subprojects:
+	cd ../RandomFwk && ${MAKE}  -f Makefile CONF=Release
 
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
@@ -215,6 +216,7 @@ ${OBJECTDIR}/source/main.o: nbproject/Makefile-${CND_CONF}.mk source/main.cpp
 
 # Subprojects
 .clean-subprojects:
+	cd ../RandomFwk && ${MAKE}  -f Makefile CONF=Release clean
 
 # Enable dependency checking
 .dep.inc: .depcheck-impl

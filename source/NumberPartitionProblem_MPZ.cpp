@@ -749,7 +749,7 @@ void NumberPartitionProblem_MPZ::cloneSolutionToBest(ListOfSums_mpz *los) {
     }
     cloneSolutionFromBest();
     mpz_class res(calculaResultado() + 1);
-    cout << log2(res) << endl;
+    cout << log2_temp(res) << endl;
 }
 
 void NumberPartitionProblem_MPZ::getListFromBkp(bkp_bfs* b, ListStructure<number_element_mpz>*ret) {
@@ -775,7 +775,7 @@ void NumberPartitionProblem_MPZ::cloneSolutionToBest(los_bfs *los) {
         j++;
     }
     cloneSolutionFromBest();
-    cout << log2(calculaResultado() + 1) << endl;
+    cout << log2_temp(calculaResultado() + 1) << endl;
 }
 
 int NumberPartitionProblem_MPZ::getQuantidade() const {

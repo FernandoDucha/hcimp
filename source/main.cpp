@@ -56,12 +56,15 @@ int main(int argc, char** argv) {
     //    PPN_Heap p("hard0100.dat");
     //    p.runBFS();
     //    exit(0);
+    char temp[50] = "inst-0100-001";
+    PPN_Heap ppn(temp);
+    ppn.KKConstruct();
     if (argc == 4) {
         if (strcmp(argv[1], "lds") == 0) {
             int type = atoi(argv[2]);
             int wich = atoi(argv[3]);
             char buffer[30];
-            sprintf(buffer, "inst-%04d-%03d", type, wich);
+            sprintf(buffer, "inst-%05d-%03d", type,wich);
             string s = buffer;
             s += ".lds";
             if (!checkResultExist(s.c_str())) {
@@ -72,7 +75,7 @@ int main(int argc, char** argv) {
             int type = atoi(argv[2]);
             int wich = atoi(argv[3]);
             char buffer[30];
-            sprintf(buffer, "inst-%04d-%03d", type, wich);
+            sprintf(buffer, "inst-%05d-%03d", type,wich);
             string s = buffer;
             s += ".bfs";
             if (!checkResultExist(s.c_str())) {
@@ -83,7 +86,7 @@ int main(int argc, char** argv) {
             int type = atoi(argv[2]);
             int wich = atoi(argv[3]);
             char buffer[30];
-            sprintf(buffer, "inst-%04d-%03d", type, wich);
+            sprintf(buffer, "inst-%05d-%03d", type,wich);
             string s = buffer;
             s += ".dfs";
             if (!checkResultExist(s.c_str())) {

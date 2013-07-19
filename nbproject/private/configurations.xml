@@ -28,8 +28,10 @@
           <runcommandpicklistitem>"${OUTPUT_PATH}" lds 1 50</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" bfs 1 50</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" lds 100 3</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" lds 100</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" lds 10 20</runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}" lds 100 3</runcommand>
+        <runcommand>"${OUTPUT_PATH}" lds 10 20</runcommand>
         <rundir></rundir>
         <buildfirst>true</buildfirst>
         <terminal-type>0</terminal-type>
@@ -62,8 +64,10 @@
         <runcommandpicklist>
           <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" bfs 100 1</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" bfs 100</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" bfs 10 20</runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}" bfs 100 1</runcommand>
+        <runcommand>"${OUTPUT_PATH}" bfs 10 20</runcommand>
         <rundir></rundir>
         <buildfirst>true</buildfirst>
         <terminal-type>0</terminal-type>

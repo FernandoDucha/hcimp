@@ -68,6 +68,7 @@
                    kind="IMPORTANT_FILES_FOLDER">
       <itemPath>Makefile</itemPath>
     </logicalFolder>
+    <itemPath>run.sh</itemPath>
     <itemPath>subRun.sh</itemPath>
   </logicalFolder>
   <sourceRootList>
@@ -104,14 +105,14 @@
             <linkerLibFileItem>/usr/lib/libgslcblas.a</linkerLibFileItem>
             <linkerLibProjectItem>
               <makeArtifact PL="../RandomFwk"
-                            CT="6"
+                            CT="3"
                             CN="Release"
                             AC="true"
-                            BL="false"
+                            BL="true"
                             WD="../RandomFwk"
                             BC="${MAKE}  -f Makefile CONF=Release"
                             CC="${MAKE}  -f Makefile CONF=Release clean"
-                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libRandomFwk.a">
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/librandomfwk.a">
               </makeArtifact>
             </linkerLibProjectItem>
           </linkerLibItems>
@@ -172,6 +173,8 @@
       <item path="include/enums.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/node_list_struct.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="run.sh" ex="false" tool="3" flavor2="0">
       </item>
       <item path="source/Avl.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -264,14 +267,14 @@
             <linkerOptionItem>`pkg-config --libs gsl`</linkerOptionItem>
             <linkerLibProjectItem>
               <makeArtifact PL="../RandomFwk"
-                            CT="6"
+                            CT="3"
                             CN="Release"
-                            AC="true"
-                            BL="false"
+                            AC="false"
+                            BL="true"
                             WD="../RandomFwk"
                             BC="${MAKE}  -f Makefile CONF=Release"
                             CC="${MAKE}  -f Makefile CONF=Release clean"
-                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libRandomFwk.a">
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/librandomfwk.a">
               </makeArtifact>
             </linkerLibProjectItem>
           </linkerLibItems>
@@ -344,6 +347,8 @@
       <item path="include/enums.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/node_list_struct.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="run.sh" ex="false" tool="3" flavor2="0">
       </item>
       <item path="source/Avl.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -473,6 +478,8 @@
       <item path="include/enums.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/node_list_struct.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="run.sh" ex="false" tool="3" flavor2="0">
       </item>
       <item path="source/Avl.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -645,6 +652,8 @@
       <item path="include/enums.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/node_list_struct.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="run.sh" ex="false" tool="3" flavor2="0">
       </item>
       <item path="source/Avl.cpp" ex="false" tool="1" flavor2="0">
       </item>

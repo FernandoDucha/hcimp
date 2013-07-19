@@ -1067,7 +1067,7 @@ inline void CompleteKarmarkarKarp_MPZ::subLDS(CKKnode_lds * Parent, int depth, i
         cout << "Minutes: " << NodesPersecond / 60 << endl;
         mpz_class res((char*) min, 10);
         res+=1;
-        cout << nodesInspected[0] << " -- " << nodesPruned[0] << " -- " << (double) nodesPruned[0] / (nodesInspected[0]) << " -- " << log2(res) << " -- " << getpid() << " -- " << nls << " -- " << " Nodes p/ sec.: " << nodesInspected[0] / NodesPersecond << ":" << (nodesInspected[0] - NIActual) / a << endl;
+        cout << nodesInspected[0] << " -- " << nodesPruned[0] << " -- " << (double) nodesPruned[0] / (nodesInspected[0]) << " -- " << log2_temp(res) << " -- " << getpid() << " -- " << nls << " -- " << " Nodes p/ sec.: " << nodesInspected[0] / NodesPersecond << ":" << (nodesInspected[0] - NIActual) / a << endl;
         NIActual = nodesInspected[0];
         c.end();
         c.start();
@@ -1081,7 +1081,7 @@ inline void CompleteKarmarkarKarp_MPZ::subLDS(CKKnode_lds * Parent, int depth, i
         mpz_class m(m1);
         if (temp < m) {
             mpz_class res(temp+1);
-            cout << log2(res) << " -- " << getpid() << endl;
+            cout << log2_temp(res) << " -- " << getpid() << endl;
             strcpy((char*) min, temp.get_str(10).c_str());
             //p->cloneSolutionToBest(Parent->nodeList->peekFirst());
         }
@@ -1139,7 +1139,7 @@ inline void CompleteKarmarkarKarp_MPZ::subLDS(CKKnode_mpz * Parent, int depth, i
         NodesPersecond += a;
         mpz_class res((char*) min, 10);
         res+=1;
-        cout << nodesInspected[0] << " -- " << nodesPruned[0] << " -- " << (double) nodesPruned[0] / (nodesInspected[0]) << " -- " << log2(res) << " -- " << getpid() << " -- " << nls << " -- " << " Nodes p/ sec.: " << nodesInspected[0] / NodesPersecond << ":" << (nodesInspected[0] - NIActual) / a << endl;
+        cout << nodesInspected[0] << " -- " << nodesPruned[0] << " -- " << (double) nodesPruned[0] / (nodesInspected[0]) << " -- " << log2_temp(res) << " -- " << getpid() << " -- " << nls << " -- " << " Nodes p/ sec.: " << nodesInspected[0] / NodesPersecond << ":" << (nodesInspected[0] - NIActual) / a << endl;
         NIActual = nodesInspected[0];
         c.end();
         c.start();
@@ -1153,7 +1153,7 @@ inline void CompleteKarmarkarKarp_MPZ::subLDS(CKKnode_mpz * Parent, int depth, i
         mpz_class m(m1);
         if (temp < m) {
             mpz_class res(temp+1);
-            cout << log2(res) << " -- " << getpid() << endl;
+            cout << log2_temp(res) << " -- " << getpid() << endl;
             strcpy((char*) min, temp.get_str(10).c_str());
             p->cloneSolutionToBest(Parent->nodeList->List->peekFirst());
         }
@@ -1264,7 +1264,7 @@ inline void CompleteKarmarkarKarp_MPZ::breadthFirst(CKKnode_bfs * Parent, int al
             if ((a = c.elapsed()) > 5) {
                 NodesPersecond += a;
                 mpz_class res((char*) min, 10);res+=1;
-                cout << nodesInspected[0] << " -- " << nodesPruned[0] << " -- " << (double) nodesPruned[0] / (nodesInspected[0]) << " -- " << log2(res) << " -- " << getpid() << " -- " << nls << " -- " << bfslist->getSize() << " Nodes p/ sec.: " << nodesInspected[0] / NodesPersecond << ":" << (nodesInspected[0] - NIActual) / a << endl;
+                cout << nodesInspected[0] << " -- " << nodesPruned[0] << " -- " << (double) nodesPruned[0] / (nodesInspected[0]) << " -- " << log2_temp(res) << " -- " << getpid() << " -- " << nls << " -- " << bfslist->getSize() << " Nodes p/ sec.: " << nodesInspected[0] / NodesPersecond << ":" << (nodesInspected[0] - NIActual) / a << endl;
                 NIActual = nodesInspected[0];
                 c.end();
                 c.start();
@@ -1364,7 +1364,7 @@ inline void CompleteKarmarkarKarp_MPZ::breadthFirst(CKKnode_mpz * Parent, int al
             if ((a = c.elapsed()) > 5) {
                 NodesPersecond += a;
                 mpz_class res((char*) min, 10);res+=1;
-                cout << nodesInspected[0] << " -- " << nodesPruned[0] << " -- " << (double) nodesPruned[0] / (nodesInspected[0]) << " -- " << log2(res) << " -- " << getpid() << " -- " << nls << " -- " << bfslist->getSize() << " Nodes p/ sec.: " << nodesInspected[0] / NodesPersecond << endl;
+                cout << nodesInspected[0] << " -- " << nodesPruned[0] << " -- " << (double) nodesPruned[0] / (nodesInspected[0]) << " -- " << log2_temp(res) << " -- " << getpid() << " -- " << nls << " -- " << bfslist->getSize() << " Nodes p/ sec.: " << nodesInspected[0] / NodesPersecond << endl;
                 c.end();
                 c.start();
             }
@@ -1460,7 +1460,7 @@ inline void CompleteKarmarkarKarp_MPZ::KK(CKKnode_mpz * node, int d) {
         mpz_class m((char*) min, 10);
         if (temp < m) {
             mpz_class res(temp+1);
-            cout << log2(res) << " -- " << getpid() << endl;
+            cout << log2_temp(res) << " -- " << getpid() << endl;
             strcpy((char*) min, temp.get_str(10).c_str());
             // node->nodeList->List->peekFirst()->element->List->peekFirst()->element->print();
             //node->nodeList->List->peekFirst()->element->List->peekLast()->element->print();
@@ -1564,7 +1564,7 @@ void CompleteKarmarkarKarp_MPZ::KK(node_lst_tree * node, int d) {
         mpz_class m((char*) min, 10);
         if (temp < m) {
             mpz_class res(temp+1);
-            cout << log2(res) << " -- " << getpid() << endl;
+            cout << log2_temp(res) << " -- " << getpid() << endl;
             strcpy((char*) min, temp.get_str(10).c_str());
             // node->nodeList->List->peekFirst()->element->List->peekFirst()->element->print();
             //node->nodeList->List->peekFirst()->element->List->peekLast()->element->print();
@@ -1668,7 +1668,7 @@ void CompleteKarmarkarKarp_MPZ::breadthFirst(CKKnode_bfs_mpz * Parent, int alpha
                 NodesPersecond += a;
                 cout << "Minutes: " << NodesPersecond / 60 << endl;
                 mpz_class res((char*) min, 10);res+=1;
-                cout << nodesInspected[0] << " -- " << nodesPruned[0] << " -- " << (double) nodesPruned[0] / (nodesInspected[0]) << " -- " << log2(res) << " -- " << getpid() << " -- " << nls << " -- " << bfslist1->getSize() << " Nodes p/ sec.: " << nodesInspected[0] / NodesPersecond << ":" << (nodesInspected[0] - NIActual) / a << endl;
+                cout << nodesInspected[0] << " -- " << nodesPruned[0] << " -- " << (double) nodesPruned[0] / (nodesInspected[0]) << " -- " << log2_temp(res) << " -- " << getpid() << " -- " << nls << " -- " << bfslist1->getSize() << " Nodes p/ sec.: " << nodesInspected[0] / NodesPersecond << ":" << (nodesInspected[0] - NIActual) / a << endl;
                 NIActual = nodesInspected[0];
                 c.end();
                 c.start();
@@ -1779,7 +1779,7 @@ inline void CompleteKarmarkarKarp_MPZ::KK(CKKnode_bfs_mpz * node) {
     mpz_class m((char*) min, 10);
     if (v.id < m) {
         mpz_class res(v.id+1);
-        cout << log2(res) << " -- " << getpid() << "Discrepância: " << (int) node->right << endl;
+        cout << log2_temp(res) << " -- " << getpid() << "Discrepância: " << (int) node->right << endl;
         strcpy((char*) min, v.id.get_str(10).c_str());
         //p->cloneSolutionToBest(v->List[1]);
     }
@@ -1795,7 +1795,7 @@ inline void CompleteKarmarkarKarp_MPZ::KK(node_lst_vector * v) {
     }
     mpz_class m((char*) min, 10);
     if (v->id < m) {
-        cout << log2(v->id + 1) << " -- " << getpid() << endl;
+        cout << log2_temp(v->id + 1) << " -- " << getpid() << endl;
         strcpy((char*) min, v->id.get_str(10).c_str());
         //p->cloneSolutionToBest(v->List[1]);
     }
@@ -1820,7 +1820,7 @@ inline void CompleteKarmarkarKarp_MPZ::KK(CKKnode_bfs * node, int d, int n) {
         mpz_class temp = node->nodeList->peekFirst()->List->peekFirst()->id - node->nodeList->peekFirst()->List->peekLast()->id;
         mpz_class m((char*) min, 10);
         if (temp < m) {
-            cout << log2(temp + 1) << " -- " << getpid() << endl;
+            cout << log2_temp(temp + 1) << " -- " << getpid() << endl;
             strcpy((char*) min, temp.get_str(10).c_str());
             // node->nodeList->List->peekFirst()->element->List->peekFirst()->element->print();
             //node->nodeList->List->peekFirst()->element->List->peekLast()->element->print();
@@ -1954,7 +1954,7 @@ inline void CompleteKarmarkarKarp_MPZ::depthFirst(CKKnode_dfs *Parent) {
         mpz_class temp = Parent->nodeList.getId();
         mpz_class m((char*) min, 10);
         if (temp < m) {
-            cout << log2(temp + 1) << " -- " << getpid() << endl;
+            cout << log2_temp(temp + 1) << " -- " << getpid() << endl;
             strcpy((char*) min, temp.get_str(10).c_str());
             //p->cloneSolutionToBest(Parent->nodeList->List->peekFirst());
         }
@@ -2003,7 +2003,7 @@ inline void CompleteKarmarkarKarp_MPZ::depthFirst(CKKnode_mpz * Parent) {
         mpz_class temp = Parent->nodeList->List->peekFirst()->List->peekFirst()->id - Parent->nodeList->List->peekFirst()->List->peekLast()->id;
         mpz_class m((char*) min, 10);
         if (temp < m) {
-            cout << log2(temp + 1) << " -- " << getpid() << endl;
+            cout << log2_temp(temp + 1) << " -- " << getpid() << endl;
             strcpy((char*) min, temp.get_str(10).c_str());
             p->cloneSolutionToBest(Parent->nodeList->List->peekFirst());
         }

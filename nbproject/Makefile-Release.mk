@@ -74,13 +74,13 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-lm -pthread -lrt -lgmp -lgmpxx `pkg-config --libs gsl` ../RandomFwk/dist/Release/GNU-Linux-x86/libRandomFwk.a  
+LDLIBSOPTIONS=-lm -pthread -lrt -lgmp -lgmpxx `pkg-config --libs gsl` ../RandomFwk/dist/Release/GNU-Linux-x86/librandomfwk.a  
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
 	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hcimp
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hcimp: ../RandomFwk/dist/Release/GNU-Linux-x86/libRandomFwk.a
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hcimp: ../RandomFwk/dist/Release/GNU-Linux-x86/librandomfwk.a
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hcimp: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
@@ -203,6 +203,7 @@ ${OBJECTDIR}/source/main.o: source/main.cpp
 
 # Subprojects
 .build-subprojects:
+	cd ../RandomFwk && ${MAKE}  -f Makefile CONF=Release
 
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
@@ -211,6 +212,7 @@ ${OBJECTDIR}/source/main.o: source/main.cpp
 
 # Subprojects
 .clean-subprojects:
+	cd ../RandomFwk && ${MAKE}  -f Makefile CONF=Release clean
 
 # Enable dependency checking
 .dep.inc: .depcheck-impl

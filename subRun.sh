@@ -7,13 +7,12 @@
 #
 #/bin/bash
 
-
-for ((  i = 100 ;  i <= 1000;  i+=100  ))
+for ((  i = 10 ;  i <= 90;  i+=10 ))
 do
-    for (( j = $2 ; j <= $3 ; j++ ))
-    do
-        echo "Executando $1 tipo $i instancia $j"  
-        dist/Release/GNU-Linux-x86/hcimp $1 $i $j
-    done
+for (( j = $2 ; j <= $3 ; j++ ))
+do
+    echo "Executando $1 tipo $i instancia $j"  
+    dist/Release/GNU-Linux-x86/hcimp $1 $i $j
+done
 done
 

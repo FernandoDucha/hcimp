@@ -17,7 +17,7 @@ PPN_Heap::PPN_Heap(char * filename) {
     nodes_pruned = 0;
     perfect = false;
     perfectVal = -1;
-    finished=false;
+    finished = false;
 }
 
 PPN_Heap::PPN_Heap() {
@@ -29,7 +29,7 @@ PPN_Heap::PPN_Heap() {
     perfectVal = -1;
     raiz = NULL;
     raiz_bfs = NULL;
-    finished=false;
+    finished = false;
 }
 
 void PPN_Heap::openNewProblem(char* filename) {
@@ -74,6 +74,8 @@ void PPN_Heap::lerArquivo(char * problemFile) {
     for (int i = 0; i < nElementos; i++) {
         fgets(buff, 1000, file);
         mpz_class temp(buff);
+        numLookUpTable[temp]=i;
+        invNumLookUpTable[i]=temp;
         min += temp;
         raiz->pushElem(temp);
         raiz_bfs->pushElem(new mpz_heap_elem(temp));
@@ -96,12 +98,12 @@ void PPN_Heap::runDFS() {
 void PPN_Heap::runDFS(mpz_node * node) {
     if (chrono.elapsed() >= tempo || perfect) {
         if (node->size() == nElementos - 1)
-            res << log2(min + 1) << ";" << chrono.elapsed() << ";" << nodes_inspected << ";" << nodes_pruned << endl;
+            res << log2_temp(min + 1) << ";" << chrono.elapsed() << ";" << nodes_inspected << ";" << nodes_pruned << endl;
         return;
     } else if (node->size() == 1) {
         min = node->getSum();
         perfect = (min == perfectVal) ? true : false;
-        res << log2(node->getSum() + 1) << ";" << chrono.elapsed() << ";" << nodes_inspected << ";" << nodes_pruned << endl;
+        res << log2_temp(node->getSum() + 1) << ";" << chrono.elapsed() << ";" << nodes_inspected << ";" << nodes_pruned << endl;
     } else {
         mpz_node temp, temp1;
         temp = *node;
@@ -156,7 +158,7 @@ void PPN_Heap::runLDS(mpz_node * node) {
     for (int i = 0; i <= node->size(); i++) {
         if (!finished) {
             runLDS(node, node->size(), i);
-        }else{
+        } else {
             break;
         }
     }
@@ -191,7 +193,7 @@ void PPN_Heap::_runLDS(mpz_node* node) {
             if (aux.size() == 1) {
                 min = aux.getSum();
                 perfect = (min == perfectVal) ? true : false;
-                res << log2(min + 1) << ";" << chrono.elapsed() << ";" << nodes_inspected << ";" << nodes_pruned << endl;
+                res << log2_temp(min + 1) << ";" << chrono.elapsed() << ";" << nodes_inspected << ";" << nodes_pruned << endl;
             }
         } while (r);
         cout << i << "--" << chrono.elapsed() << endl;
@@ -201,15 +203,15 @@ void PPN_Heap::_runLDS(mpz_node* node) {
 }
 
 void PPN_Heap::runLDS(mpz_node * node, u_int32_t depth, u_int32_t disc) {
-    if(finished) return;
+    if (finished) return;
     if ((chrono.elapsed() >= tempo || perfect)) {
-        res << log2(min + 1) << ";" << chrono.elapsed() << ";" << nodes_inspected << ";" << nodes_pruned <<";#"<<endl;
-        finished=true;
+        res << log2_temp(min + 1) << ";" << chrono.elapsed() << ";" << nodes_inspected << ";" << nodes_pruned << ";#" << endl;
+        finished = true;
         return;
     } else if (node->size() == 1) {
         min = node->getSum();
         perfect = (min == perfectVal) ? true : false;
-        res << log2(node->getSum() + 1) << ";" << chrono.elapsed() << ";" << nodes_inspected << ";" << nodes_pruned << endl;
+        res << log2_temp(node->getSum() + 1) << ";" << chrono.elapsed() << ";" << nodes_inspected << ";" << nodes_pruned << endl;
     } else {
         bool chamada1 = false, chamada2 = false;
         nodes_inspected++;
@@ -249,7 +251,7 @@ void PPN_Heap::KK(mpz_node * node) {
         if (node->getSum() < min) {
             min = node->getSum();
             perfect = (min == perfectVal) ? true : false;
-            res << log2(node->getSum() + 1) << ";" << chrono.elapsed() << ";" << nodes_inspected << ";" << nodes_pruned << endl;
+            res << log2_temp(node->getSum() + 1) << ";" << chrono.elapsed() << ";" << nodes_inspected << ";" << nodes_pruned << endl;
         }
     } else {
         mpz_class A, B, DIFF;
@@ -269,7 +271,7 @@ void PPN_Heap::KK(HeapStrctPtrMin & node) {
         if (result < min) {
             min = result;
             perfect = (min == perfectVal) ? true : false;
-            res << log2(result + 1) << ";" << chrono.elapsed() << ";" << nodes_inspected << ";" << nodes_pruned << endl;
+            res << log2_temp(result + 1) << ";" << chrono.elapsed() << ";" << nodes_inspected << ";" << nodes_pruned << endl;
         }
         mpz_heap_elem_ptr Last = node.getMax();
         delete Last;
@@ -288,6 +290,59 @@ void PPN_Heap::KK(HeapStrctPtrMin & node) {
         if (!B->isOrig()) {
             delete B;
         }
+    }
+}
+
+void PPN_Heap::KKConstruct() {
+    map<mpz_class, mpz_class> a1, a2;
+    HeapStrctPtrMin temp;
+    temp = raiz_bfs->data();
+    KK(temp, a1, a2);
+    map<mpz_class, mpz_class>::iterator begin, end;
+    begin = a1.begin();
+    end = a1.end();
+    uint16_t * solv = new uint16_t[nElementos];
+    for(int i=0;i<nElementos;i++){
+        solv[i]=0;
+    }
+    for (begin; begin != end; begin++) {
+        solv[numLookUpTable[(*begin).first]]=1;
+    }
+    SolutionObject a(invNumLookUpTable,solv,raiz->getSum());
+}
+
+void PPN_Heap::KK(HeapStrctPtrMin & node, map<mpz_class, mpz_class> & A1, map<mpz_class, mpz_class> & A2) {
+    if (node.size() == 1) {
+        mpz_class result = node.pick_max()->getId();
+        if (result < min) {
+            min = result;
+            perfect = (min == perfectVal) ? true : false;
+            cout << log2_temp(result + 1) << endl;
+        }
+        node.getMax();
+    } else {
+        mpz_heap_elem_ptr A, B, DIFF;
+        A = node.getMax();
+        B = node.getMax();
+        nodes_inspected++;
+        DIFF = &(*A - *B);
+        DIFF->Original(false);
+        node.Insert(DIFF);
+        KK(node, A1, A2);
+        map<mpz_class, mpz_class>::iterator it;
+        it = A1.find(DIFF->getId());
+        if (it != A1.end()) {
+            A1.erase(it);
+            A1[A->getId()] = A->getId();
+            A2[B->getId()] = B->getId();
+        } else {
+            it = A2.find(DIFF->getId());
+            if (it != A2.end())
+                A2.erase(it);
+            A1[B->getId()] = B->getId();
+            A2[A->getId()] = A->getId();
+        }
+        delete DIFF;
     }
 }
 
@@ -325,7 +380,7 @@ void PPN_Heap::runBFS(mpz_node_bfs * node) {
     hmin = node->data();
     KK(hmin);
     hash.nextCyle();
-    char end='#';
+    char end = '#';
     while (chrono.elapsed() <= tempo && !perfect) {
         int nelem = hash.getNElem();
         int j = 0;
@@ -351,12 +406,12 @@ void PPN_Heap::runBFS(mpz_node_bfs * node) {
             j++;
         }
         if (hash.peekFirst()->size() == 1) {
-            end='$';
+            end = '$';
             break;
         }
         hash.nextCyle();
     }
-    res << log2(min + 1) << ";" << chrono.elapsed() << ";" << nodes_inspected << ";" << nodes_pruned << ";"<<end<< endl;
+    res << log2_temp(min + 1) << ";" << chrono.elapsed() << ";" << nodes_inspected << ";" << nodes_pruned << ";" << end << endl;
     chrono.setStoped(true);
     exit(0);
 }

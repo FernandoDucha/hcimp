@@ -23,17 +23,17 @@ hold(axes1,'all');
 
 % Create multiple lines using matrix input to bar
 bar1 = bar(ymatrix1,'BarWidth',0.4,'BarLayout','stacked','Parent',axes1);
-set(bar1(1),'DisplayName','d_1');
-set(bar1(2),'DisplayName','d_2');
-set(bar1(3),'DisplayName','d_3');
-set(bar1(4),'DisplayName','d_4');
-set(bar1(5),'DisplayName','d_5');
-set(bar1(6),'DisplayName','d_6');
-set(bar1(7),'DisplayName','d_7');
-set(bar1(8),'DisplayName','d_8');
-set(bar1(9),'DisplayName','d_9');
-set(bar1(10),'DisplayName','d_{10}');
-set(bar1(11),'DisplayName','d_{11}');
+set(bar1(1),'DisplayName','d_0');
+set(bar1(2),'DisplayName','d_1');
+set(bar1(3),'DisplayName','d_2');
+set(bar1(4),'DisplayName','d_3');
+set(bar1(5),'DisplayName','d_4');
+set(bar1(6),'DisplayName','d_5');
+set(bar1(7),'DisplayName','d_6');
+set(bar1(8),'DisplayName','d_7');
+set(bar1(9),'DisplayName','d_8');
+set(bar1(10),'DisplayName','d_9');
+set(bar1(11),'DisplayName','d_{10}');
 
 % Create xlabel
 xlabel('Depth - \textbf{k}','Interpreter','latex','FontWeight','bold',...
