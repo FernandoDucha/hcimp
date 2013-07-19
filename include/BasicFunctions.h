@@ -13,6 +13,9 @@
 #include "RandomNumberGenerator.h"
 #include "FileRawBuffer.h"
 #include <fstream>
+#define ONE 0xFF
+#define ZERO 0x00
+
 void readResults(const char * resultFile);
 bool checkResultExist(const char * file);
 double log2(mpz_class  l);

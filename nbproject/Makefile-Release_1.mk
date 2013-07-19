@@ -57,6 +57,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/source/NumberPartitionProblem_MPZ.o \
 	${OBJECTDIR}/source/PPN_Heap.o \
 	${OBJECTDIR}/source/Semaphore.o \
+	${OBJECTDIR}/source/SolutionObject.o \
 	${OBJECTDIR}/source/main.o
 
 
@@ -195,6 +196,11 @@ ${OBJECTDIR}/source/Semaphore.o: source/Semaphore.cpp
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} $@.d
 	$(COMPILE.cc) -O3 -Iinclude -I../RandomFwk/include `pkg-config --cflags gsl` -std=c++11 -m64 -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/source/Semaphore.o source/Semaphore.cpp
+
+${OBJECTDIR}/source/SolutionObject.o: source/SolutionObject.cpp 
+	${MKDIR} -p ${OBJECTDIR}/source
+	${RM} $@.d
+	$(COMPILE.cc) -O3 -Iinclude -I../RandomFwk/include `pkg-config --cflags gsl` -std=c++11 -m64 -fPIC -fexceptions -DNDEBUG -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/source/SolutionObject.o source/SolutionObject.cpp
 
 ${OBJECTDIR}/source/main.o: source/main.cpp 
 	${MKDIR} -p ${OBJECTDIR}/source

@@ -74,8 +74,8 @@ void PPN_Heap::lerArquivo(char * problemFile) {
     for (int i = 0; i < nElementos; i++) {
         fgets(buff, 1000, file);
         mpz_class temp(buff);
-        numLookUpTable[temp]=i;
-        invNumLookUpTable[i]=temp;
+        numLookUpTable[temp] = i;
+        invNumLookUpTable[i] = temp;
         min += temp;
         raiz->pushElem(temp);
         raiz_bfs->pushElem(new mpz_heap_elem(temp));
@@ -293,7 +293,7 @@ void PPN_Heap::KK(HeapStrctPtrMin & node) {
     }
 }
 
-void PPN_Heap::KKConstruct() {
+uint16_t * PPN_Heap::KKConstruct() {
     map<mpz_class, mpz_class> a1, a2;
     HeapStrctPtrMin temp;
     temp = raiz_bfs->data();
@@ -301,15 +301,18 @@ void PPN_Heap::KKConstruct() {
     map<mpz_class, mpz_class>::iterator begin, end;
     begin = a1.begin();
     end = a1.end();
-    uint16_t * solv = new uint16_t[nElementos];
-    for(int i=0;i<nElementos;i++){
-        solv[i]=0;
+    uint8_t * solv = new uint8_t[nElementos];
+    for (int i = 0; i < nElementos; i++) {
+        solv[i] = ZERO;
     }
     for (begin; begin != end; begin++) {
-        solv[numLookUpTable[(*begin).first]]=1;
+        uint16_t a = numLookUpTable[(*begin).first];
+        solv[a] = ONE;
     }
-    SolutionObject a(invNumLookUpTable,solv,raiz->getSum());
+    SolutionObject a(invNumLookUpTable, solv, raiz->getSum());
+    a.encode();
 }
+
 
 void PPN_Heap::KK(HeapStrctPtrMin & node, map<mpz_class, mpz_class> & A1, map<mpz_class, mpz_class> & A2) {
     if (node.size() == 1) {

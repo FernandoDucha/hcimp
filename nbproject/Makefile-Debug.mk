@@ -57,6 +57,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/source/NumberPartitionProblem_MPZ.o \
 	${OBJECTDIR}/source/PPN_Heap.o \
 	${OBJECTDIR}/source/Semaphore.o \
+	${OBJECTDIR}/source/SolutionObject.o \
 	${OBJECTDIR}/source/main.o
 
 
@@ -199,6 +200,11 @@ ${OBJECTDIR}/source/Semaphore.o: nbproject/Makefile-${CND_CONF}.mk source/Semaph
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -I../RandomFwk/include -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/source/Semaphore.o source/Semaphore.cpp
+
+${OBJECTDIR}/source/SolutionObject.o: nbproject/Makefile-${CND_CONF}.mk source/SolutionObject.cpp 
+	${MKDIR} -p ${OBJECTDIR}/source
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude -I../RandomFwk/include -std=c++11 -m64 -fexceptions -DIL_STD -MMD -MP -MF $@.d -o ${OBJECTDIR}/source/SolutionObject.o source/SolutionObject.cpp
 
 ${OBJECTDIR}/source/main.o: nbproject/Makefile-${CND_CONF}.mk source/main.cpp 
 	${MKDIR} -p ${OBJECTDIR}/source

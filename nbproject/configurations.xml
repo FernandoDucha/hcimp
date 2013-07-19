@@ -29,6 +29,7 @@
       <itemPath>include/NumberPartitionProblem_MPZ.h</itemPath>
       <itemPath>include/PPN_Heap.h</itemPath>
       <itemPath>include/Semaphore.h</itemPath>
+      <itemPath>include/SolutionObject.h</itemPath>
       <itemPath>include/enums.h</itemPath>
       <itemPath>include/node_list_struct.h</itemPath>
     </logicalFolder>
@@ -55,6 +56,7 @@
       <itemPath>source/NumberPartitionProblem_MPZ.cpp</itemPath>
       <itemPath>source/PPN_Heap.cpp</itemPath>
       <itemPath>source/Semaphore.cpp</itemPath>
+      <itemPath>source/SolutionObject.cpp</itemPath>
       <itemPath>source/main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -170,6 +172,8 @@
       </item>
       <item path="include/Semaphore.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="include/SolutionObject.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="include/enums.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/node_list_struct.h" ex="false" tool="3" flavor2="0">
@@ -225,6 +229,8 @@
       <item path="source/PPN_Heap.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="source/Semaphore.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/SolutionObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="source/main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -344,6 +350,8 @@
       </item>
       <item path="include/Semaphore.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="include/SolutionObject.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="include/enums.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/node_list_struct.h" ex="false" tool="3" flavor2="0">
@@ -399,6 +407,8 @@
       <item path="source/PPN_Heap.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="source/Semaphore.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/SolutionObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="source/main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -475,6 +485,8 @@
       </item>
       <item path="include/Semaphore.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="include/SolutionObject.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="include/enums.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/node_list_struct.h" ex="false" tool="3" flavor2="0">
@@ -530,6 +542,8 @@
       <item path="source/PPN_Heap.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="source/Semaphore.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/SolutionObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="source/main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -649,6 +663,8 @@
       </item>
       <item path="include/Semaphore.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="include/SolutionObject.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="include/enums.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/node_list_struct.h" ex="false" tool="3" flavor2="0">
@@ -704,6 +720,8 @@
       <item path="source/PPN_Heap.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="source/Semaphore.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/SolutionObject.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="source/main.cpp" ex="false" tool="1" flavor2="0">
       </item>

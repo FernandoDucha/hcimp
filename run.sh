@@ -1,8 +1,8 @@
 #/bin/bash
-bash subRun.sh "lds" 1 50 &
-bash subRun.sh "lds" 51 100&
-bash subRun.sh "dfs" 1 50 &
-bash subRun.sh "dfs" 51 100 &
-bash subRun.sh "bfs" 1 50 &
-bash subRun.sh "bfs" 51 100 &
+bash subRun.sh "lds" 45 62 &
+bash subRun.sh "lds" 63 81&
+bash subRun.sh "lds" 82 100&
+bash subRun.sh "dfs" 45 62&
+bash subRun.sh "dfs" 63 81&
+bash subRun.sh "dfs" 82 100&
 
