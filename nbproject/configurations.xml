@@ -550,66 +550,48 @@
       <item path="subRun.sh" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
-    <conf name="Release_1" type="1">
+    <conf name="Realease_1" type="1">
       <toolsSet>
         <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
-        <compilerSet>GNU|GNU</compilerSet>
+        <compilerSet>default</compilerSet>
         <dependencyChecking>true</dependencyChecking>
-        <rebuildPropChanged>false</rebuildPropChanged>
+        <rebuildPropChanged>true</rebuildPropChanged>
       </toolsSet>
       <compileType>
-        <cTool>
-          <developmentMode>5</developmentMode>
-        </cTool>
         <ccTool>
           <developmentMode>6</developmentMode>
+          <architecture>2</architecture>
           <standard>8</standard>
           <incDir>
             <pElem>include</pElem>
             <pElem>../RandomFwk/include</pElem>
           </incDir>
-          <commandLine>-m64 -fPIC -fexceptions -DNDEBUG -DIL_STD</commandLine>
+          <commandLine>-m64 -fexceptions -DIL_STD</commandLine>
         </ccTool>
-        <fortranCompilerTool>
-          <developmentMode>5</developmentMode>
-        </fortranCompilerTool>
-        <asmTool>
-          <developmentMode>5</developmentMode>
-        </asmTool>
         <linkerTool>
           <linkerLibItems>
             <linkerOptionItem>-lm</linkerOptionItem>
             <linkerOptionItem>-pthread</linkerOptionItem>
             <linkerOptionItem>-lrt</linkerOptionItem>
+            <linkerLibLibItem>mpfr</linkerLibLibItem>
             <linkerLibLibItem>gmp</linkerLibLibItem>
             <linkerLibLibItem>gmpxx</linkerLibLibItem>
-            <linkerOptionItem>`pkg-config --libs gsl`</linkerOptionItem>
+            <linkerLibFileItem>/usr/lib/libgsl.a</linkerLibFileItem>
+            <linkerLibFileItem>/usr/lib/libgslcblas.a</linkerLibFileItem>
             <linkerLibProjectItem>
               <makeArtifact PL="../RandomFwk"
-                            CT="6"
+                            CT="3"
                             CN="Release"
                             AC="true"
-                            BL="false"
+                            BL="true"
                             WD="../RandomFwk"
                             BC="${MAKE}  -f Makefile CONF=Release"
                             CC="${MAKE}  -f Makefile CONF=Release clean"
-                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libRandomFwk.a">
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/librandomfwk.a">
               </makeArtifact>
             </linkerLibProjectItem>
           </linkerLibItems>
         </linkerTool>
-        <requiredProjects>
-          <makeArtifact PL="/home/fernando/Dropbox/HC/RandomFwk"
-                        CT="6"
-                        CN="Release"
-                        AC="true"
-                        BL="false"
-                        WD="/home/fernando/Dropbox/HC/RandomFwk"
-                        BC="${MAKE}  -f Makefile CONF=Release"
-                        CC="${MAKE}  -f Makefile CONF=Release clean"
-                        OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libRandomFwk.a">
-          </makeArtifact>
-        </requiredProjects>
       </compileType>
       <item path="include/Avl.h" ex="false" tool="3" flavor2="0">
       </item>

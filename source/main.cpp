@@ -58,7 +58,7 @@ int main(int argc, char** argv) {
     //    exit(0);
     char temp[50] = "inst-0100-001";
     PPN_Heap ppn(temp);
-    ppn.KKConstruct();
+    ppn.ILS_KK();
     if (argc == 4) {
         if (strcmp(argv[1], "lds") == 0) {
             int type = atoi(argv[2]);

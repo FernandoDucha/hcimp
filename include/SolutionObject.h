@@ -13,30 +13,33 @@
 #include "BasicFunctions.h"
 
 using namespace std;
-
 class SolutionObject {
 private:
     map<uint16_t, mpz_class> NumMapTable;
     uint8_t * solVector;
     mpz_class NumSum, PartSum;
 
-    typedef pair<uint16_t, uint16_t> swap;
     typedef map<uint16_t, mpz_class>::iterator NMapIt;
 public:
+    typedef pair<uint16_t,uint16_t> swap;
+    SolutionObject(){
+        solVector=NULL;
+    }
     SolutionObject(map<uint16_t, mpz_class> invtbl, uint8_t*solVec, mpz_class sum);
-    double getResult();
+    mpz_class getResult();
     virtual ~SolutionObject();
-    double testMoveInvert(uint16_t pos);
-    double testMoveSwap(swap p);
-    double makeMoveInvert(uint16_t pos);
-    double makeMoveSwap(swap p);
+    mpz_class testMoveInvert(uint16_t pos);
+    mpz_class testMoveSwap(swap p);
+    mpz_class makeMoveInvert(uint16_t pos);
+    mpz_class makeMoveSwap(swap p);
     mpz_class encode();
+    SolutionObject & operator=(SolutionObject & rhs);
 };
 
-inline double SolutionObject::getResult() {
+inline mpz_class SolutionObject::getResult() {
     mpz_class ret = NumSum - 2 * PartSum;
     ret = (ret < 0) ? -ret : ret;
-    return log2(ret);
+    return ret;
 }
 #endif	/* SOLUTIONOBJECT_H */
 

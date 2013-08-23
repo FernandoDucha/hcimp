@@ -14,8 +14,28 @@
 #include <iostream>
 #include <fstream>
 #include <math.h>
-
+#include <gmpxx.h>
 using namespace std;
+
+double log2(mpz_class l) {
+    mpf_class r = l;
+    mpf_class t, t1 = l;
+    int y = 1;
+    mpf_class resp;
+    do {
+        mpf_sqrt(t.get_mpf_t(), t1.get_mpf_t());
+        y *= 2;
+        t1 = t;
+    } while (t > 2);
+    resp = y * log2(t.get_d());
+    return resp.get_d();
+}
+//struct result {
+//    double result;
+//    double time;
+//    int nc;
+//    int np;
+//};
 
 struct result {
     double result;
@@ -56,6 +76,20 @@ struct results {
                 if (temp < resultSet[i].result) {
                     return resultSet[i].time;
                 }
+            }
+        }
+        return resp;
+    }
+
+    double getRunningTime() {
+        double temp = getMaxResult();
+        double resp;
+        for (int i = 1; i < resultSet.size(); i++) {
+            if (resultSet[i].time <= 3600) {
+                temp = resultSet[i].result;
+                resp = resultSet[i].time;
+            } else {
+                return 3600;
             }
         }
         return resp;
@@ -162,130 +196,146 @@ void accSum(double * lhs, double ** rhs) {
     }
 }
 
-int main(int argc, char** argv) {
+void AnaliseCplex() {
+    string path = "../../HCImpCplex/results/";
+    string type[3] = {".lds", ".bfs", ".dfs"};
+    string typeform[3] = {"\\textit{ILDS}", "\\textit{BFS}", "\\textit{DFS}"};
+
+    vector<double> etav, tauv;
+    for (int i = 10; i < 100; i += 10) {
+        //        cout << type[k] << endl;
+        double etam = 0;
+        double taum = 0;
+        for (int k = 1; k <= 100; k++) {
+            char buf[1000];
+            sprintf(buf, "inst-%05d-%03d", i, k);
+            string middle = buf;
+            string fullname = path + middle;
+            fullname += ".cplex";
+            ifstream file(fullname.c_str());
+            int tmp = 0;
+            if (file.is_open()) {
+                string buf1;
+                result t;
+                do {
+                    file.getline(buf, 1000);
+                    buf1 = buf;
+                } while ((tmp = buf1.find_first_of("@#$%")) == buf1.npos);
+
+                buf1 = buf1.substr(5, buf1.size() - 5);
+                sscanf(buf1.c_str(), "%le;%lg", &t.result, &t.time);
+                file.close();
+                if (t.result < 0) {
+                    t.result = -t.result;
+                }
+                etam += log2(t.result + 1);
+                taum += t.time;
+            }
+        }
+        cout << i << "&" << etam / 100 << "&" << taum / 100 << "\\\\\\hline" << endl;
+    }
+}
+
+void AnaliseALgorithms() {
     string path = "../results/";
     string type[3] = {".lds", ".bfs", ".dfs"};
     string typeform[3] = {"\\textit{ILDS}", "\\textit{BFS}", "\\textit{DFS}"};
 
     vector<double> etav, tauv;
-
-    //    double * acumulado = new double[5];
-    //    for (int i = 0; i < 5; i++) {
-    //        acumulado[i] = 0;
-    //    }
-    //    double ** resinter = new double*[100];
-    //    for (int i = 0; i < 100; i++) {
-    //        resinter[i] = new double[5];
-    //    }
-    //   
-    for (int i = 100; i <= 1000; i += 100) {
-        //        cout << type[k] << endl;
-        cout << i;
-        for (int k = 0; k < 3; k++) {
-            //            AllInstances insts;
-            double eta = 0;
-            double etal = 0;
-            double tau = 0;
-            double delta = 0;
-            //            accInit(resinter);
-            //            for (int i = 0; i < 5; i++) {
-            //                acumulado[i] = 0;
-            //            }
-            //            for (int j = 1; j <= 100; j++) {
-            char buf[100];
-            sprintf(buf, "hard%04d.dat", i);
-            string middle = buf;
-            string fullname = path + middle;
-            fullname += type[k].c_str();
-            ifstream file(fullname.c_str());
-            results All;
-            int tmp = 0;
-            if (file.is_open()) {
-                while (true) {
-                    result t;
-                    char pontvirgula;
-                    file.getline(buf, 300);
-                    string buf1 = buf;
-                    if (buf1.find_first_of(";") == buf1.npos)break;
-                    if (buf1[buf1.length() - 1] != '#' && buf1[buf1.length() - 1] != '$') {
-                        sscanf(buf1.c_str(), "%lg;%lg;%d;%d", &t.result, &t.time, &t.nc, &t.np);
-                    } else if (buf1[buf1.length() - 1] == '#') {
-                        sscanf(buf1.c_str(), "%lg;%lg;%d;%d#", &t.result, &t.time, &t.nc, &t.np);
-                    } else if (buf1[buf1.length() - 1] == '$') {
-                        sscanf(buf1.c_str(), "%lg;%lg;%d;%d$", &t.result, &t.time, &t.nc, &t.np);
-                    }
-
-                    //                        if (t.time <= 1) {
-                    //                            //                            tmp=(t.time<=1)?tmp:tmp++;
-                    //                            resinter[j - 1][tmp] = t.result;
-                    //                        } else if (t.time <= 10) {
-                    //                            tmp = tempIncrement(tmp, t.time);
-                    //                            resinter[j - 1][tmp] = t.result;
-                    //                        } else if (t.time <= 100) {
-                    //                            tmp = tempIncrement(tmp, t.time);
-                    //                            resinter[j - 1][tmp] = t.result;
-                    //                        } else if (t.time <= 1000) {
-                    //                            tmp = tempIncrement(tmp, t.time);
-                    //                            resinter[j - 1][tmp] = t.result;
-                    //                        } else if (t.time <= 3600) {
-                    //                            tmp = tempIncrement(tmp, t.time);
-                    //                            resinter[j - 1][tmp] = t.result;
-                    //                        }
-                    //file>>t.result>>pontvirgula>>t.time>>pontvirgula>>t.nc>>pontvirgula>>t.np;
-                    if (t.time <= 3600) {
+    for (int i = 10; i < 100; i += 10) {
+        double etam = 0;
+        double taum = 0;
+        for (int j = 0; j < 3; j++) {
+            etam = 0;
+            taum = 0;
+            for (int k = 1; k <= 100; k++) {
+                results All;
+                char buf[1000];
+                sprintf(buf, "inst-%05d-%03d", i, k);
+                string middle = buf;
+                string fullname = path + middle;
+                fullname += type[j];
+                ifstream file(fullname.c_str());
+                if (file.is_open()) {
+                    while (true) {
+                        result t;
+                        char pontvirgula;
+                        file.getline(buf, 300);
+                        string buf1 = buf;
+                        if (buf1.find_first_of(";") == buf1.npos)break;
+                        if (buf1[buf1.length() - 1] != '#' && buf1[buf1.length() - 1] != '$') {
+                            sscanf(buf1.c_str(), "%lg;%lg;%d;%d", &t.result, &t.time, &t.nc, &t.np);
+                        } else if (buf1[buf1.length() - 1] == '#') {
+                            sscanf(buf1.c_str(), "%lg;%lg;%d;%d#", &t.result, &t.time, &t.nc, &t.np);
+                        } else if (buf1[buf1.length() - 1] == '$') {
+                            sscanf(buf1.c_str(), "%lg;%lg;%d;%d$", &t.result, &t.time, &t.nc, &t.np);
+                        }
                         All.resultSet.push_back(t);
-                    } else {
-                        break;
                     }
                 }
+
+                etam += All.getMinResult();
+                taum += All.getRunningTime();
             }
-            //                accFillGaps(resinter);
-            //                if (i == 800 && k == 1) {
-            //                    for (int p = 0; p<4;p++){
-            //                        if(resinter[j-1][p]<resinter[j-1][p+1]){
-            //                            cout<<endl;
-            //                        }
-            //                    }
-            //                }
-            eta = All.getMinResult();
-            etav.push_back(All.getMinResult());
-            tau = All.getMinResultTime();
-            cout << "&" << eta<<"&"<<3600;
-
-            tauv.push_back(All.getMinResultTime());
-            etal = All.getMaxResult();
-            //                eta += All.getMinResult();
-            //                etav.push_back(All.getMinResult());
-            //                tau += All.getMinResultTime();
-            //                tauv.push_back(All.getMinResultTime());
-            //                etal += All.getMaxResult();
-            //            insts.resultSet.push_back(All);
-            //            }
-            //            accSum(acumulado, resinter);
-            double etam = eta / 100;
-            double taum = tau / 100;
-            delta = (etal / 100 - etam) / (tau / 100);
-
-            eta = 0;
-            tau = 0;
-            for (int l = 0; l < 1; l++) {
-                double tempeta = etav.at(l);
-                double temptau = tauv.at(l);
-                eta += pow(tempeta - etam, 2);
-                tau += pow(temptau - taum, 2);
-            }
-            eta = sqrt(eta / 99);
-            tau = sqrt(tau / 99);
-            //            cout << i << "&" << etam << "&" << eta << "&" << taum << "&" << tau << "&" << delta << "\\\\\\hline" << endl;
-            //            cout << "&" << typeform[k] << "&" << etal / 100 << "&" << acumulado[0] / 100 << "&" << acumulado[1] / 100 << "&" << acumulado[2] / 100 << "&" << acumulado[3] / 100 << "&" << acumulado[4] / 100 << "\\\\\\hline" << endl;
-            etav.clear();
-            tauv.clear();
-            //        }
-
-            //        cout << endl;
+            cout << "&"<< etam / 100 << "&" << taum / 100 ;
         }
-        cout << "\\\\\\hline" << endl;
+        cout << endl;
     }
-    return 0;
+}
+
+//int main(int argc, char** argv) {
+//    AnaliseALgorithms();
+//    return 0;
+//}
+int partition( int a[], int l, int r) {
+   int pivot, i, j, t;
+   pivot = a[l];
+   i = l; j = r+1;
+		
+   while( 1)
+   {
+   	do ++i; while( a[i] <= pivot && i <= r );
+   	do --j; while( a[j] > pivot );
+   	if( i >= j ) break;
+   	t = a[i]; a[i] = a[j]; a[j] = t;
+   }
+   t = a[l]; a[l] = a[j]; a[j] = t;
+   return j;
+}
+void quickSort( int a[], int l, int r)
+{
+   int j;
+
+   if( l < r ) 
+   {
+   	// divide and conquer
+        j = partition( a, l, r);
+       quickSort( a, l, j-1);
+       quickSort( a, j+1, r);
+   }
+	
+}
+int main() 
+{
+	int a[] = { 7, 12, 1, -2, 0, 15, 4, 11, 9};
+
+	int i;
+	printf("\n\nUnsorted array is:  ");
+	for(i = 0; i < 9; ++i)
+		printf(" %d ", a[i]);
+
+	quickSort( a, 0, 8);
+
+	printf("\n\nSorted array is:  ");
+	for(i = 0; i < 9; ++i)
+		printf(" %d ", a[i]);
+        return 0;
 
 }
+
+
+
+
+
+
+

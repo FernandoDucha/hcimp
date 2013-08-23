@@ -8,6 +8,7 @@
 #include "PPN_Heap.h"
 #include "BasicTypes.h"
 #include "Hash.h"
+#include "BFS.h"
 
 PPN_Heap::PPN_Heap(char * filename) {
     problem_file = filename;
@@ -18,6 +19,11 @@ PPN_Heap::PPN_Heap(char * filename) {
     perfect = false;
     perfectVal = -1;
     finished = false;
+    pertubationHistory = new bool*[nElementos];
+    for (int i = 0; i < nElementos; i++) {
+        pertubationHistory[i] = new bool[nElementos];
+    }
+    Cronometro::startIntern();
 }
 
 PPN_Heap::PPN_Heap() {
@@ -30,6 +36,7 @@ PPN_Heap::PPN_Heap() {
     raiz = NULL;
     raiz_bfs = NULL;
     finished = false;
+    Cronometro::startIntern();
 }
 
 void PPN_Heap::openNewProblem(char* filename) {
@@ -71,16 +78,22 @@ void PPN_Heap::lerArquivo(char * problemFile) {
     raiz_bfs->data().GetHeap().reserve(nElementos + 1);
 
     fgets(buff, 1000, file);
+    mpz_class * vectemp = new mpz_class[nElementos + 1];
     for (int i = 0; i < nElementos; i++) {
         fgets(buff, 1000, file);
         mpz_class temp(buff);
-        numLookUpTable[temp] = i;
-        invNumLookUpTable[i] = temp;
-        min += temp;
-        raiz->pushElem(temp);
-        raiz_bfs->pushElem(new mpz_heap_elem(temp));
+        vectemp[i + 1] = temp;
+    }
+    quicksort(vectemp, 1, nElementos);
+    for (int i = 0; i < nElementos; i++) {
+        numLookUpTable[vectemp[nElementos - i]] = i;
+        invNumLookUpTable[i] = vectemp[nElementos - i];
+        min += vectemp[nElementos - i];
+        raiz->pushElem(vectemp[nElementos - i]);
+        raiz_bfs->pushElem(new mpz_heap_elem(vectemp[nElementos - i]));
     }
     fclose(file);
+    delete [] vectemp;
 }
 
 void PPN_Heap::runDFS() {
@@ -293,7 +306,7 @@ void PPN_Heap::KK(HeapStrctPtrMin & node) {
     }
 }
 
-uint16_t * PPN_Heap::KKConstruct() {
+SolutionObject * PPN_Heap::KKConstruct() {
     map<mpz_class, mpz_class> a1, a2;
     HeapStrctPtrMin temp;
     temp = raiz_bfs->data();
@@ -309,10 +322,267 @@ uint16_t * PPN_Heap::KKConstruct() {
         uint16_t a = numLookUpTable[(*begin).first];
         solv[a] = ONE;
     }
-    SolutionObject a(invNumLookUpTable, solv, raiz->getSum());
-    a.encode();
+    SolutionObject * a = new SolutionObject(invNumLookUpTable, solv, raiz->getSum());
+    return a;
 }
 
+SolutionObject * PPN_Heap::GraspConstruct(double alpha) {
+    uint8_t * solv = new uint8_t[nElementos];
+    //    uint8_t * solv1 = new uint8_t[nElementos];
+    mpz_class sum[2] = {0, 0};
+    map<uint16_t, mpz_class> nonAssigned;
+    gsl_rng * rng = gsl_rng_alloc(gsl_rng_mt19937);
+    gsl_rng_set(rng, Cronometro::elapsedIntern());
+    nonAssigned = this->invNumLookUpTable;
+    for (int i = 0; i < nElementos; i++) {
+        solv[i] = ZERO;
+        //        solv1[i]=ZERO;
+    }
+    for (int i = 0; i < nElementos; i++) {
+        int menor = sum[0] < sum[1] ? 0 : 1;
+        map<uint16_t, mpz_class> nonAssignedValues;
+        map<uint16_t, mpz_class>::iterator beg = nonAssigned.begin(), end = nonAssigned.end();
+        mpz_class maxVal = -raiz->getSum(), minVal = raiz->getSum();
+        for (; beg != end; beg++) {
+            sum[menor] += beg->second;
+            mpz_class diff = sum[menor] - sum[(menor + 1) % 2];
+            diff = (diff < 0) ? -diff : diff;
+            if (maxVal < diff) {
+                maxVal = diff;
+            }
+            if (minVal > diff) {
+                minVal = diff;
+            }
+            nonAssignedValues[beg->first] = diff;
+            sum[menor] -= beg->second;
+        }
+        mpz_class RCLLim = minVal + alpha * (maxVal - minVal);
+        vector<uint16_t> RCL;
+        beg = nonAssignedValues.begin();
+        end = nonAssignedValues.end();
+        for (; beg != end; beg++) {
+            if (beg->second <= RCLLim) {
+                RCL.push_back(beg->first);
+            }
+        }
+        int chosen = gsl_rng_uniform_int(rng, RCL.size());
+        sum[menor] += nonAssigned[RCL[chosen]];
+        if (menor == 0) {
+            solv[RCL[chosen]] = ONE;
+        }
+//        cout<<"0 "<<sum[0]<<" - "<<"1 "<<sum[1]<<endl;
+        nonAssigned.erase(RCL[chosen]);
+    }
+    SolutionObject * ret = new SolutionObject(invNumLookUpTable, solv, raiz->getSum());
+//    cout << log2(ret->getResult()) << endl;
+//    mpz_class diff = sum[0] - sum[1];
+//    diff = (diff < 0) ? -diff : diff;
+//    cout << log2(diff) << endl;
+//    exit(0);
+    return ret;
+}
+void PPN_Heap::ILS_Grasp(double alpha){
+    set<mpz_class> bacias;
+    set<mpz_class> descidas;
+    pair < set<mpz_class>::iterator, bool> exists;
+    chrono.start();
+    gsl_rng * rng = gsl_rng_alloc(gsl_rng_mt19937);
+    gsl_rng_set(rng, Cronometro::elapsedIntern());
+    Cronometro c(Cronometro::SEGUNDOS);
+    c.start();
+    SolutionObject * init  = GraspConstruct(alpha);
+    steepestDescent(init);
+    SolutionObject temp;
+    temp=*init;
+    double j = 0, k = 0;
+    int l=1;
+    double weight = 1;
+    for (int i = 0; i < 1000000; i++) {
+        pertubation(&temp, rng, 1, 5, 10);
+        exists = bacias.insert(temp.encode());
+        if (exists.second) {
+            steepestDescent(&temp);
+            exists = descidas.insert(temp.encode());
+            k++;
+            if (exists.second) {
+                if (temp.getResult() < init->getResult()) {
+                    *init = temp;
+                    cout << log2(temp.getResult()) << " Tempo: " << c.elapsed() << " Descidas:" << k << endl;
+                    k = 0;
+                    j = c.elapsed();
+                    //                    weight=1;
+                }
+            } else {
+                cout << "repetiu descida" << endl;
+            }
+        } else {
+            cout << "repetiu perturbação" << endl;
+        }
+        if (c.elapsed() - j >= 50) {
+            weight += 0.1;
+            j = c.elapsed();
+            l++;
+            cout << weight << " Tempo:" << j << " Descidas:" << k << endl;
+        }
+        if((l%10)==0){
+            weight=1;
+            temp = *GraspConstruct(alpha);
+            steepestDescent(&temp);
+        }
+    }   
+}
+
+void PPN_Heap::ILS_KK() {
+    set<mpz_class> bacias;
+    set<mpz_class> descidas;
+    pair < set<mpz_class>::iterator, bool> exists;
+    chrono.start();
+    SolutionObject * init = KKConstruct();
+    steepestDescent(init);
+    gsl_rng * rng = gsl_rng_alloc(gsl_rng_mt19937);
+    gsl_rng_set(rng, Cronometro::elapsedIntern());
+    SolutionObject temp;
+    temp = *init;
+    bacias.insert(temp.encode());
+    Cronometro c(Cronometro::SEGUNDOS);
+    c.start();
+    double j = 0;int k = 0;
+    double weight = 1;
+    for (int i = 0; i < 1000000; i++) {
+        pertubation(&temp, rng, 1, 5, 10);
+//        exists = bacias.insert(temp.encode());
+//        if (exists.second) {
+            steepestDescent(&temp);
+//            exists = descidas.insert(temp.encode());
+            k++;
+//            if (exists.second) {
+                if (temp.getResult() < init->getResult()) {
+                    *init = temp;
+                    cout << log2(temp.getResult()) << " Tempo: " << c.elapsed() << " Descidas:" << k << endl;
+                    k = 0;
+                    weight=1;
+                    //                    weight=1;
+                }
+//            } else {
+//                cout << "repetiu descida" << endl;
+//            }
+//        } else {
+//            cout << "repetiu perturbação" << endl;
+//        }
+        if ((k%5000)==0) {
+            weight += 0.2;
+            cout << weight << " Tempo:" << c.elapsed() << " Descidas:" << k << endl;
+        }
+    }
+}
+
+void PPN_Heap::pertubation(SolutionObject * sol, gsl_rng * rng, double strength, int Invertions, int Swaps) {
+    int inv = strength*Invertions;
+    int swp = strength*Swaps;
+    set<uint16_t> historyInvert;
+    set<swap> historySwap;
+    pair < set<uint16_t>::iterator, bool> historyInvertRet;
+    for (int i = 0; i < inv; i++) {
+        uint16_t t = (uint16_t) gsl_rng_uniform_int(rng, nElementos);
+        historyInvertRet = historyInvert.insert(t);
+        if (historyInvertRet.second) {
+            sol->makeMoveInvert((*historyInvertRet.first));
+        } else {
+            i--;
+        }
+    }
+    for (int j = 0; j < swp; j++) {
+        uint16_t a = gsl_rng_uniform_int(rng, nElementos);
+        uint16_t b = gsl_rng_uniform_int(rng, nElementos);
+        swap p1(a, b);
+        swap p2(b, a);
+        bool b1 = historySwap.insert(p1).second;
+        bool b2 = historySwap.insert(p2).second;
+        if (sol->testMoveSwap(p1) > 0 && (b1 && b2)) {
+            if ((historyInvert.find(a) == historyInvert.end()) || (historyInvert.find(b) == historyInvert.end())) {
+                sol->makeMoveSwap(p1);
+            } else {
+                j--;
+            }
+        } else {
+            j--;
+        }
+    }
+}
+
+void PPN_Heap::pertubation1(SolutionObject * sol, gsl_rng * rng, double strength, int Invertions, int Swaps) {
+    int inv = strength*Invertions;
+    int swp = strength*Swaps;
+    cleanHistory();
+    //    set<uint16_t> historyInvert;
+    //    set<swap> historySwap;
+    //    pair < set<uint16_t>::iterator, bool> historyInvertRet;
+    for (int i = 0; i < inv; i++) {
+        uint16_t t = (uint16_t) gsl_rng_uniform_int(rng, nElementos);
+        //        historyInvertRet = historyInvert.insert(t);
+        if (!pertubationHistory[t][t]) {
+            pertubationHistory[t][t] = true;
+            sol->makeMoveInvert(t);
+        } else {
+            i--;
+        }
+    }
+    for (int j = 0; j < swp; j++) {
+        uint16_t a = gsl_rng_uniform_int(rng, nElementos);
+        uint16_t b = gsl_rng_uniform_int(rng, nElementos);
+        bool *b1 = &pertubationHistory[a][b];
+        bool *b2 = &pertubationHistory[b][a];
+        if (sol->testMoveSwap(swap(a, b)) > 0 && (!(*b1) && !(*b2))) {
+            if ((!pertubationHistory[a][a]) || (!pertubationHistory[b][b])) {
+                sol->makeMoveSwap(swap(a, b));
+                *b1 = ~(*b1);
+                *b2 = ~(*b2);
+            } else {
+                j--;
+            }
+        } else {
+            j--;
+        }
+    }
+}
+
+void PPN_Heap::steepestDescent(SolutionObject * sobj) {
+    int bestIndex = -1;
+    swap bestSwap = swap(-1, -1);
+    bool improved = false;
+    do {
+        improved = false;
+        bestIndex = -1;
+        mpz_class bestRes = sobj->getResult();
+        for (uint16_t i = 0; i < nElementos; i++) {
+            mpz_class temp = sobj->testMoveInvert(i);
+            if (temp < bestRes) {
+                bestIndex = i;
+                bestRes = temp;
+                improved = true;
+            }
+        }
+        bestSwap = swap(-1, -1);
+        mpz_class bestRes1 = sobj->getResult();
+        for (uint16_t i = 0; i < nElementos; i++) {
+            for (uint16_t j = i + 1; j < nElementos; j++) {
+                mpz_class temp = sobj->testMoveSwap(swap(i, j));
+                if ((temp >= 0)&&(temp < bestRes1)) {
+                    bestSwap = swap(i, j);
+                    bestRes1 = temp;
+                    improved = true;
+                }
+            }
+        }
+        if (improved) {
+            if (bestRes <= bestRes1) {
+                sobj->makeMoveInvert(bestIndex);
+            } else if (bestRes > bestRes1) {
+                sobj->makeMoveSwap(bestSwap);
+            }
+        }
+    } while (improved);
+}
 
 void PPN_Heap::KK(HeapStrctPtrMin & node, map<mpz_class, mpz_class> & A1, map<mpz_class, mpz_class> & A2) {
     if (node.size() == 1) {

@@ -31,7 +31,7 @@ DEFAULTCONF=Debug
 CONF=${DEFAULTCONF}
 
 # All Configurations
-ALLCONFS=Debug Release Windows Release_1 
+ALLCONFS=Debug Release Windows Realease_1 
 
 
 # build

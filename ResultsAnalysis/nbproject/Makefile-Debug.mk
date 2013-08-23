@@ -52,7 +52,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=
+LDLIBSOPTIONS=-lgmp -lgmpxx
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}

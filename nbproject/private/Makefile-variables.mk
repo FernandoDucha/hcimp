@@ -6,4 +6,4 @@
 # Debug configuration
 # Release configuration
 # Windows configuration
-# Release_1 configuration
+# Realease_1 configuration

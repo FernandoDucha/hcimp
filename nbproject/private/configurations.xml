@@ -62,12 +62,12 @@
       </nativedebugger>
       <runprofile version="9">
         <runcommandpicklist>
-          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" bfs 100 1</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" bfs 100</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" bfs 10 20</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}" bfs 10 20</runcommand>
+        <runcommand>"${OUTPUT_PATH}"</runcommand>
         <rundir></rundir>
         <buildfirst>true</buildfirst>
         <terminal-type>0</terminal-type>
@@ -109,7 +109,7 @@
         </environment>
       </runprofile>
     </conf>
-    <conf name="Release_1" type="1">
+    <conf name="Realease_1" type="1">
       <toolsSet>
         <developmentServer>localhost</developmentServer>
         <platform>2</platform>
@@ -132,9 +132,13 @@
       <runprofile version="9">
         <runcommandpicklist>
           <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
-          <runcommandpicklistitem>"${OUTPUT_PATH}" bfs 100 1</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" lds 1 50</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" bfs 1 50</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" lds 100 3</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" lds 100</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" lds 10 20</runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}" bfs 100 1</runcommand>
+        <runcommand>"${OUTPUT_PATH}" lds 10 20</runcommand>
         <rundir></rundir>
         <buildfirst>true</buildfirst>
         <terminal-type>0</terminal-type>

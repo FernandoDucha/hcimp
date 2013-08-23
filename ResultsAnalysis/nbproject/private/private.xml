@@ -6,11 +6,16 @@
     </data>
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
-        <file>file:/home/fordem/Dropbox/HC/HCImp/ResultsAnalysis/main.cpp</file>
-        <file>file:/home/fordem/Dropbox/HC/HCImp/source/BasicFunctions.cpp</file>
-        <file>file:/home/fordem/Dropbox/HC/HCImp/source/main.cpp</file>
-        <file>file:/home/fordem/Dropbox/HC/HCImp/source/BasicTypes.cpp</file>
         <file>file:/home/fordem/Dropbox/HC/HCImp/source/PPN_Heap.cpp</file>
-        <file>file:/home/fordem/Dropbox/HC/HCImp/source/CompleteKarmarkarKarp_MPZ.cpp</file>
+        <file>file:/home/fordem/Dropbox/HC/HCImp/source/main.cpp</file>
+        <file>file:/home/fordem/Dropbox/HC/HCImp/source/SolutionObject.cpp</file>
+        <file>file:/home/fordem/Dropbox/HC/HCImp/source/Semaphore.cpp</file>
+        <file>file:/home/fordem/Dropbox/HC/HCImp/source/BasicFunctions.cpp</file>
+        <file>file:/home/fordem/Dropbox/HC/HCImp/source/Cronometro.cpp</file>
+        <file>file:/home/fordem/Dropbox/HC/HCImp/ResultsAnalysis/main.cpp</file>
+        <file>file:/home/fordem/Dropbox/HC/HCImp/source/NumberPartitionProblem.cpp</file>
+        <file>file:/home/fordem/Dropbox/HC/HCImp/source/BFS.cpp</file>
+        <file>file:/home/fordem/Dropbox/HC/HCImp/source/CompleteKarmarkarKarp.cpp</file>
+        <file>file:/home/fordem/Dropbox/HC/HCImp/source/NumberPartitionProblem_MPZ.cpp</file>
     </open-files>
 </project-private>
